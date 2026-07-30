@@ -162,7 +162,7 @@ function Planos() {
               </span>
             ))}
           </div>
-          <p className="mt-6.5 max-w-[720px] font-manrope text-sm leading-[1.6] text-gray-light italic text-pretty">
+          <p className="mt-6.5 font-manrope text-sm leading-[1.6] text-gray-light italic lg:text-base">
             Esse filtro existe para garantir que só entramos em parceria com negócios prontos para o método
             funcionar de verdade.
           </p>

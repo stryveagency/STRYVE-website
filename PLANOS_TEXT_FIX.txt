@@ -1,0 +1,18 @@
+AJUSTE — Planos.tsx Texto da Qualificação
+
+Problema: O texto "Esse filtro existe para garantir que só entremos em parcerias com negócios prontos para o método funcionar, de verdade." 
+está quebrando pra baixo quando deveria continuar na mesma linha (conforme a linha branca que você marcou).
+
+Solução: No bloco "CRITÉRIOS DE QUALIFICAÇÃO" da seção Planos.tsx
+
+Verificar:
+- width do container de texto
+- white-space: nowrap (se estiver aplicado, remover)
+- text-wrap: balance ou balance (ajustar se necessário)
+- Font-size (pode estar muito grande, causando quebra)
+- Padding/margin que está comprimindo o espaço
+
+Fazer o texto ocupar a linha inteira horizontalmente, sem quebra para baixo.
+Se necessário, ajustar o layout para que a frase caiba numa única linha (aumentar container width ou diminuir fonte ligeiramente).
+
+Fazer agora.
