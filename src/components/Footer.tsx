@@ -13,9 +13,7 @@ function Footer() {
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr] lg:gap-12">
           <div className="flex flex-col">
             <a href="#hero" className="flex items-center gap-3 no-underline">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full border border-teal-neon/60 font-playfair text-lg leading-none text-teal-neon italic shadow-[0_0_14px_rgba(46,230,184,0.3)]">
-                S
-              </span>
+              <img src="/images/logo-stryve.png" alt="STRYVE" style={{ height: '50px', width: 'auto' }} />
               <span className="font-manrope text-2xl leading-none font-light tracking-[0.26em] text-white">
                 STRYVE
               </span>

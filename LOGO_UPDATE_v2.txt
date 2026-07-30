@@ -1,0 +1,24 @@
+ATUALIZAR LOGOS — Remover do Hero, Trocar Navbar e Footer
+
+ARQUIVO DE LOGO: logo-stryve.png (já está em design-reference/)
+
+TAREFA 1 — Hero.tsx:
+✓ REMOVER o elemento com o logo "S" oval (aquele que rabiscou)
+✓ Deletar completamente: div com "S" + glow + texto "STRYVE"
+✓ Deixar apenas: headline "CRESCIMENTO NÃO É SORTE" + "É PROCESSO." + texto descritivo + botão
+
+TAREFA 2 — Navbar.tsx:
+✓ Trocar o logo atual (S dentro de círculo)
+✓ Copy logo-stryve.png de design-reference/ para public/images/logo-stryve.png
+✓ No Navbar.tsx, substituir o elemento logo por:
+  <img src="/images/logo-stryve.png" alt="STRYVE" style="height: 45px; width: auto;" />
+✓ Manter o espaçamento/layout da Navbar igual
+
+TAREFA 3 — Footer.tsx:
+✓ Trocar o logo do footer
+✓ Usar a mesma imagem: public/images/logo-stryve.png
+✓ Substituir por:
+  <img src="/images/logo-stryve.png" alt="STRYVE" style="height: 50px; width: auto;" />
+✓ Manter proporcional ao design
+
+Fazer agora.

@@ -71,24 +71,9 @@ function Hero() {
           ref={contentRef}
           className="flex flex-col items-start transition-transform duration-300 ease-out will-change-transform"
         >
-          <Reveal className="mb-10 flex items-center gap-[18px]">
-            <span className="flex h-10 w-10 items-center justify-center rounded-full border border-teal-neon/55 font-playfair text-[22px] leading-none text-teal-neon italic shadow-[0_0_18px_rgba(46,230,184,0.35),inset_0_0_12px_rgba(46,230,184,0.15)]">
-              S
-            </span>
-            <span
-              className="font-manrope text-[32px] leading-none font-extralight tracking-[0.28em] text-transparent sm:text-4xl lg:text-[48px]"
-              style={{
-                WebkitTextStroke: '0.7px #2EE6B8',
-                filter: 'drop-shadow(0 0 14px rgba(46,230,184,0.65)) drop-shadow(0 0 42px rgba(46,230,184,0.28))',
-              }}
-            >
-              STRYVE
-            </span>
-          </Reveal>
-
           <Reveal
             as="h1"
-            delay={1}
+            delay={0}
             className="m-0 font-anton text-[52px] leading-[1.05] tracking-[0.01em] text-white uppercase text-balance sm:text-[68px] lg:text-[100px]"
           >
             CRESCIMENTO
@@ -98,7 +83,7 @@ function Hero() {
 
           <Reveal
             as="p"
-            delay={2}
+            delay={1}
             className="mt-6 font-anton text-[26px] leading-[1.1] tracking-[0.04em] text-teal-neon uppercase lg:text-[60px]"
             style={{ textShadow: '0 0 24px rgba(46,230,184,0.45)' }}
           >
@@ -107,7 +92,7 @@ function Hero() {
 
           <Reveal
             as="p"
-            delay={3}
+            delay={2}
             className="mt-8 max-w-[480px] font-manrope text-lg leading-[1.6] text-gray-light text-pretty"
           >
             Estratégia digital orientada a <strong className="font-bold text-white">RESULTADO</strong>. Sem
@@ -115,7 +100,7 @@ function Hero() {
             decisão.
           </Reveal>
 
-          <Reveal delay={4} className="mt-10">
+          <Reveal delay={3} className="mt-10">
             <a
               href="#planos"
               className="inline-block rounded bg-teal-neon px-12 py-[18px] font-manrope text-xl font-extrabold tracking-[0.12em] text-black uppercase no-underline transition-all duration-300 ease-out hover:scale-105 hover:bg-teal-neon-bright hover:shadow-[0_0_0_1px_rgba(46,230,184,0.6),0_0_32px_rgba(46,230,184,0.6),0_0_72px_rgba(46,230,184,0.35)]"

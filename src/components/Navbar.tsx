@@ -34,9 +34,7 @@ function Navbar() {
     >
       <div className="flex w-full items-center justify-between gap-8 px-6 py-[18px] lg:px-16 lg:py-[22px]">
         <a href="#hero" onClick={closeMobile} className="flex items-center gap-3 no-underline">
-          <span className="flex h-[30px] w-[30px] items-center justify-center rounded-full border border-teal-neon/60 font-playfair text-base leading-none text-teal-neon italic shadow-[0_0_14px_rgba(46,230,184,0.3)]">
-            S
-          </span>
+          <img src="/images/logo-stryve.png" alt="STRYVE" style={{ height: '45px', width: 'auto' }} />
           <span className="font-manrope text-xl leading-none font-light tracking-[0.26em] text-white">
             STRYVE
           </span>
