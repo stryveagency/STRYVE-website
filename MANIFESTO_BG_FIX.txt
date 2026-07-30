@@ -1,0 +1,15 @@
+AJUSTE RÁPIDO — Manifesto.tsx Background Image
+
+Problema: A imagem do busto (novo-background-sessão-manifesto.png) está sendo cortada completamente — não aparece nada.
+
+Solução: Ajustar o CSS da imagem de background no Manifesto.tsx:
+
+Na seção que renderiza o background do Manifesto, ajustar:
+- background-size: 50% ou 55% (em vez de cover)
+- background-position: right center ou 95% 50% (posicionar no canto direito)
+- background-repeat: no-repeat
+- A imagem deve ficar parcial no canto (metade/3/4 do busto visível é ok), desde que apareça algo
+
+Objetivo: o busto fica "cortado" naturalmente no canto direito (como no design), mas agora VISÍVEL — dá pra ver pelo menos o rosto/ombros.
+
+Fazer o ajuste e testar no browser (npm run dev), depois screenshot comparando com o print original (sessão-manifesto.png).
