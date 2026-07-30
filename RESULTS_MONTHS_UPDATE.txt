@@ -1,0 +1,11 @@
+AJUSTE RÁPIDO — Resultados.tsx
+
+Trocar: "3 MESES" 
+Por: "5 MESES"
+
+Na seção Resultados, o terceiro número/contador:
+- Mudar de "3" para "5"
+- Manter o texto "PRAZO MÍNIMO PARA RESULTADOS CONSISTENTES"
+- Manter tudo o mais igual
+
+Fazer agora.

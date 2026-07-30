@@ -116,7 +116,7 @@ function Resultados() {
               className="font-anton text-[60px] leading-none tracking-[0.01em] whitespace-nowrap text-teal-neon"
               style={{ textShadow: '0 0 40px rgba(46,230,184,0.35)' }}
             >
-              3 MESES
+              5 MESES
             </span>
             <span className="mt-3 max-w-[320px] font-manrope text-[17px] leading-[1.5] font-medium tracking-[0.14em] text-white uppercase text-pretty">
               Prazo mínimo para resultados consistentes
