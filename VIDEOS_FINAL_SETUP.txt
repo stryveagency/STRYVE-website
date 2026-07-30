@@ -1,0 +1,30 @@
+SETUP FINAL — Vídeos Hero e Resultados com Regras
+
+Arquivos novos (ambos em design-reference/):
+- novo-background-sessão-hero
+- novo-video-background-sessão-resultados
+
+TAREFA 1 — Hero.tsx (SEM Navbar comendo o vídeo):
+✓ Copy novo-background-sessão-hero para public/videos/hero-bust.mp4
+✓ Na seção Hero (<section id="hero">):
+  - Adicionar: padding-top: 90px (altura da Navbar)
+  - OU margin-top: 90px
+  - Isso garante que o vídeo começa ABAIXO da Navbar
+✓ Verificar: min-height: 100vh deve ser APÓS o padding-top
+✓ Resultado: Vídeo não fica coberto pelo cabeçalho
+
+TAREFA 2 — Resultados.tsx (SEM risco branco na esquerda):
+✓ Copy novo-video-background-sessão-resultados para public/videos/resultados-bust.mp4
+✓ Na tag <video>:
+  - overflow: hidden
+  - position: absolute
+  - inset: 0 (top/left/right/bottom: 0)
+  - width: 100%
+  - height: 100%
+  - object-fit: cover
+  - object-position: center
+  - z-index: 0
+✓ Container pai deve ter: position: relative
+✓ Resultado: Sem glitch, sem risco branco
+
+Fazer agora. Garantir que ambas as regras são aplicadas.
