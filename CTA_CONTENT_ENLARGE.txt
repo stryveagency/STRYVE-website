@@ -1,0 +1,38 @@
+AJUSTE CRÍTICO — CTA WhatsApp Conteúdo Chamativo
+
+Problema: Texto muito pequeno, botão pequeno, contraste fraco com fundo da imagem.
+
+Solução: CtaWhatsApp.tsx — AUMENTAR e MELHORAR visibilidade
+
+1. TÍTULO "PRONTO PARA CRESCER?"
+   - Font-size: 56px ou maior (em desktop)
+   - Font-weight: 900 (super bold)
+   - Color: #FFFFFF (branco puro)
+   - Text-shadow: 0 0 20px rgba(46,230,184,0.4) (glow teal suave)
+
+2. MENSAGEM (corpo de texto)
+   - Font-size: 20px ou 22px (em desktop)
+   - Color: #CCCCCC (cinza claro, bem legível)
+   - Line-height: 1.6
+
+3. BOTÃO "CHAMA NO WHATSAPP"
+   - Padding: 20px 50px (MAIOR)
+   - Font-size: 18px (MAIOR)
+   - Background: #2EE6B8 (teal puro)
+   - Color: #000000 (texto preto)
+   - Box-shadow: 0 0 40px rgba(46,230,184,0.6) (glow bem forte)
+   - Hover: scale(1.08), sombra maior
+
+4. CONTRASTE/OVERLAY (opcional)
+   - Se a imagem for muito clara, adicionar um overlay escuro
+   - Exemplo: background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.3))
+   - Isso escurece o fundo e melhora o contraste do texto
+
+5. ESTRUTURA
+   - Container: padding grande (60px 80px ou similar)
+   - Conteúdo centralizado no lado direito
+   - Espaçamento entre título, mensagem e botão
+
+Objetivo: A seção CTA fica **IMPACTANTE** — algo que faz a pessoa QUERER clicar.
+
+Fazer agora.
