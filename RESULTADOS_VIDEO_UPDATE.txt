@@ -1,0 +1,24 @@
+TROCAR VÍDEO — Resultados.tsx (sem risco branco)
+
+Arquivo novo: novo-video-background-sessão-resultados (já está em design-reference/)
+
+Tarefa: Resultados.tsx
+
+✓ Copy novo-video-background-sessão-resultados de design-reference/ para public/videos/resultados-bust.mp4 (sobrescrever)
+
+✓ Aplicar CSS no elemento <video> para evitar artefatos/risco branco:
+  - overflow: hidden
+  - position: absolute
+  - top: 0
+  - left: 0
+  - width: 100%
+  - height: 100%
+  - object-fit: cover
+  - object-position: center
+  - z-index: 0
+  - inset: 0 (ou top/left/right/bottom: 0)
+
+✓ Garantir que o container pai da seção tem position: relative
+✓ Testar no browser para confirmar que não há risco branco na esquerda
+
+Fazer agora.

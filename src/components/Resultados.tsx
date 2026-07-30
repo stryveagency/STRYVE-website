@@ -63,7 +63,7 @@ function Resultados() {
         disablePictureInPicture
         preload="metadata"
         aria-hidden="true"
-        className="absolute inset-0 z-0 h-full w-full scale-[1.03] object-cover object-center"
+        className="absolute inset-0 z-0 h-full w-full object-cover object-center"
       />
       <div
         aria-hidden="true"
