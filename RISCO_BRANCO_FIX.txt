@@ -1,0 +1,36 @@
+ELIMINAR RISCO BRANCO — Resultados.tsx
+
+Problema: Artefato/glitch branco aparecendo na esquerda do vídeo.
+
+Solução robusta: Resultados.tsx - tag <video>
+
+Adicionar TODAS essas propriedades CSS:
+- position: absolute
+- top: 0
+- left: 0
+- width: 100%
+- height: 100%
+- object-fit: cover
+- object-position: center
+- z-index: 0
+- margin: 0
+- padding: 0
+- border: none
+- display: block
+- inset: 0
+- overflow: hidden
+- backface-visibility: hidden
+- -webkit-backface-visibility: hidden
+
+No container pai do vídeo:
+- position: relative
+- overflow: hidden
+- width: 100%
+- height: 100%
+
+Se ainda houver risco branco:
+✓ Verificar se há outro elemento (div, pseudo-element) criando o risco
+✓ Usar clip-path: inset(0) como última opção
+✓ Verificar se o arquivo do vídeo tem problema de codec
+
+Fazer agora e testar.

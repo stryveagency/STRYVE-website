@@ -53,7 +53,11 @@ function Counter({ target, suffix = '' }: { target: number; suffix?: string }) {
 
 function Resultados() {
   return (
-    <section id="resultados" className="relative flex min-h-screen items-end overflow-hidden bg-black">
+    <section
+      id="resultados"
+      className="relative flex min-h-screen w-full items-end overflow-hidden bg-black"
+      style={{ overflow: 'hidden' }}
+    >
       <video
         src="/videos/resultados-bust.mp4"
         autoPlay
@@ -63,7 +67,16 @@ function Resultados() {
         disablePictureInPicture
         preload="metadata"
         aria-hidden="true"
-        className="absolute inset-0 z-0 h-full w-full object-cover object-center"
+        className="absolute inset-0 z-0 m-0 block h-full w-full scale-[1.05] border-none object-cover object-center p-0"
+        style={{
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backfaceVisibility: 'hidden',
+          WebkitBackfaceVisibility: 'hidden',
+          clipPath: 'inset(0)',
+        }}
       />
       <div
         aria-hidden="true"
