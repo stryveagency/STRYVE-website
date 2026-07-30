@@ -1,0 +1,18 @@
+TROCAR VÍDEOS — Hero e Resultados
+
+Arquivos:
+- novo-background-sessão-hero (novo, para Hero)
+- novo-background-sessão-resultado (antigo, para Resultados)
+
+Tarefa:
+
+✓ Copy novo-background-sessão-hero de design-reference/ para public/videos/hero-bust.mp4 (sobrescrever)
+✓ Copy novo-background-sessão-resultado de design-reference/ para public/videos/resultados-bust.mp4 (sobrescrever)
+
+As referências já estão corretas:
+- Hero.tsx: <video src="/videos/hero-bust.mp4" />
+- Resultados.tsx: <video src="/videos/resultados-bust.mp4" />
+
+Os vídeos vão trocar automaticamente quando você recarregar a página.
+
+Fazer agora.
