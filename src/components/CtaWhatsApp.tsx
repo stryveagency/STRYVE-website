@@ -6,7 +6,7 @@ function CtaWhatsApp() {
       className="relative overflow-hidden bg-black"
       style={{
         backgroundImage: 'url(/images/cta-bg.png)',
-        backgroundSize: 'cover',
+        backgroundSize: 'auto 100%',
         backgroundPosition: 'left center',
         backgroundRepeat: 'no-repeat',
         height: '100%',
