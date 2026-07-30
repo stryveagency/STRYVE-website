@@ -1,3 +1,4 @@
+import manifestoBg from '../assets/manifesto-bg.png'
 import Reveal from './Reveal'
 
 function Manifesto() {
@@ -87,6 +88,31 @@ function Manifesto() {
 
         <div />
       </div>
+
+      <Reveal
+        className="pointer-events-none absolute inset-y-0 right-0 z-2 hidden w-[46%] md:block"
+        style={{
+          maskImage: 'linear-gradient(to right, transparent 0, #000 34%, #000 100%)',
+          WebkitMaskImage: 'linear-gradient(to right, transparent 0, #000 34%, #000 100%)',
+        }}
+      >
+        <div
+          className="h-full w-full"
+          style={{
+            maskImage: 'linear-gradient(to bottom, transparent 0, #000 14%, #000 84%, transparent 100%)',
+            WebkitMaskImage:
+              'linear-gradient(to bottom, transparent 0, #000 14%, #000 84%, transparent 100%)',
+          }}
+        >
+          <img
+            src={manifestoBg}
+            alt=""
+            aria-hidden="true"
+            className="block h-full w-full object-cover opacity-[0.62]"
+            style={{ objectPosition: '62% 32%' }}
+          />
+        </div>
+      </Reveal>
     </section>
   )
 }

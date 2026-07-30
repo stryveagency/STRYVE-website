@@ -3,44 +3,44 @@ import Reveal from './Reveal'
 
 const steps = [
   {
-    code: 'S-01',
-    title: 'Scan — Diagnóstico 360°',
-    desc: 'Mergulhamos no negócio do cliente antes de qualquer ação. Analisamos presença digital, concorrentes, público e histórico. Nada é executado sem ser diagnosticado primeiro.',
-    tags: ['Formulário estratégico', 'Análise de concorrentes', 'Auditoria de perfil'],
+    code: '01',
+    title: 'Diagnóstico',
+    desc: 'Levantamos os números reais do cliente: faturamento, ticket médio, funil atual e gargalo principal. Validamos os critérios de qualificação antes de qualquer proposta.',
+    artefato: 'Artefato: Documento de Diagnóstico',
   },
   {
-    code: 'T-02',
-    title: 'Target — Estratégia sob medida',
-    desc: 'Com base no diagnóstico, criamos uma estratégia customizada. Definimos público-alvo, mensagem, canais e metas mensuráveis. Cada cliente tem um plano único — nunca um template genérico.',
-    tags: ['ICP do cliente', 'Plano de 30/60/90 dias', 'Metas e KPIs'],
+    code: '02',
+    title: 'Árvore de Metas',
+    desc: 'Definimos com o cliente a meta de negócio principal e desdobramos em KPIs de marketing e depois KPIs por canal — tudo registrado e rastreável.',
+    artefato: 'Artefato: Árvore de Metas',
   },
   {
-    code: 'R-03',
-    title: 'Run — Execução simultânea',
-    desc: 'Conteúdo e tráfego pago rodando juntos, não em sequência. Enquanto o orgânico constrói autoridade, o pago acelera resultado. Essa combinação é o que separa agências de performance das demais.',
-    tags: ['Social media', 'Meta Ads', 'Google Ads', 'Landing pages'],
+    code: '03',
+    title: 'Ciclos de Execução',
+    desc: 'Cada ciclo de 2 a 4 semanas parte de uma hipótese ligada à Árvore de Metas. Produzimos os criativos e rodamos as campanhas conforme o plano do ciclo.',
+    artefato: 'Artefato: Plano de Ciclo',
   },
   {
-    code: 'I-04',
-    title: 'Insights — Monitoramento em tempo real',
-    desc: 'Acompanhamos os dados semanalmente, não só no final do mês. Identificamos o que está performando e o que não está antes que vire problema. Cliente sempre informado.',
-    tags: ['Análise semanal', 'Dashboard do cliente', 'Alertas de performance'],
+    code: '04',
+    title: 'Ritual de Medição',
+    desc: 'Toda sexta, revisamos as métricas com cadência fixa. Geramos o relatório com números reais, e a decisão do que muda vem do dado — nunca do achismo.',
+    artefato: 'Artefato: Relatório de Ciclo',
   },
   {
-    code: 'D-05',
-    title: 'Drive — Otimização contínua',
-    desc: 'Pausamos o que não funciona, escalamos o que funciona. Testes A/B, ajustes de segmentação, novos criativos. A estratégia evolui todo mês — nunca fica parada.',
-    tags: ['Testes A/B', 'Ajustes semanais', 'Relatório mensal'],
+    code: '05',
+    title: 'Otimização',
+    desc: 'Revisamos o que funcionou e o que não funcionou. Pausamos o que é fraco, escalamos o que performa, e ajustamos o próximo ciclo.',
+    artefato: 'Artefato: Ata de Otimização',
   },
   {
-    code: 'E-06',
-    title: 'Expand — Escala e novos horizontes',
-    desc: 'Quando os resultados chegam, escalamos. Novos canais, novos públicos, novas campanhas. O objetivo é crescimento previsível e sustentável — não um pico isolado.',
-    tags: ['Novos canais', 'Upsell estratégico', 'Planejamento trimestral'],
+    code: '06',
+    title: 'Expansão',
+    desc: 'Verificamos se a meta da Árvore foi batida, apresentamos a proposta de expansão de escopo e orçamento, e ativamos o bônus por resultado.',
+    artefato: 'Artefato: Proposta de Expansão',
   },
 ]
 
-function Metodo() {
+function MotorDeCrescimento() {
   const gridRef = useRef<HTMLDivElement>(null)
   const dotRefs = useRef<(HTMLSpanElement | null)[]>([])
   const basePathRef = useRef<SVGPathElement>(null)
@@ -130,13 +130,13 @@ function Metodo() {
         }}
       />
 
-      <div className="relative z-2 mx-auto w-full max-w-[1560px] px-6 pt-[130px] pb-22 sm:px-10 sm:pt-[140px] sm:pb-22 lg:px-20 lg:pt-[160px] lg:pb-25">
+      <div className="relative z-2 mx-auto w-full max-w-[1560px] px-6 pt-[130px] pb-15 sm:px-10 sm:pt-[140px] sm:pb-15 lg:px-20 lg:pt-[160px] lg:pb-15">
         <Reveal
           as="span"
           className="inline-flex items-center gap-3 font-manrope text-sm font-medium tracking-[0.4em] text-teal-neon uppercase"
         >
           <span className="block h-px w-7 bg-teal-neon" />
-          Método
+          Motor de Crescimento
         </Reveal>
 
         <Reveal
@@ -144,7 +144,7 @@ function Metodo() {
           delay={1}
           className="mt-5 mb-5 font-anton text-[38px] leading-[1.05] tracking-[0.01em] text-white uppercase lg:text-[54px]"
         >
-          O MÉTODO S.T.R.I.D.E
+          O MOTOR DE CRESCIMENTO STRYVE
         </Reveal>
 
         <Reveal
@@ -152,8 +152,8 @@ function Metodo() {
           delay={2}
           className="mb-15 max-w-[760px] font-manrope text-xl leading-[1.6] text-gray-light text-pretty"
         >
-          Seis etapas que transformam presença digital em crescimento previsível — aplicado a qualquer
-          negócio, de qualquer segmento.
+          Um artefato obrigatório em cada etapa — sempre com dono e entregável claro. Decisão baseada em dado
+          real, não em achismo.
         </Reveal>
 
         <div ref={gridRef} className="relative grid grid-cols-1 gap-x-16 md:grid-cols-2">
@@ -203,22 +203,15 @@ function Metodo() {
               <span className="inline-block rounded bg-teal-neon/10 px-3 py-1 font-anton text-[26px] tracking-[0.08em] text-teal-neon">
                 {step.code}
               </span>
-              <h3 className="mt-[18px] mb-3.5 font-manrope text-2xl font-extrabold text-white lg:text-[30px]">
+              <h3 className="mt-[18px] mb-3.5 font-manrope text-2xl font-extrabold text-white uppercase lg:text-[30px]">
                 {step.title}
               </h3>
               <p className="mb-[18px] max-w-[620px] font-manrope text-lg leading-[1.7] text-gray-light text-pretty">
                 {step.desc}
               </p>
-              <div className="flex flex-wrap gap-2.5">
-                {step.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full border border-teal-neon/35 px-3 py-1 font-manrope text-sm text-gray-light"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
+              <span className="inline-block rounded-full border border-teal-neon/55 bg-teal-neon/8 px-3 py-1 font-manrope text-[15px] text-white">
+                {step.artefato}
+              </span>
             </Reveal>
           ))}
         </div>
@@ -227,4 +220,4 @@ function Metodo() {
   )
 }
 
-export default Metodo
+export default MotorDeCrescimento

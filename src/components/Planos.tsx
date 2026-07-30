@@ -2,49 +2,18 @@ import Reveal from './Reveal'
 
 const WHATSAPP = 'https://wa.me/5511991437244'
 
-const essencialIncluso = [
-  '8 a 12 posts por mês',
-  'Gestão básica do Instagram',
-  'Stories estratégicos',
-  'Organização visual do feed',
-  'Legendas objetivas',
-  'Agendamento de posts',
-  'Relatório mensal simples',
-  'Suporte básico',
+const incluso = [
+  'Diagnóstico completo do negócio',
+  'Estratégia sob medida (Árvore de Metas)',
+  'Execução simultânea de conteúdo e tráfego pago',
+  'Monitoramento semanal com relatório real',
+  'Otimização contínua a cada ciclo',
+  'Plano de expansão quando a meta for batida',
 ]
 
-const essencialNaoIncluso = [
-  'Tráfego pago (anúncios)',
-  'Estratégia de vendas',
-  'Produção de vídeos profissionais',
-  'Captação presencial',
-  'Monitoramento ou ajustes estratégicos',
-]
-
-const crescimentoIncluso = [
-  '10 a 15 posts por mês',
-  'Gestão completa do Instagram',
-  'Tráfego pago — gestão básica',
-  'Segmentação local',
-  'Stories estratégicos',
-  'Legendas persuasivas',
-  'Criação de anúncios',
-  'Captação e Reels (limitados)',
-  'Relatório mensal',
-  'Suporte prioritário',
-]
-
-const performanceIncluso = [
-  '15 a 25 posts por mês',
-  'Gestão completa do Instagram',
-  'Planejamento estratégico mensal',
-  'Captação presencial recorrente',
-  'Testes A/B e segmentação avançada',
-  'Stories diários estratégicos',
-  'Monitoramento diário de anúncios',
-  'Reels profissionais contínuos',
-  'Meta Ads — gestão completa',
-  'Estratégia de vendas e campanhas',
+const qualificacao = [
+  'Faturamento mensal a partir de R$ 10.000 a R$ 30.000',
+  'Orçamento de tráfego pago a partir de R$ 600/mês',
 ]
 
 function Planos() {
@@ -67,7 +36,7 @@ function Planos() {
           className="inline-flex items-center gap-3 font-manrope text-sm font-medium tracking-[0.4em] text-teal-neon uppercase"
         >
           <span className="block h-px w-7 bg-teal-neon" />
-          Planos
+          Investimento
         </Reveal>
 
         <Reveal
@@ -75,7 +44,7 @@ function Planos() {
           delay={1}
           className="mt-5 mb-4 font-anton text-[38px] leading-[1.05] tracking-[0.01em] text-white uppercase lg:text-[54px]"
         >
-          ESCOLHA SEU PLANO
+          UM MODELO. RESULTADO MENSURÁVEL.
         </Reveal>
 
         <Reveal
@@ -83,163 +52,121 @@ function Planos() {
           delay={2}
           className="mb-15 max-w-[700px] font-manrope text-lg leading-[1.6] text-gray-light text-pretty"
         >
-          O plano ideal depende do momento e do objetivo do seu negócio — o investimento é definido na
-          reunião de diagnóstico.
+          Sem pacotes genéricos. Um retainer com escopo completo, que cresce junto com o seu negócio.
         </Reveal>
 
-        <div className="grid grid-cols-1 items-center gap-7 lg:grid-cols-3">
-          {/* ESSENCIAL */}
-          <Reveal anim="pop" className="flex h-full flex-col rounded-lg border border-teal-neon/15 bg-[#0A0A0A] p-10">
-            <span className="font-manrope text-xs font-medium tracking-[0.24em] text-gray-light uppercase">
-              Presença digital
-            </span>
-            <h3 className="mt-3.5 mb-5 font-manrope text-[28px] font-extrabold tracking-[0.02em] text-white uppercase">
-              Essencial
-            </h3>
-            <span
-              className="font-anton text-4xl leading-[1.05] text-teal-neon"
-              style={{ textShadow: '0 0 30px rgba(46,230,184,0.3)' }}
-            >
-              SOB CONSULTA
-            </span>
-            <span className="mt-2 font-manrope text-sm text-gray-light">Mensal · contrato mínimo 2 meses</span>
-            <span aria-hidden="true" className="my-7 block h-px bg-white/10" />
-
-            <span className="mb-3.5 font-manrope text-xs font-bold tracking-[0.24em] text-teal-neon uppercase">
-              Incluso
-            </span>
-            <ul className="mb-6.5 flex list-none flex-col gap-2.5 p-0">
-              {essencialIncluso.map((item) => (
-                <li key={item} className="flex gap-2.5 font-manrope text-[15px] leading-[1.5] text-white">
-                  <span className="text-teal-neon">✓</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-
-            <span className="mb-3.5 font-manrope text-xs font-bold tracking-[0.24em] text-[#666666] uppercase">
-              Não incluso
-            </span>
-            <ul className="mb-6.5 flex list-none flex-col gap-2 p-0">
-              {essencialNaoIncluso.map((item) => (
-                <li key={item} className="flex gap-2.5 font-manrope text-sm leading-[1.5] text-[#777777]">
-                  <span className="text-[#4a4a4a]">✗</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-
-            <p className="mb-7 font-manrope text-sm leading-[1.6] text-gray-light italic text-pretty">
-              Para quem é: negócios que querem manter presença profissional no Instagram com constância, sem
-              foco direto em vendas imediatas.
-            </p>
-
-            <a
-              href={WHATSAPP}
-              target="_blank"
-              rel="noopener"
-              className="mt-auto block rounded-md border border-teal-neon bg-transparent px-8 py-[15px] text-center font-manrope text-[15px] font-bold tracking-[0.14em] text-teal-neon uppercase no-underline transition-all duration-300 ease-out hover:bg-teal-neon hover:text-black hover:shadow-[0_0_28px_rgba(46,230,184,0.4)]"
-            >
-              Solicitar proposta
-            </a>
-          </Reveal>
-
-          {/* CRESCIMENTO — destaque */}
+        <div className="grid grid-cols-1 items-stretch gap-7 lg:grid-cols-[60fr_40fr]">
+          {/* RETAINER PRINCIPAL */}
           <Reveal
             anim="pop"
-            delay={1}
-            className="flex h-full flex-col rounded-lg border-2 border-teal-neon p-12 shadow-[0_18px_60px_rgba(46,230,184,0.16)]"
+            className="flex flex-col rounded-xl border-2 border-teal-neon p-9 sm:p-12"
             style={{
               background:
-                'linear-gradient(160deg, rgba(46,230,184,0.1), rgba(46,230,184,0.03) 60%, rgba(10,10,10,1))',
+                'linear-gradient(160deg, rgba(46,230,184,0.1), rgba(46,230,184,0.03) 55%, #0A0A0A)',
             }}
           >
-            <span className="self-start rounded-full bg-teal-neon px-4 py-1.5 font-manrope text-xs font-extrabold tracking-[0.18em] text-black uppercase">
-              ✦ Mais contratado ✦
+            <span className="font-manrope text-xs font-medium tracking-[0.26em] text-gray-light uppercase">
+              Retainer base
             </span>
-            <h3 className="mt-4.5 mb-5 font-manrope text-[32px] font-extrabold tracking-[0.02em] text-white uppercase">
-              Crescimento
-            </h3>
             <span
-              className="font-anton text-[46px] leading-[1.05] text-teal-neon"
-              style={{ textShadow: '0 0 36px rgba(46,230,184,0.45)' }}
+              className="mt-4.5 font-anton text-4xl leading-[1.05] text-teal-neon sm:text-[56px]"
+              style={{ textShadow: '0 0 40px rgba(46,230,184,0.4)' }}
             >
               SOB CONSULTA
             </span>
-            <span className="mt-2 font-manrope text-sm text-gray-light">Mensal · contrato mínimo 3 meses</span>
-            <span aria-hidden="true" className="my-7 block h-px bg-teal-neon/25" />
+            <span className="mt-2.5 font-manrope text-base text-gray-light">Mensal · 1 unidade/local</span>
+            <span className="mt-2 font-manrope text-sm text-gray-light">Contrato mínimo: 4 a 6 meses</span>
 
-            <span className="mb-3.5 font-manrope text-xs font-bold tracking-[0.24em] text-teal-neon uppercase">
-              Incluso
+            <span aria-hidden="true" className="my-8 block h-px bg-teal-neon/25" />
+
+            <span className="mb-4.5 font-manrope text-xs font-bold tracking-[0.24em] text-teal-neon uppercase">
+              O que está incluso
             </span>
-            <ul className="mb-8 flex list-none flex-col gap-2.5 p-0">
-              {crescimentoIncluso.map((item) => (
-                <li key={item} className="flex gap-2.5 font-manrope text-base leading-[1.5] text-white">
+            <ul className="mb-9 flex list-none flex-col gap-3 p-0">
+              {incluso.map((item) => (
+                <li key={item} className="flex gap-3 font-manrope text-base leading-[1.5] text-white sm:text-[17px]">
                   <span className="text-teal-neon">✓</span>
                   {item}
                 </li>
               ))}
             </ul>
 
-            <p className="mb-8 font-manrope text-[15px] leading-[1.6] text-gray-light italic text-pretty">
-              Para quem é: empresas que querem crescer, ganhar visibilidade e iniciar conversões reais com
-              tráfego pago.
-            </p>
-
             <a
               href={WHATSAPP}
               target="_blank"
               rel="noopener"
-              className="mt-auto block rounded-md border border-teal-neon bg-teal-neon px-10 py-5 text-center font-manrope text-[17px] font-extrabold tracking-[0.14em] text-black uppercase no-underline transition-all duration-300 ease-out hover:scale-[1.04] hover:bg-teal-neon-bright hover:shadow-[0_0_40px_rgba(46,230,184,0.65),0_0_90px_rgba(46,230,184,0.35)]"
+              className="mt-auto inline-block self-start rounded-md bg-teal-neon px-12 py-[18px] font-manrope text-[17px] font-extrabold tracking-[0.12em] text-black whitespace-nowrap uppercase no-underline transition-all duration-300 ease-out hover:scale-[1.04] hover:bg-teal-neon-bright hover:shadow-[0_0_40px_rgba(46,230,184,0.65),0_0_90px_rgba(46,230,184,0.35)]"
             >
-              Falar com a STRYVE
+              Agendar diagnóstico
             </a>
           </Reveal>
 
-          {/* PERFORMANCE */}
-          <Reveal anim="pop" delay={2} className="flex h-full flex-col rounded-lg border border-teal-neon/15 bg-[#0A0A0A] p-10">
-            <span className="font-manrope text-xs font-medium tracking-[0.24em] text-gray-light uppercase">
-              Escala &amp; resultados
-            </span>
-            <h3 className="mt-3.5 mb-5 font-manrope text-[28px] font-extrabold tracking-[0.02em] text-white uppercase">
-              Performance
-            </h3>
-            <span
-              className="font-anton text-4xl leading-[1.05] text-teal-neon"
-              style={{ textShadow: '0 0 30px rgba(46,230,184,0.3)' }}
+          {/* COMPLEMENTOS */}
+          <div className="flex flex-col gap-7">
+            <Reveal
+              anim="pop"
+              delay={1}
+              className="flex flex-col gap-3.5 rounded-lg border border-teal-neon/15 bg-[#0A0A0A] p-6 transition-all duration-300 ease-out hover:border-teal-neon hover:shadow-[0_12px_40px_rgba(46,230,184,0.14)]"
             >
-              SOB CONSULTA
-            </span>
-            <span className="mt-2 font-manrope text-sm text-gray-light">Mensal · contrato mínimo 3 meses</span>
-            <span aria-hidden="true" className="my-7 block h-px bg-white/10" />
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#2EE6B8" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M5 14 L8 6 H28 L31 14" />
+                <path d="M7 14 V30 H29 V14" />
+                <path d="M18 21 V27" />
+                <path d="M15 24 H21" />
+              </svg>
+              <h3 className="m-0 font-manrope text-lg font-extrabold tracking-[0.04em] text-white uppercase">
+                Unidade adicional
+              </h3>
+              <span className="font-anton text-[26px] leading-[1.1] text-teal-neon">+ R$ 1.500 a R$ 2.000</span>
+              <span className="font-manrope text-sm text-gray-light">/mês por local extra</span>
+            </Reveal>
 
-            <span className="mb-3.5 font-manrope text-xs font-bold tracking-[0.24em] text-teal-neon uppercase">
-              Pacote completo
-            </span>
-            <ul className="mb-6.5 flex list-none flex-col gap-2.5 p-0">
-              {performanceIncluso.map((item) => (
-                <li key={item} className="flex gap-2.5 font-manrope text-[15px] leading-[1.5] text-white">
-                  <span className="text-teal-neon">✓</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-
-            <p className="mb-7 font-manrope text-sm leading-[1.6] text-gray-light italic text-pretty">
-              Para quem é: empresas que buscam crescimento previsível, escala e foco total em performance e
-              ROI.
-            </p>
-
-            <a
-              href={WHATSAPP}
-              target="_blank"
-              rel="noopener"
-              className="mt-auto block rounded-md border border-teal-neon bg-transparent px-8 py-[15px] text-center font-manrope text-[15px] font-bold tracking-[0.14em] text-teal-neon uppercase no-underline transition-all duration-300 ease-out hover:bg-teal-neon hover:text-black hover:shadow-[0_0_28px_rgba(46,230,184,0.4)]"
+            <Reveal
+              anim="pop"
+              delay={2}
+              className="flex flex-col gap-3.5 rounded-lg border border-teal-neon/15 bg-[#0A0A0A] p-6 transition-all duration-300 ease-out hover:border-teal-neon hover:shadow-[0_12px_40px_rgba(46,230,184,0.14)]"
             >
-              Solicitar proposta
-            </a>
-          </Reveal>
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#2EE6B8" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <circle cx="18" cy="18" r="12" />
+                <circle cx="18" cy="18" r="6.5" />
+                <circle cx="18" cy="18" r="1.8" fill="#2EE6B8" stroke="none" />
+              </svg>
+              <h3 className="m-0 font-manrope text-lg font-extrabold tracking-[0.04em] text-white uppercase">
+                Bônus por resultado
+              </h3>
+              <span className="font-anton text-[26px] leading-[1.1] text-teal-neon">R$ 800 a R$ 2.000</span>
+              <span className="font-manrope text-sm leading-[1.5] text-gray-light">
+                por meta atingida, conforme a Árvore de Metas
+              </span>
+            </Reveal>
+          </div>
         </div>
+
+        {/* QUALIFICAÇÃO */}
+        <Reveal
+          anim="fade"
+          className="mt-15 rounded-xl border border-white/8 bg-white/3 p-8 sm:p-10"
+        >
+          <span className="inline-flex items-center gap-3 font-manrope text-sm font-medium tracking-[0.4em] text-teal-neon uppercase">
+            <span className="block h-px w-7 bg-teal-neon" />
+            Critérios de qualificação
+          </span>
+          <h3 className="mt-4.5 mb-6 font-manrope text-xl font-extrabold text-white sm:text-2xl">
+            Trabalhamos com negócios prontos para escalar.
+          </h3>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-x-10">
+            {qualificacao.map((item) => (
+              <span key={item} className="flex gap-3 font-manrope text-base leading-[1.5] text-white sm:text-[17px]">
+                <span className="text-teal-neon">✓</span>
+                {item}
+              </span>
+            ))}
+          </div>
+          <p className="mt-6.5 max-w-[720px] font-manrope text-sm leading-[1.6] text-gray-light italic text-pretty">
+            Esse filtro existe para garantir que só entramos em parceria com negócios prontos para o método
+            funcionar de verdade.
+          </p>
+        </Reveal>
       </div>
     </section>
   )

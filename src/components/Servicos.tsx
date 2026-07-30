@@ -4,6 +4,8 @@ const services = [
   {
     title: 'Tráfego Pago',
     desc: 'Campanhas Meta Ads e Google Ads com segmentação precisa, testes A/B e otimização semanal para maximizar ROI.',
+    statTitle: '1 campanha por objetivo',
+    statCaption: '3 criativos em teste A/B simultâneo',
     icon: (
       <>
         <path d="M7 33 L17 22 L24 28 L37 13" />
@@ -14,6 +16,8 @@ const services = [
   {
     title: 'Social Media',
     desc: 'Gestão completa de Instagram: planejamento, criação de conteúdo, Reels, Stories, legendas persuasivas, calendário estratégico.',
+    statTitle: '3x por semana',
+    statCaption: 'cadência fixa de publicação',
     icon: (
       <>
         <rect x="6" y="12" width="24" height="20" rx="4" />
@@ -24,6 +28,8 @@ const services = [
   {
     title: 'Landing Pages',
     desc: 'Páginas de captura otimizadas para conversão. Design, copywriting e performance orientados a CTA.',
+    statTitle: 'Pixel da Meta + GA4',
+    statCaption: 'rastreamento e SEO técnico configurados no lançamento',
     icon: (
       <>
         <rect x="6" y="8" width="32" height="22" rx="3" />
@@ -36,6 +42,8 @@ const services = [
   {
     title: 'Estratégia Digital',
     desc: 'Diagnóstico 360° do negócio, posicionamento, definição de público, plano estratégico mensal.',
+    statTitle: 'Diagnóstico completo',
+    statCaption: 'antes de qualquer execução',
     icon: (
       <>
         <circle cx="22" cy="22" r="15" />
@@ -47,6 +55,8 @@ const services = [
   {
     title: 'Conteúdo & Criativos',
     desc: 'Produção de criativos de alta qualidade para anúncios, redes sociais e materiais de campanha.',
+    statTitle: '35% autoridade · 25% prova social\n20% bastidores · 20% conversão',
+    statCaption: 'distribuição do calendário de conteúdo',
     icon: (
       <>
         <path d="M22 7 L37 15 L22 23 L7 15 Z" />
@@ -58,6 +68,8 @@ const services = [
   {
     title: 'Relatórios & Insights',
     desc: 'Monitoramento semanal com métricas reais, análise de conversões, próximos passos baseados em dados.',
+    statTitle: 'Toda sexta-feira',
+    statCaption: 'revisão fixa de métricas',
     icon: (
       <>
         <path d="M7 36 H37" />
@@ -127,6 +139,15 @@ function Servicos() {
               <p className="m-0 font-manrope text-base leading-[1.6] text-gray-light text-pretty">
                 {service.desc}
               </p>
+              <span aria-hidden="true" className="mt-1 block h-px bg-teal-neon/15" />
+              <div className="flex flex-col gap-1">
+                <span className="font-manrope text-xl leading-[1.35] font-extrabold whitespace-pre-line text-teal-neon">
+                  {service.statTitle}
+                </span>
+                <span className="font-manrope text-[13px] leading-[1.5] text-gray-light">
+                  {service.statCaption}
+                </span>
+              </div>
             </Reveal>
           ))}
         </div>
