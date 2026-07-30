@@ -1,0 +1,29 @@
+AJUSTE CORRETO — CTA WhatsApp Background
+
+Problema anterior: Imagem estava só no container da mensagem.
+Solução correta: Imagem deve preencher o BACKGROUND DA SEÇÃO INTEIRA (como no Manifesto).
+
+Tarefa: CtaWhatsApp.tsx
+
+Na seção CTA (CtaWhatsApp), estrutura deve ser:
+
+1. Copy background-sessão-cta-whatsapp.png de design-reference/ para public/images/cta-bg.png
+
+2. A seção CtaWhatsApp precisa ter:
+   - background-image: url(/images/cta-bg.png)
+   - background-size: cover
+   - background-position: left center (LADO ESQUERDO, invertido do Manifesto)
+   - background-repeat: no-repeat
+   - height: 100% (preencher toda a altura da seção)
+
+3. O container com texto + botão fica no centro ou direita da seção
+   - Texto: "PRONTO PARA CRESCER?" + mensagem
+   - Botão: "CHAMA NO WHATSAPP"
+   - Tudo centralizado/alinhado à direita, deixando o lado esquerdo pra imagem
+
+Resultado: A seção CTA tem a imagem do busto preenchendo o lado esquerdo (parcialmente cortada), 
+e o conteúdo (mensagem + botão) fica no centro/direita, bem legível.
+
+Tipo: |[BUSTO CORTADO AQUI]|[PRONTO PARA CRESCER? + BOTÃO]|
+
+Fazer agora.
