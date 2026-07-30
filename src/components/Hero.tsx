@@ -28,7 +28,7 @@ function Hero() {
       id="hero"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative flex min-h-screen items-stretch overflow-hidden bg-black"
+      className="relative mt-[90px] flex min-h-screen items-stretch overflow-hidden bg-black"
     >
       <div
         ref={videoWrapRef}

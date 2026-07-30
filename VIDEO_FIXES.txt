@@ -1,0 +1,22 @@
+AJUSTES DE VÍDEO — Hero e Resultados
+
+PROBLEMA 1 — Hero.tsx:
+O Navbar (fixa no top) está comendo/cobrindo o vídeo do Hero.
+
+Solução:
+✓ No container/section do Hero, adicionar: padding-top: 90px (ou altura da Navbar)
+✓ OU margin-top: 90px
+✓ Isso desloca o conteúdo pra baixo e o vídeo não fica coberto pela Navbar
+✓ Alternativa: Na Navbar, aumentar o z-index e garantir que o Hero comece APÓS ela
+
+PROBLEMA 2 — Resultados.tsx:
+Há um risco/artefato branco na esquerda do vídeo (glitch visual).
+
+Solução:
+✓ Verificar se o vídeo tem overflow visível ou propriedade errada
+✓ Adicionar ao vídeo: overflow: hidden; position: relative; z-index: 0;
+✓ Verificar se há border ou sombra indesejada
+✓ Se for artefato do vídeo, tentar: object-fit: cover; object-position: center;
+✓ Testar se o arquivo do vídeo tem algum problema (re-salvar se necessário)
+
+Fazer agora.
