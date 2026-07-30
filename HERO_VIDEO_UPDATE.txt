@@ -1,0 +1,11 @@
+TROCAR VÍDEO — Hero.tsx Background
+
+Arquivo novo: novo-background-sessão-hero (já está em design-reference/)
+
+Tarefa: Hero.tsx
+
+✓ Copy novo-background-sessão-hero de design-reference/ para public/videos/hero-bust.mp4 (sobrescrever o arquivo anterior)
+✓ A tag <video> já está referenciando src="/videos/hero-bust.mp4"
+✓ Salvar e o novo vídeo vai aparecer automaticamente no Hero
+
+Pronto.
