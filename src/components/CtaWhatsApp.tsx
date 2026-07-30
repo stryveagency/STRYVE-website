@@ -5,15 +5,26 @@ function CtaWhatsApp() {
     <div className="bg-black px-6 pb-20 lg:px-20 lg:pb-25">
       <Reveal
         anim="pop"
-        className="mx-auto max-w-[900px] rounded-2xl border border-teal-neon/20 bg-black px-8 py-12 text-center lg:px-16"
+        className="relative mx-auto max-w-[900px] overflow-hidden rounded-2xl border border-teal-neon/20 bg-black px-8 py-12 text-center lg:px-16"
+        style={{
+          backgroundImage: 'url(/images/cta-bg.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
       >
-        <h2 className="m-0 font-anton text-[32px] leading-[1.1] tracking-[0.01em] text-white uppercase lg:text-[40px]">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 z-0"
+          style={{ background: 'rgba(0,0,0,0.45)' }}
+        />
+        <h2 className="relative z-1 m-0 font-anton text-[32px] leading-[1.1] tracking-[0.01em] text-white uppercase lg:text-[40px]">
           PRONTO PARA CRESCER?
         </h2>
-        <p className="mx-auto mt-4.5 max-w-[500px] font-manrope text-[17px] leading-[1.6] text-gray-light text-pretty">
+        <p className="relative z-1 mx-auto mt-4.5 max-w-[500px] font-manrope text-[17px] leading-[1.6] text-gray-light text-pretty">
           O seu próximo passo é uma conversa. Não cobramos pela reunião de diagnóstico — só pelo resultado.
         </p>
-        <div className="mt-8 flex justify-center">
+        <div className="relative z-1 mt-8 flex justify-center">
           <a
             href="https://wa.me/5511991437244"
             target="_blank"

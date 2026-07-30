@@ -1,0 +1,20 @@
+ADICIONAR BACKGROUND NO CTA WHATSAPP
+
+Arquivo de imagem: background-sessão-cta-whatsapp.png (já está em design-reference/)
+Localização: Seção CTA Final (embaixo da seção Planos, antes do Footer)
+
+Tarefa: CtaWhatsApp.tsx
+
+Adicionar a imagem como background do container principal do CTA:
+- Copy background-sessão-cta-whatsapp.png de design-reference/ para public/images/cta-bg.png
+- No CtaWhatsApp.tsx, adicionar um elemento <div> com a imagem como background
+- CSS:
+  * background-image: url(/images/cta-bg.png)
+  * background-size: cover
+  * background-position: center
+  * background-repeat: no-repeat
+  * O texto do CTA (titulo + mensagem + botão) deve ficar em cima, legível
+
+Resultado: A seção CTA terá a imagem como fundo, com o conteúdo branco/teal em cima (com contrast suficiente).
+
+Fazer agora.
