@@ -93,9 +93,10 @@ function Manifesto() {
         className="pointer-events-none absolute inset-y-0 right-0 z-2 hidden w-[46%] md:block"
         style={{
           backgroundImage: `url(${manifestoBg})`,
-          backgroundSize: '55%',
+          backgroundSize: 'cover',
           backgroundPosition: 'right center',
           backgroundRepeat: 'no-repeat',
+          height: '100%',
           opacity: 0.62,
           maskImage: 'linear-gradient(to right, transparent 0, #000 34%, #000 100%)',
           WebkitMaskImage: 'linear-gradient(to right, transparent 0, #000 34%, #000 100%)',

@@ -1,0 +1,16 @@
+AJUSTE CORRETO — Manifesto.tsx Background Image
+
+Problema: A imagem está muito pequena no canto. Deveria preencher TODO o espaço do background (height 100%).
+
+Solução: 
+Na seção Manifesto.tsx, o elemento com a imagem de background deve ter:
+- background-size: cover (preencher todo o container)
+- background-position: right center (posicionar para o lado direito)
+- background-repeat: no-repeat
+- Height: 100% (ocupar toda a altura da seção)
+
+Resultado esperado: A imagem do busto preenche TODO o background da seção, mas fica parcialmente visível/cortada no lado direito (só a metade/3/4 do busto aparece). O resto da seção (esquerda) fica com fundo preto puro pra o texto ficar legível.
+
+Tipo: |[texto branco aqui]|[BUSTO CORTADO AQUI]|
+
+Fazer o ajuste agora.
