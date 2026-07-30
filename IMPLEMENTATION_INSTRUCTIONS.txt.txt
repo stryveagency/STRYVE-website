@@ -1,0 +1,147 @@
+STRYVE Landing Page - Instruções de Implementação
+
+CONTEXTO:
+- Pasta de referência: C:\Users\ss\Downloads\SITE\design-reference\
+- Arquivo HTML principal: STRYVE Landing.html
+- Vídeos: hero-background.mp4, resultados-background.mp4
+- Prints de conferência: cabeçalho.png, sessão-hero.png, sessão-manifesto.png, sessão-serviços.png, sessão-resultados.png, sessão-metodo.png, sessão-planos.png, rodapé.png, layout-completo.png
+- Ignorar: Header.html, image-slot.js, support.js
+
+TAREFA:
+Recrie a landing page STRYVE dentro do projeto React (Navbar + Hero + Manifesto + Serviços + Resultados + Método + Planos + CTA WhatsApp + Footer), preservando pixel a pixel: cores exatas, tipografia (font-family, font-size, font-weight), espaçamento, layout, margens e preenchimento.
+
+NÃO reinterprete o design — só adapte a estrutura HTML do arquivo STRYVE Landing.html para componentes React + Tailwind.
+
+PASSO 1: EXTRAIR E ORGANIZAR VÍDEOS
+- Copie hero-background.mp4 de design-reference/ para public/videos/hero-bust.mp4
+- Copie resultados-background.mp4 de design-reference/ para public/videos/resultados-bust.mp4
+- Se a pasta public/videos/ não existir, crie-a primeiro
+
+PASSO 2: ANALISAR HTML E ESTRUTURA
+- Abra C:\Users\ss\Downloads\SITE\design-reference\STRYVE Landing.html no seu editor
+- Identifique as 9 seções principais (Navbar, Hero, Manifesto, Serviços, Resultados, Método, Planos, CTA WhatsApp, Footer)
+- Extraia as classes CSS, cores (ex: #2EE6B8 para teal), tipografia, e estrutura HTML de cada seção
+
+PASSO 3: CRIAR/ATUALIZAR COMPONENTES REACT
+Crie ou atualize os seguintes arquivos em src/components/:
+
+- Navbar.tsx
+  * Menu links: Manifesto, Serviços, Método, Resultados, Planos
+  * Botão WhatsApp com destaque teal
+  * Position: sticky ou fixed (conforme o print mostra)
+  * Links devem fazer smooth scroll para as seções correspondentes (usar IDs nas seções abaixo)
+
+- Hero.tsx
+  * Headline: "Crescimento não é sorte, é processo"
+  * <video src="/videos/hero-bust.mp4" autoPlay muted loop />
+  * Parallax e tilt 3D no mouse (usar event listeners ou biblioteca como react-use-gesture)
+  * Padding/margin deve bater exatamente com hero.png
+
+- Manifesto.tsx
+  * Título e texto original
+  * Bloco extra: "O que a gente faz na prática?" com lista 01/02/03
+  * Cores e espaçamento devem bater com sessão-manifesto.png
+
+- Serviços.tsx
+  * 6 cartões com ícones outline teal
+  * Cores: fundo preto, texto branco, destaque teal
+  * Spacing e grid devem bater com sessão-serviços.png
+
+- Resultados.tsx
+  * 3 números com contadores animados: 50+ clientes, 100% transparência, 3 meses
+  * <video src="/videos/resultados-bust.mp4" autoPlay muted loop /> como fundo
+  * Contadores devem usar animação de contagem (0 → número final)
+  * Layout deve bater com sessão-resultados.png
+
+- Método.tsx
+  * 6 cartões com etapas S.T.R.I.D.E (Scan, Target, Run, Insights, Drive, Expand)
+  * Timeline conectada por linha animada entre os cards
+  * Cores de fundo diferentes por etapa ou destaque teal uniforme
+  * Layout deve bater com sessão-metodo.png
+
+- Planos.tsx
+  * 3 cartões: Essencial (R$1.797), Crescimento (R$2.997, destaque), Performance (R$4.997)
+  * Preço, descrição, features (checkmarks teal)
+  * Card "Crescimento" deve ter destaque visual (cor diferente, border ou shadow)
+  * Layout deve bater com sessão-planos.png
+
+- CtaWhatsApp.tsx (ou integrar no Footer.tsx)
+  * Container horizontal centralizado
+  * Mensagem CTA + botão WhatsApp com ícone
+  * Antes do footer
+
+- Footer.tsx
+  * Logo STRYVE
+  * Tagline: "Crescimento não é sorte. É processo."
+  * Redes sociais: Instagram (@stryve_ag)
+  * Contato: 11 991437244 (WhatsApp), stryve.agency01@gmail.com
+  * Copyright
+  * Layout deve bater com rodapé.png
+
+PASSO 4: ATUALIZAR App.tsx
+```tsx
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Manifesto from './components/Manifesto';
+import Servicos from './components/Servicos';
+import Resultados from './components/Resultados';
+import Metodo from './components/Metodo';
+import Planos from './components/Planos';
+import CtaWhatsApp from './components/CtaWhatsApp';
+import Footer from './components/Footer';
+
+export default function App() {
+  return (
+    <>
+      <Navbar />
+      <Hero id="hero" />
+      <Manifesto id="manifesto" />
+      <Servicos id="servicos" />
+      <Resultados id="resultados" />
+      <Metodo id="metodo" />
+      <Planos id="planos" />
+      <CtaWhatsApp />
+      <Footer />
+    </>
+  );
+}
+```
+
+PASSO 5: PRESERVAR ANIMAÇÕES E INTERATIVIDADE
+- Parallax no Hero: use onMouseMove e transform: perspective
+- Contadores animados em Resultados: use useEffect + incrementar valor até o alvo
+- Timeline em Método: use CSS animations ou Framer Motion
+- Smooth scroll de menu: <a href="#manifesto" onClick={scrollToElement}>
+- Hovers em cartões: use Tailwind hover:scale-105 ou similar
+- Todos os efeitos devem ser suaves e não afetar performance
+
+PASSO 6: CORES E TIPOGRAFIA (CRÍTICO)
+Cores principais (do STRYVE Landing.html):
+- Fundo: #000000 (preto profundo)
+- Destaque teal: #2EE6B8 (ou próximo)
+- Texto principal: #FFFFFF (branco)
+- Texto secundário: #999999 (cinza claro)
+
+Tipografia (confirmar no HTML):
+- Headlines: font-family deve ser condensada/bold, font-size grande
+- Corpo: font-family serifada ou sans-serif conforme HTML
+- Destaques: possível cursiva serifada em pontos específicos
+
+PASSO 7: TESTAR E COMPARAR
+- Execute: npm run dev
+- Abra http://localhost:5173 (ou porta configurada)
+- Tire screenshots de cada seção scrollando de cima a baixo
+- Compare lado a lado com: cabeçalho.png, sessão-hero.png, ... rodapé.png, layout-completo.png
+- Anote qualquer diferença em cores, espaçamento, tipografia ou alinhamento
+
+PASSO 8: CORREÇÕES ITERATIVAS
+- Para cada diferença encontrada (cor não bate, margin está menor, font-size errado):
+  * Abra o componente correspondente
+  * Ajuste o valor (ex: padding-x muda de 8 para 12, cor muda de #2EE6B8 para #2EE6BA)
+  * Salve e veja a mudança ao vivo no navegador
+  * Tire novo screenshot e compare
+  * Repita até bater 100% com o original
+
+DICA: Abra o STRYVE Landing.html num navegador para usar F12 (DevTools) e inspecionar valores exatos de padding, margin, font-size, color das seções — isso vai acelerar muito o trabalho.
+
+FIM DAS INSTRUÇÕES

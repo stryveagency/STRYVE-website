@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#000"/><circle cx="50" cy="50" r="26" fill="none" stroke="#2EE6B8" stroke-width="2"/><text x="50" y="60" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="30" fill="#2EE6B8">S</text></svg>
+</template>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Manrope:wght@200;300;400;500;700;800&amp;family=Playfair+Display:ital@0;1&amp;display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   STRYVE — LANDING PAGE (versão final consolidada)
+   Paleta:   --bg-black #000000 · --teal-neon #2EE6B8
+             --white #FFFFFF   · --gray-light #CCCCCC
+   Tipos:    headline 'Anton' · corpo 'Manrope' · detalhe 'Playfair Display'
+   Ritmo:    8 / 16 / 24 / 32 / 40 / 64 / 96 / 160
+   ============================================================ */
+:root {
+  --bg-black: #000000;
+  --teal-neon: #2EE6B8;
+  --white: #FFFFFF;
+  --gray-light: #CCCCCC;
+}
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+html, body { margin: 0; padding: 0; background: var(--bg-black); }
+body { font-family: 'Manrope', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+a { color: var(--teal-neon); text-decoration: none; }
+a:hover { color: #7ff5d8; }
+
+/* --- keyframes (declaração única para toda a página) --- */
+@keyframes stryveHeaderIn { from { opacity: 0; transform: translateY(-14px); } to { opacity: 1; transform: none; } }
+@keyframes stryveUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+@keyframes stryveFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes stryveFadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes stryvePop { from { opacity: 0; transform: scale(0.94); } to { opacity: 1; transform: scale(1); } }
+@keyframes stryveZoomIn { from { opacity: 0; transform: scale(1.1); } to { opacity: 1; transform: scale(1); } }
+@keyframes stryveFloat { 0%, 100% { transform: translateY(-8px); } 50% { transform: translateY(8px); } }
+@keyframes stryveGlowPulse { 0%, 100% { transform: scale(1); opacity: 0.85; } 50% { transform: scale(1.05); opacity: 1; } }
+@keyframes stryvePulse { 0%, 100% { opacity: 0.15; } 50% { opacity: 0.9; } }
+@keyframes stryveBreathe { 0%, 100% { opacity: 0.08; } 50% { opacity: 0.12; } }
+@keyframes stryveCodeGlow { 0% { box-shadow: 0 0 0 rgba(46,230,184,0); } 45% { box-shadow: 0 0 26px rgba(46,230,184,0.55); } 100% { box-shadow: 0 0 0 rgba(46,230,184,0); } }
+@keyframes stryveHighlight { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.02); } }
+@keyframes stryveFadeStat { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@keyframes stryveIconGlow { 0%, 100% { filter: drop-shadow(0 0 0 rgba(46,230,184,0)); } 50% { filter: drop-shadow(0 0 10px rgba(46,230,184,0.8)); } }
+@keyframes stryveCardGlow { 0%, 100% { box-shadow: 0 18px 60px rgba(46,230,184,0.14); } 50% { box-shadow: 0 18px 74px rgba(46,230,184,0.3); } }
+@keyframes stryveBtnPulse { 0%, 100% { box-shadow: 0 0 0 rgba(46,230,184,0.25); } 50% { box-shadow: 0 0 34px rgba(46,230,184,0.55); } }
+@keyframes stryveDriftA { 0% { transform: translate(0, 0); opacity: 0.08; } 45% { opacity: 0.6; } 100% { transform: translate(16px, -110px); opacity: 0; } }
+@keyframes stryveDriftB { 0% { transform: translate(0, 0); opacity: 0.05; } 50% { opacity: 0.45; } 100% { transform: translate(-22px, -160px); opacity: 0; } }
+@keyframes stryveDriftC { 0% { transform: translate(0, 0) scale(0.7); opacity: 0.1; } 40% { opacity: 0.75; } 100% { transform: translate(8px, -70px) scale(1.2); opacity: 0; } }
+
+/* --- responsivo (blocos herdados de cada seção, sem duplicatas) --- */
+@media (max-width: 767px) {
+  #stryve-servicos-inner { padding: 120px 24px 80px !important; }
+  #stryve-servicos-h2 { font-size: 38px !important; }
+  #stryve-servicos-grid { grid-template-columns: 1fr !important; }
+}
+@media (min-width: 768px) and (max-width: 1180px) {
+  #stryve-servicos-inner { padding: 132px 40px 88px !important; }
+  #stryve-servicos-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
+@media (max-width: 767px) {
+  #stryve-motor-inner { padding: 130px 24px 90px !important; }
+  #stryve-motor-h2 { font-size: 38px !important; }
+  .stryve-step { padding-left: 40px !important; padding-bottom: 44px !important; }
+  #stryve-motor-zig { grid-template-columns: 1fr !important; column-gap: 0 !important; }
+  #stryve-motor-zig > .stryve-step { grid-column: 1 !important; }
+  .stryve-rail { left: 9px !important; }
+  .stryve-title { font-size: 25px !important; }
+}
+@media (min-width: 768px) and (max-width: 1180px) {
+  #stryve-motor-inner { padding: 140px 40px 88px !important; }
+  #stryve-motor-zig { column-gap: 36px !important; }
+}
+@media (max-width: 767px) {
+  #stryve-traf-inner { padding: 130px 24px 90px !important; }
+  #stryve-traf-h2 { font-size: 38px !important; }
+  #stryve-traf-flow { grid-template-columns: 1fr !important; }
+  .stryve-arrow { transform: rotate(90deg); justify-self: center !important; }
+  #stryve-traf-vars { grid-template-columns: 1fr !important; }
+  #stryve-traf-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 28px !important; }
+  #stryve-traf-metrics > span { border-left: 0 !important; }
+  #stryve-traf-opt { padding: 28px 24px !important; }
+}
+@media (min-width: 768px) and (max-width: 1180px) {
+  #stryve-traf-inner { padding: 140px 40px 88px !important; }
+  #stryve-traf-flow { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  #stryve-traf-flow .stryve-arrow { display: none !important; }
+}
+@media (max-width: 767px) {
+  #stryve-cont-inner { padding: 130px 24px 90px !important; }
+  #stryve-cont-h2 { font-size: 38px !important; }
+  #stryve-cont-week { grid-template-columns: 1fr !important; }
+  #stryve-cont-rail { display: none !important; }
+  #stryve-cont-pilares { grid-template-columns: 1fr !important; }
+  #stryve-cont-id { padding: 28px 24px !important; }
+}
+@media (min-width: 768px) and (max-width: 1180px) {
+  #stryve-cont-inner { padding: 140px 40px 88px !important; }
+  #stryve-cont-week { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+  #stryve-cont-rail { display: none !important; }
+}
+@media (max-width: 767px) {
+  #stryve-inv-inner { padding: 130px 24px 90px !important; }
+  #stryve-inv-h2 { font-size: 38px !important; }
+  #stryve-inv-cols { grid-template-columns: 1fr !important; }
+  #stryve-inv-main { padding: 32px !important; }
+  #stryve-inv-price { font-size: 40px !important; }
+  #stryve-inv-quali-list { grid-template-columns: 1fr !important; }
+  #stryve-inv-quali { padding: 28px !important; }
+}
+@media (min-width: 768px) and (max-width: 1180px) {
+  #stryve-inv-inner { padding: 140px 40px 88px !important; }
+  #stryve-inv-cols { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 767px) {
+  #stryve-traf-inner { padding: 32px 24px 80px !important; }
+  #stryve-cont-inner { padding: 32px 24px 80px !important; }
+  #stryve-motor-inner { padding: 116px 24px 48px !important; }
+}
+@media (min-width: 768px) and (max-width: 1180px) {
+  #stryve-traf-inner { padding: 36px 40px 88px !important; }
+  #stryve-cont-inner { padding: 36px 40px 88px !important; }
+  #stryve-motor-inner { padding: 140px 40px 56px !important; }
+}
+#stryve-metodo-menu:hover #stryve-metodo-drop,
+#stryve-metodo-menu:focus-within #stryve-metodo-drop,
+#stryve-metodo-menu[data-open] #stryve-metodo-drop { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; }
+/* --- responsivo restaurado: Hero · Manifesto · CTA · Footer --- */
+@media (max-width: 767px) {
+  #stryve-hero-grid { grid-template-columns: 1fr !important; padding: 116px 24px 96px !important; gap: 40px !important; }
+  #stryve-hero-h1 { font-size: 46px !important; }
+  #stryve-hero-sub { font-size: 26px !important; }
+  #stryve-hero-mark { font-size: 32px !important; }
+  #stryve-manifesto { min-height: 0 !important; }
+  #stryve-manifesto-grid { grid-template-columns: 1fr !important; padding: 72px 24px 0 !important; gap: 40px !important; }
+  #stryve-manifesto-h2 { font-size: 44px !important; }
+  #stryve-manifesto-art { position: relative !important; left: 0 !important; transform: none !important; height: 46vh !important; min-height: 280px !important; width: 100% !important; }
+  #stryve-cta-box { padding: 32px 24px !important; margin: 64px auto 56px !important; }
+  #stryve-cta-btn { width: 100% !important; justify-content: center !important; }
+  #stryve-footer-inner { padding: 48px 24px !important; }
+  #stryve-footer-cols { grid-template-columns: 1fr !important; gap: 32px !important; }
+  #stryve-footer-bottom { text-align: center !important; }
+}
+@media (min-width: 768px) and (max-width: 1180px) {
+  #stryve-hero-grid { padding: 124px 40px 72px !important; }
+  #stryve-hero-h1 { font-size: 64px !important; }
+  #stryve-manifesto-h2 { font-size: 48px !important; }
+  #stryve-manifesto-grid { padding: 96px 40px !important; }
+  #stryve-footer-inner { padding: 56px 40px !important; }
+  #stryve-footer-cols { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 40px !important; }
+}
+@media (min-width: 768px) and (max-height: 700px) {
+  #stryve-hero-grid { padding: 112px 40px 64px !important; }
+  #stryve-hero-h1 { font-size: 58px !important; }
+  #stryve-hero-sub { font-size: 26px !important; }
+  #stryve-hero-mark { font-size: 36px !important; }
+}
+@media (min-width: 1024px) and (max-width: 1280px) {
+  #stryve-header { padding: 20px 32px !important; gap: 20px !important; }
+  #stryve-nav { gap: 16px !important; flex-wrap: nowrap; }
+  #stryve-nav a { font-size: 11px !important; letter-spacing: 0.1em !important; }
+}
+@media (max-width: 1023px) {
+  #stryve-header { padding: 18px 24px !important; }
+  #stryve-nav { display: none !important; }
+  /* accordion do submenu quando a nav mobile é aberta */
+  #stryve-nav[data-open] { display: flex !important; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: flex-start !important; gap: 4px !important; padding: 16px 24px 24px; background: #0A0A0A; border-bottom: 1px solid rgba(46,230,184,0.2); }
+  #stryve-nav[data-open] > a, #stryve-nav[data-open] #stryve-metodo-trigger { padding: 12px 0; }
+  #stryve-nav[data-open] #stryve-metodo-menu { flex-direction: column; align-items: flex-start !important; width: 100% !important; }
+  #stryve-nav[data-open] #stryve-metodo-drop { position: static !important; margin: 0 0 8px !important; min-width: 0 !important; width: 100% !important; border: 0 !important; box-shadow: none !important; background: transparent !important; padding: 0 0 0 12px !important; display: none !important; }
+  #stryve-nav[data-open] #stryve-metodo-menu[data-expanded] #stryve-metodo-drop { display: flex !important; opacity: 1 !important; visibility: visible !important; transform: none !important; }
+  #stryve-burger { display: inline-flex !important; }
+}
+</style>
+</helmet>
+
+  <header id="stryve-header" style="position: fixed; top: 0; left: 0; right: 0; z-index: 50; width: 100%; box-sizing: border-box; display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 22px 64px; background: rgba(0,0,0,0.55); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,0.06); animation: stryveHeaderIn 0.8s cubic-bezier(.2,.7,.2,1) both;">
+    <a href="#hero" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+      <span style="display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border: 1px solid rgba(46,230,184,0.6); border-radius: 50%; color: #2EE6B8; font-family: 'Playfair Display', serif; font-size: 16px; font-style: italic; line-height: 1; box-shadow: 0 0 14px rgba(46,230,184,0.3);">S</span>
+      <span style="font-family: 'Manrope', sans-serif; font-weight: 300; font-size: 20px; line-height: 1; letter-spacing: 0.26em; color: #FFFFFF;">STRYVE</span>
+    </a>
+    <button id="stryve-burger" type="button" aria-label="Abrir menu" style="display: none; align-items: center; justify-content: center; width: 40px; height: 40px; padding: 0; border: 1px solid rgba(46,230,184,0.4); border-radius: 6px; background: transparent; color: #2EE6B8; cursor: pointer; font-size: 18px; line-height: 1;">☰</button>
+    <nav id="stryve-nav" style="display: flex; align-items: center; gap: 36px;">
+      <a href="#manifesto" style="font-family: 'Manrope', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: #CCCCCC; text-decoration: none; transition: color 0.25s ease;" style-hover="color: #2EE6B8;">Manifesto</a>
+      <a href="#servicos" style="font-family: 'Manrope', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: #CCCCCC; text-decoration: none; transition: color 0.25s ease;" style-hover="color: #2EE6B8;">Serviços</a>
+      <div id="stryve-metodo-menu" style="position: relative; display: flex; align-items: center; align-self: stretch; padding: 0 2px;">
+        <a href="#metodo" id="stryve-metodo-trigger" style="display: inline-flex; align-items: center; gap: 6px; font-family: 'Manrope', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: #CCCCCC; text-decoration: none; transition: color 0.25s ease;" style-hover="color: #2EE6B8;">Método<span aria-hidden="true" style="font-size: 10px; line-height: 1;">▾</span></a>
+        <div id="stryve-metodo-drop" style-before="content: ''; position: absolute; left: 0; right: 0; top: -14px; height: 14px;" style="position: absolute; z-index: 60; top: 100%; left: 0; margin-top: 12px; min-width: 210px; padding: 8px; box-sizing: border-box; background: #0A0A0A; border: 1px solid rgba(46,230,184,0.28); border-radius: 8px; box-shadow: 0 16px 40px rgba(0,0,0,0.6), 0 0 22px rgba(46,230,184,0.14); display: flex; flex-direction: column; opacity: 0; visibility: hidden; transform: translateY(-6px); transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;">
+          <a href="#trafego" style="padding: 10px 16px; border-radius: 6px; font-family: 'Manrope', sans-serif; font-size: 14px; color: #FFFFFF; text-decoration: none; transition: color 0.2s ease, background 0.2s ease;" style-hover="color: #2EE6B8; background: rgba(46,230,184,0.08);">Tráfego Pago</a>
+          <a href="#conteudo" style="padding: 10px 16px; border-radius: 6px; font-family: 'Manrope', sans-serif; font-size: 14px; color: #FFFFFF; text-decoration: none; transition: color 0.2s ease, background 0.2s ease;" style-hover="color: #2EE6B8; background: rgba(46,230,184,0.08);">Conteúdo</a>
+        </div>
+      </div>
+      <a href="#resultados" style="font-family: 'Manrope', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: #CCCCCC; text-decoration: none; transition: color 0.25s ease;" style-hover="color: #2EE6B8;">Resultados</a>
+      <a href="#planos" style="font-family: 'Manrope', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: #CCCCCC; text-decoration: none; transition: color 0.25s ease;" style-hover="color: #2EE6B8;">Planos</a>
+    </nav>
+    <a href="https://wa.me/5511991437244" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; padding: 11px 22px; border: 1px solid rgba(46,230,184,0.55); border-radius: 4px; background: rgba(46,230,184,0.06); color: #2EE6B8; font-family: 'Manrope', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; white-space: nowrap; transition: background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;" style-hover="background: #2EE6B8; color: #000000; box-shadow: 0 0 26px rgba(46,230,184,0.45);">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5v-.5l-.8-1.8c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-.9.9-.9 2.1s.9 2.5 1 2.6c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.2.7 3 .6.5 0 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3Z"></path></svg>
+      WhatsApp
+    </a>
+  </header>
+
+<section id="hero" data-screen-label="Hero" style="position: relative; min-height: 100vh; box-sizing: border-box; background: #000; overflow: hidden; display: flex; align-items: stretch;">
+
+  <!-- CAMADA 0 — vídeo de fundo full-bleed -->
+  <video data-bgvideo="" src="./assets/hero-bg.mp4" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" controls="{{ false }}" preload="auto" disablePictureInPicture="{{ true }}" aria-hidden="true" style="position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; pointer-events: none; image-rendering: high-quality; transform: translateZ(0); backface-visibility: hidden;"></video>
+  <div aria-hidden="true" style="position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(to right, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0.14) 55%, transparent 78%);"></div>
+
+
+  
+
+  <!-- ================= SCROLL CUE ================= -->
+  <div style="position: absolute; left: 50%; bottom: 28px; transform: translateX(-50%); z-index: 6; display: flex; flex-direction: column; align-items: center; gap: 10px; animation: stryvePulse 2s ease-in-out infinite;">
+    <span style="font-family: 'Manrope', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.4em; text-transform: uppercase; color: #CCCCCC;">scroll</span>
+    <span style="display: block; width: 1px; height: 34px; background: linear-gradient(to bottom, rgba(204,204,204,0.9), transparent);"></span>
+  </div>
+
+<div id="stryve-hero-grid" style="position: relative; z-index: 4; width: 100%; max-width: 1560px; margin: 0 auto; padding: 132px 64px 96px; box-sizing: border-box; display: grid; grid-template-columns: minmax(0, 1fr); gap: 48px; align-items: center; opacity: 1">
+
+    <!-- ================= LADO ESQUERDO ================= -->
+    
+
+    <!-- ================= LADO DIREITO — respiro sobre o vídeo ================= -->
+    
+
+  <div style="display: flex; flex-direction: column; align-items: flex-start;">
+
+
+
+      <div style="display: flex; align-items: center; gap: 18px; margin-bottom: 40px; animation: stryveUp 0.8s cubic-bezier(.2,.7,.2,1) both;">
+        <span style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid rgba(46,230,184,0.55); border-radius: 50%; color: #2EE6B8; font-family: 'Playfair Display', serif; font-size: 22px; font-style: italic; line-height: 1; box-shadow: 0 0 18px rgba(46,230,184,0.35), inset 0 0 12px rgba(46,230,184,0.15);">S</span>
+        <span id="stryve-hero-mark" style="font-family: 'Manrope', sans-serif; font-weight: 200; font-size: 48px; line-height: 1; letter-spacing: 0.28em; color: transparent; -webkit-text-stroke: 0.7px #2EE6B8; filter: drop-shadow(0 0 14px rgba(46,230,184,0.65)) drop-shadow(0 0 42px rgba(46,230,184,0.28));">STRYVE</span>
+      </div>
+
+      <h1 id="stryve-hero-h1" style="margin: 0; font-family: 'Anton', 'Arial Narrow', sans-serif; font-weight: 400; font-size: 100px; line-height: 1.2; letter-spacing: 0.01em; color: #FFFFFF; text-transform: uppercase; text-wrap: balance; animation: stryveUp 0.8s cubic-bezier(.2,.7,.2,1) 0.14s both">CRESCIMENTO<br>NÃO É SORTE</h1>
+
+      <p id="stryve-hero-sub" style="margin: 24px 0 0; font-family: 'Anton', 'Arial Narrow', sans-serif; font-size: 60px; line-height: 1.1; letter-spacing: 0.04em; color: #2EE6B8; text-transform: uppercase; text-shadow: 0 0 24px rgba(46,230,184,0.45); animation: stryveUp 0.8s cubic-bezier(.2,.7,.2,1) 0.28s both">É PROCESSO.</p>
+
+      <p style="margin: 32px 0 0; max-width: 480px; font-family: 'Manrope', sans-serif; font-weight: 400; font-size: 18px; line-height: 1.6; color: #CCCCCC; text-wrap: pretty; animation: stryveUp 0.8s cubic-bezier(.2,.7,.2,1) 0.42s both;">Estratégia digital orientada a <strong style="color: #FFFFFF; font-weight: 700;">RESULTADO</strong>. Sem achismo. Tráfego pago, social media e conteúdo trabalhando juntos, com dados reais guiando cada decisão.</p>
+
+      <div style="margin-top: 40px; animation: stryveUp 0.8s cubic-bezier(.2,.7,.2,1) 0.56s both; width: 280px; height: 87px">
+        <a href="#planos" style="display: inline-block; padding: 18px 48px; background: #2EE6B8; color: #000000; font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 20px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; border-radius: 4px; transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; width: 173px; height: 29px" style-hover="transform: scale(1.05); box-shadow: 0 0 0 1px rgba(46,230,184,0.6), 0 0 32px rgba(46,230,184,0.6), 0 0 72px rgba(46,230,184,0.35); background: #3af3c4; color: #000000;">CHAMA NA DM</a>
+      </div>
+
+    </div></div></section>
+
+<section id="manifesto" data-screen-label="Manifesto" style="position: relative; min-height: 88vh; box-sizing: border-box; background: #000000; overflow: hidden;">
+
+<div id="stryve-manifesto-grid" style="position: relative; z-index: 3; width: 100%; max-width: 1560px; margin: 0 auto; padding: 152px 64px 128px; box-sizing: border-box; display: grid; grid-template-columns: minmax(0, 58fr) minmax(0, 42fr); gap: 56px; align-items: center;">
+
+    <div style="display: flex; flex-direction: column; align-items: flex-start; max-width: 620px;">
+
+      <span data-reveal="" style="display: inline-flex; align-items: center; gap: 12px; margin-bottom: 28px; font-family: 'Manrope', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.4em; text-transform: uppercase; color: #2EE6B8;">
+        <span style="display: block; width: 28px; height: 1px; background: #2EE6B8;"></span>
+        Manifesto
+      </span>
+
+      <h2 id="stryve-manifesto-h2" data-reveal="" style="margin: 0; font-family: 'Anton', 'Arial Narrow', sans-serif; font-weight: 400; font-size: 60px; line-height: 1.05; letter-spacing: 0.01em; color: #FFFFFF; text-transform: uppercase; text-wrap: balance;">STRYVE NÃO É<br>SÓ UM NOME</h2>
+
+      <p data-reveal="" style="margin: 24px 0 0; font-family: 'Manrope', sans-serif; font-size: 21px; font-weight: 700; line-height: 1.5; color: #2EE6B8; text-shadow: 0 0 26px rgba(46,230,184,0.35);">significa: <span style="font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400;">buscar, evoluir, ir além</span></p>
+
+      <div style="display: flex; flex-direction: column; gap: 6px; margin-top: 28px;">
+        <span data-reveal="" style="font-family: 'Manrope', sans-serif; font-size: 18px; line-height: 1.8; color: #FFFFFF;">Mas pra gente, vai além da tradução.</span>
+        <span data-reveal="" style="font-family: 'Manrope', sans-serif; font-size: 18px; line-height: 1.8; color: #FFFFFF;">Stryve é sobre não aceitar o básico.</span>
+        <span data-reveal="" style="font-family: 'Manrope', sans-serif; font-size: 18px; line-height: 1.8; color: #FFFFFF;">É sobre crescer com estratégia.</span>
+        <span data-reveal="" style="font-family: 'Manrope', sans-serif; font-size: 18px; line-height: 1.8; color: #CCCCCC;">E é assim que trabalhamos.</span>
+      </div>
+
+      <div data-reveal="" style="width: 100%; max-width: 520px; height: 1px; margin: 48px 0 40px; background: linear-gradient(to right, rgba(46,230,184,0.55), rgba(46,230,184,0.05) 70%, transparent);"></div>
+
+      <p data-reveal="" style="margin: 0 0 28px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 26px; line-height: 1.3; color: #FFFFFF;">“O que a gente faz na prática?”</p>
+
+      <span data-reveal="" style="margin-bottom: 20px; font-family: 'Manrope', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.4em; text-transform: uppercase; color: #2EE6B8;">Estrutura</span>
+
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <div data-reveal="" style="display: flex; align-items: baseline; gap: 16px;">
+          <span style="font-family: 'Anton', 'Arial Narrow', sans-serif; font-size: 15px; letter-spacing: 0.08em; color: rgba(46,230,184,0.7);">01</span>
+          <span style="font-family: 'Manrope', sans-serif; font-size: 19px; line-height: 1.5; color: #FFFFFF;">Atraímos <span style="color: #CCCCCC;">atenção</span></span>
+        </div>
+        <div data-reveal="" style="display: flex; align-items: baseline; gap: 16px;">
+          <span style="font-family: 'Anton', 'Arial Narrow', sans-serif; font-size: 15px; letter-spacing: 0.08em; color: rgba(46,230,184,0.7);">02</span>
+          <span style="font-family: 'Manrope', sans-serif; font-size: 19px; line-height: 1.5; color: #FFFFFF;">Transformamos em <span style="color: #CCCCCC;">interesse</span></span>
+        </div>
+        <div data-reveal="" style="display: flex; align-items: baseline; gap: 16px;">
+          <span style="font-family: 'Anton', 'Arial Narrow', sans-serif; font-size: 15px; letter-spacing: 0.08em; color: rgba(46,230,184,0.7);">03</span>
+          <span style="font-family: 'Manrope', sans-serif; font-size: 19px; line-height: 1.5; color: #FFFFFF;">Levamos <strong style="font-weight: 800; color: #2EE6B8;">cliente</strong> até o negócio</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div></div>
+
+  </div>
+
+  <div id="stryve-manifesto-art" data-reveal="" style="position: absolute; z-index: 2; right: 0; top: 0; bottom: 0; width: 46%; pointer-events: none;">
+    <div style="position: absolute; inset: 0; mask-image: linear-gradient(to right, transparent 0, #000 34%, #000 100%); -webkit-mask-image: linear-gradient(to right, transparent 0, #000 34%, #000 100%);">
+      <div style="position: absolute; inset: 0; mask-image: linear-gradient(to bottom, transparent 0, #000 14%, #000 84%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 14%, #000 84%, transparent 100%);">
+        <img src="./assets/bust-manifesto-v2.png" alt="Busto clássico em penumbra" style="width: 100%; height: 100%; object-fit: cover; object-position: 62% 32%; display: block; opacity: 0.62;">
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section id="servicos" data-screen-label="Serviços (com dados)" style="position: relative; box-sizing: border-box; background: #000000; overflow: hidden;">
+
+<div aria-hidden="true" style="position: absolute; inset: 0; z-index: 1; pointer-events: none; background-image: repeating-linear-gradient(to right, rgba(46,230,184,0.06) 0 1px, transparent 1px 88px); mask-image: linear-gradient(to bottom, transparent, #000 22%, #000 78%, transparent);"></div>
+
+  <div id="stryve-servicos-inner" style="position: relative; z-index: 2; width: 100%; max-width: 1560px; margin: 0 auto; padding: 160px 80px 100px; box-sizing: border-box;">
+
+    <span data-reveal="" style="opacity: 0; display: inline-flex; align-items: center; gap: 12px; font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: 0.4em; text-transform: uppercase; color: #2EE6B8;">
+      <span style="display: block; width: 28px; height: 1px; background: #2EE6B8;"></span>
+      Serviços
+    </span>
+
+    <h2 id="stryve-servicos-h2" data-reveal="" style="opacity: 0; margin: 20px 0 60px; max-width: 900px; font-family: 'Anton', 'Arial Narrow', sans-serif; font-weight: 400; font-size: 54px; line-height: 1.05; letter-spacing: 0.01em; color: #FFFFFF; text-transform: uppercase; text-wrap: balance;">O QUE A GENTE FAZ NA PRÁTICA</h2>
+
+    <div id="stryve-servicos-grid" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px;">
+
+      <article data-reveal="" style="opacity: 0; display: flex; flex-direction: column; gap: 16px; padding: 36px; box-sizing: border-box; background: #0A0A0A; border: 1px solid rgba(46,230,184,0.15); border-radius: 8px; transition: transform 0.3s ease-out, border-color 0.3s ease-out, box-shadow 0.3s ease-out, background 0.3s ease-out;" style-hover="transform: translateY(-4px); border-color: #2EE6B8; box-shadow: 0 12px 44px rgba(46,230,184,0.16); background: #0C110F;">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#2EE6B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 33 L17 22 L24 28 L37 13"></path><path d="M28 13 H37 V22"></path></svg>
+        <h3 style="margin: 0; font-family: 'Manrope', sans-serif; font-size: 21px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: #FFFFFF;">Tráfego Pago</h3>
+        <p style="margin: 0; font-family: 'Manrope', sans-serif; font-size: 16px; line-height: 1.6; color: #CCCCCC; text-wrap: pretty;">Campanhas Meta Ads e Google Ads com segmentação precisa, testes A/B e otimização semanal para maximizar ROI.</p>
+        <span aria-hidden="true" style="display: block; height: 1px; margin-top: 16px; background: rgba(46,230,184,0.15);"></span>
+        <div data-stat-block="" style="display: flex; flex-direction: column; gap: 4px;">
+          <span style="font-family: 'Manrope', sans-serif; font-size: 21px; font-weight: 800; line-height: 1.35; color: #2EE6B8;">1 campanha por objetivo</span>
+          <span style="font-family: 'Manrope', sans-serif; font-size: 13px; line-height: 1.5; color: #CCCCCC;">3 criativos em teste A/B simultâneo</span>
+        </div>
+      </article>
+
+      <article data-reveal="" style="opacity: 0; display: flex; flex-direction: column; gap: 16px; padding: 36px; box-sizing: border-box; background: #0A0A0A; border: 1px solid rgba(46,230,184,0.15); border-radius: 8px; transition: transform 0.3s ease-out, border-color 0.3s ease-out, box-shadow 0.3s ease-out, background 0.3s ease-out;" style-hover="transform: translateY(-4px); border-color: #2EE6B8; box-shadow: 0 12px 44px rgba(46,230,184,0.16); background: #0C110F;">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#2EE6B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="12" width="24" height="20" rx="4"></rect><path d="M30 20 L38 15 V29 L30 24 Z"></path></svg>
+        <h3 style="margin: 0; font-family: 'Manrope', sans-serif; font-size: 21px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: #FFFFFF;">Social Media</h3>
+        <p style="margin: 0; font-family: 'Manrope', sans-serif; font-size: 16px; line-height: 1.6; color: #CCCCCC; text-wrap: pretty;">Gestão completa de Instagram: planejamento, criação de conteúdo, Reels, Stories, legendas persuasivas, calendário estratégico.</p>
+        <span aria-hidden="true" style="display: block; height: 1px; margin-top: 16px; background: rgba(46,230,184,0.15);"></span>
+        <div data-stat-block="" style="display: flex; flex-direction: column; gap: 4px;">
+          <span style="font-family: 'Manrope', sans-serif; font-size: 21px; font-weight: 800; line-height: 1.35; color: #2EE6B8;">3x por semana</span>
+          <span style="font-family: 'Manrope', sans-serif; font-size: 13px; line-height: 1.5; color: #CCCCCC;">cadência fixa de publicação</span>
+        </div>
+      </article>
+
+      <article data-reveal="" style="opacity: 0; display: flex; flex-direction: column; gap: 16px; padding: 36px; box-sizing: border-box; background: #0A0A0A; border: 1px solid rgba(46,230,184,0.15); border-radius: 8px; transition: transform 0.3s ease-out, border-color 0.3s ease-out, box-shadow 0.3s ease-out, background 0.3s ease-out;" style-hover="transform: translateY(-4px); border-color: #2EE6B8; box-shadow: 0 12px 44px rgba(46,230,184,0.16); background: #0C110F;">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#2EE6B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="8" width="32" height="22" rx="3"></rect><path d="M18 36 H26"></path><path d="M22 30 V36"></path><path d="M20 16 L28 20 L24 21.6 L22.4 25.6 Z" fill="#2EE6B8" stroke="none"></path></svg>
+        <h3 style="margin: 0; font-family: 'Manrope', sans-serif; font-size: 21px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: #FFFFFF;">Landing Pages</h3>
+        <p style="margin: 0; font-family: 'Manrope', sans-serif; font-size: 16px; line-height: 1.6; color: #CCCCCC; text-wrap: pretty;">Páginas de captura otimizadas para conversão. Design, copywriting e performance orientados a CTA.</p>
+        <span aria-hidden="true" style="display: block; height: 1px; margin-top: 16px; background: rgba(46,230,184,0.15);"></span>
+        <div data-stat-block="" style="display: flex; flex-direction: column; gap: 4px;">
+          <span style="font-family: 'Manrope', sans-serif; font-size: 21px; font-weight: 800; line-height: 1.35; color: #2EE6B8;">Pixel da Meta + GA4</span>
+          <span style="font-family: 'Manrope', sans-serif; font-size: 13px; line-height: 1.5; color: #CCCCCC;">rastreamento e SEO técnico configurados no lançamento</span>
+        </div>
+      </article>
+
+      <article data-reveal="" style="opacity: 0; display: flex; flex-direction: column; gap: 16px; padding: 36px; box-sizing: border-box; background: #0A0A0A; border: 1px solid rgba(46,230,184,0.15); border-radius: 8px; transition: transform 0.3s ease-out, border-color 0.3s ease-out, box-shadow 0.3s ease-out, background 0.3s ease-out;" style-hover="transform: translateY(-4px); border-color: #2EE6B8; box-shadow: 0 12px 44px rgba(46,230,184,0.16); background: #0C110F;">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#2EE6B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="22" cy="22" r="15"></circle><circle cx="22" cy="22" r="8"></circle><circle cx="22" cy="22" r="2" fill="#2EE6B8" stroke="none"></circle></svg>
+        <h3 style="margin: 0; font-family: 'Manrope', sans-serif; font-size: 21px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: #FFFFFF;">Estratégia Digital</h3>
+        <p style="margin: 0; font-family: 'Manrope', sans-serif; font-size: 16px; line-height: 1.6; color: #CCCCCC; text-wrap: pretty;">Diagnóstico 360° do negócio, posicionamento, definição de público, plano estratégico mensal.</p>
+        <span aria-hidden="true" style="display: block; height: 1px; margin-top: 16px; background: rgba(46,230,184,0.15);"></span>
+        <div data-stat-block="" style="display: flex; flex-direction: column; gap: 4px;">
+          <span style="font-family: 'Manrope', sans-serif; font-size: 21px; font-weight: 800; line-height: 1.35; color: #2EE6B8;">Diagnóstico completo</span>
+          <span style="font-family: 'Manrope', sans-serif; font-size: 13px; line-height: 1.5; color: #CCCCCC;">antes de qualquer execução</span>
+        </div>
+      </article>
+
+      <article data-reveal="" style="opacity: 0; display: flex; flex-direction: column; gap: 16px; padding: 36px; box-sizing: border-box; background: #0A0A0A; border: 1px solid rgba(46,230,184,0.15); border-radius: 8px; transition: transform 0.3s ease-out, border-color 0.3s ease-out, box-shadow 0.3s ease-out, background 0.3s ease-out;" style-hover="transform: translateY(-4px); border-color: #2EE6B8; box-shadow: 0 12px 44px rgba(46,230,184,0.16); background: #0C110F;">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#2EE6B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 7 L37 15 L22 23 L7 15 Z"></path><path d="M7 22 L22 30 L37 22"></path><path d="M7 29 L22 37 L37 29"></path></svg>
+        <h3 style="margin: 0; font-family: 'Manrope', sans-serif; font-size: 21px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: #FFFFFF;">Conteúdo &amp; Criativos</h3>
+        <p style="margin: 0; font-family: 'Manrope', sans-serif; font-size: 16px; line-height: 1.6; color: #CCCCCC; text-wrap: pretty;">Produção de criativos de alta qualidade para anúncios, redes sociais e materiais de campanha.</p>
+        <span aria-hidden="true" style="display: block; height: 1px; margin-top: 16px; background: rgba(46,230,184,0.15);"></span>
+        <div data-stat-block="" style="display: flex; flex-direction: column; gap: 4px;">
+          <span style="font-family: 'Manrope', sans-serif; font-size: 15px; font-weight: 800; line-height: 1.35; color: #2EE6B8;">35% autoridade · 25% prova social<br>20% bastidores · 20% conversão</span>
+          <span style="font-family: 'Manrope', sans-serif; font-size: 13px; line-height: 1.5; color: #CCCCCC;">distribuição do calendário de conteúdo</span>
+        </div>
+      </article>
+
+      <article data-reveal="" style="opacity: 0; display: flex; flex-direction: column; gap: 16px; padding: 36px; box-sizing: border-box; background: #0A0A0A; border: 1px solid rgba(46,230,184,0.15); border-radius: 8px; transition: transform 0.3s ease-out, border-color 0.3s ease-out, box-shadow 0.3s ease-out, background 0.3s ease-out;" style-hover="transform: translateY(-4px); border-color: #2EE6B8; box-shadow: 0 12px 44px rgba(46,230,184,0.16); background: #0C110F;">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#2EE6B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 36 H37"></path><rect x="10" y="24" width="6" height="10"></rect><rect x="20" y="17" width="6" height="17"></rect><rect x="30" y="10" width="6" height="24"></rect></svg>
+        <h3 style="margin: 0; font-family: 'Manrope', sans-serif; font-size: 21px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: #FFFFFF;">Relatórios &amp; Insights</h3>
+        <p style="margin: 0; font-family: 'Manrope', sans-serif; font-size: 16px; line-height: 1.6; color: #CCCCCC; text-wrap: pretty;">Monitoramento semanal com métricas reais, análise de conversões, próximos passos baseados em dados.</p>
+        <span aria-hidden="true" style="display: block; height: 1px; margin-top: 16px; background: rgba(46,230,184,0.15);"></span>
+        <div data-stat-block="" style="display: flex; flex-direction: column; gap: 4px;">
+          <span style="font-family: 'Manrope', sans-serif; font-size: 21px; font-weight: 800; line-height: 1.35; color: #2EE6B8;">Toda sexta-feira</span>
+          <span style="font-family: 'Manrope', sans-serif; font-size: 13px; line-height: 1.5; color: #CCCCCC;">revisão fixa de métricas</span>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="metodo" data-screen-label="Motor de Crescimento" style="position: relative; box-sizing: border-box; background: #000000; overflow: hidden;">
+
+<div aria-hidden="true" style="position: absolute; inset: 0; z-index: 1; pointer-events: none; background-image: repeating-linear-gradient(to right, rgba(46,230,184,0.06) 0 1px, transparent 1px 88px); mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent);"></div>
+
+  <div id="stryve-motor-inner" style="position: relative; z-index: 2; width: 100%; max-width: 1560px; margin: 0 auto; padding: 160px 80px 60px; box-sizing: border-box;">
+
+    <span data-reveal="" style="display: inline-flex; align-items: center; gap: 12px; font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: 0.4em; text-transform: uppercase; color: #2EE6B8;">
+      <span style="display: block; width: 28px; height: 1px; background: #2EE6B8;"></span>
+      Motor de Crescimento
+    </span>
+
+    <h2 id="stryve-motor-h2" data-reveal="" style="margin: 20px 0 20px; font-family: 'Anton', 'Arial Narrow', sans-serif; font-weight: 400; font-size: 54px; line-height: 1.05; letter-spacing: 0.01em; color: #FFFFFF; text-transform: uppercase;">O MOTOR DE CRESCIMENTO STRYVE</h2>
+
+    <p data-reveal="" style="margin: 0 0 60px; max-width: 760px; font-family: 'Manrope', sans-serif; font-size: 21px; line-height: 1.6; color: #CCCCCC; text-wrap: pretty;">Um artefato obrigatório em cada etapa — sempre com dono e entregável claro. Decisão baseada em dado real, não em achismo.</p>
+
+    <div id="stryve-motor-zig" style="position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 64px; row-gap: 0;">
+
+      <svg data-snake="" aria-hidden="true" preserveAspectRatio="none" style="position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: 0;">
+        <path data-snake-base="" d="" fill="none" stroke="rgba(46,230,184,0.16)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path data-snake-fill="" d="" fill="none" stroke="#2EE6B8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(0 0 8px rgba(46,230,184,0.8));"></path>
+      </svg>
+
+      <div class="stryve-step" data-step="" style="grid-column: 1; grid-row: 1; position: relative; padding: 0 0 52px 64px;">
+        <span aria-hidden="true" style="position: absolute; left: 6px; top: 8px; width: 16px; height: 16px; border-radius: 50%; background: #000; border: 2px solid #2EE6B8; box-shadow: 0 0 16px rgba(46,230,184,0.5);"></span>
+        <span data-badge="" style="display: inline-block; padding: 4px 12px; border-radius: 4px; background: rgba(46,230,184,0.1); font-family: 'Anton', 'Arial Narrow', sans-serif; font-size: 26px; letter-spacing: 0.08em; color: #2EE6B8;">01</span>
+        <h3 class="stryve-title" style="margin: 18px 0 14px; font-family: 'Manrope', sans-serif; font-size: 30px; font-weight: 800; text-transform: uppercase; color: #FFFFFF;">Diagnóstico</h3>
+        <p style="margin: 0 0 18px; max-width: 620px; font-family: 'Manrope', sans-serif; font-size: 19px; line-height: 1.7; color: #CCCCCC; text-wrap: pretty;">Levantamos os números reais do cliente: faturamento, ticket médio, funil atual e gargalo principal. Validamos os critérios de qualificação antes de qualquer proposta.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+          <span style="padding: 4px 12px; border: 1px solid rgba(46,230,184,0.55); border-radius: 16px; background: rgba(46,230,184,0.08); font-family: 'Manrope', sans-serif; font-size: 15px; color: #FFFFFF;">Artefato: Documento de Diagnóstico</span>
+        </div>
+      </div>
+
+      <div class="stryve-step" data-step="" style="grid-column: 2; grid-row: 2; position: relative; padding: 0 0 52px 64px;">
+        <span aria-hidden="true" style="position: absolute; left: 6px; top: 8px; width: 16px; height: 16px; border-radius: 50%; background: #000; border: 2px solid #2EE6B8; box-shadow: 0 0 16px rgba(46,230,184,0.5);"></span>
+        <span data-badge="" style="display: inline-block; padding: 4px 12px; border-radius: 4px; background: rgba(46,230,184,0.1); font-family: 'Anton', 'Arial Narrow', sans-serif; font-size: 26px; letter-spacing: 0.08em; color: #2EE6B8;">02</span>
+        <h3 class="stryve-title" style="margin: 18px 0 14px; font-family: 'Manrope', sans-serif; font-size: 30px; font-weight: 800; text-transform: uppercase; color: #FFFFFF;">Árvore de Metas</h3>
+        <p style="margin: 0 0 18px; max-width: 620px; font-family: 'Manrope', sans-serif; font-size: 19px; line-height: 1.7; color: #CCCCCC; text-wrap: pretty;">Definimos com o cliente a meta de negócio principal e desdobramos em KPIs de marketing e depois KPIs por canal — tudo registrado e rastreável.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+          <span style="padding: 4px 12px; border: 1px solid rgba(46,230,184,0.55); border-radius: 16px; background: rgba(46,230,184,0.08); font-family: 'Manrope', sans-serif; font-size: 15px; color: #FFFFFF;">Artefato: Árvore de Metas</span>
+        </div>
+      </div>
+
+      <div class="stryve-step" data-step="" style="grid-column: 1; grid-row: 3; position: relative; padding: 0 0 52px 64px;">
+        <span aria-hidden="true" style="position: absolute; left: 6px; top: 8px; width: 16px; height: 16px; border-radius: 50%; background: #000; border: 2px solid #2EE6B8; box-shadow: 0 0 16px rgba(46,230,184,0.5);"></span>
+        <span data-badge="" style="display: inline-block; padding: 4px 12px; border-radius: 4px; background: rgba(46,230,184,0.1); font-family: 'Anton', 'Arial Narrow', sans-serif; font-size: 26px; letter-spacing: 0.08em; color: #2EE6B8;">03</span>
+        <h3 class="stryve-title" style="margin: 18px 0 14px; font-family: 'Manrope', sans-serif; font-size: 30px; font-weight: 800; text-transform: uppercase; color: #FFFFFF;">Ciclos de Execução</h3>
+        <p style="margin: 0 0 18px; max-width: 620px; font-family: 'Manrope', sans-serif; font-size: 19px; line-height: 1.7; color: #CCCCCC; text-wrap: pretty;">Cada ciclo de 2 a 4 semanas parte de uma hipótese ligada à Árvore de Metas. Produzimos os criativos e rodamos as campanhas conforme o plano do ciclo.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+          <span style="padding: 4px 12px; border: 1px solid rgba(46,230,184,0.55); border-radius: 16px; background: rgba(46,230,184,0.08); font-family: 'Manrope', sans-serif; font-size: 15px; color: #FFFFFF;">Artefato: Plano de Ciclo</span>
+        </div>
+      </div>
+
+      <div class="stryve-step" data-step="" style="grid-column: 2; grid-row: 4; position: relative; padding: 0 0 52px 64px;">
+        <span aria-hidden="true" style="position: absolute; left: 6px; top: 8px; width: 16px; height: 16px; border-radius: 50%; background: #000; border: 2px solid #2EE6B8; box-shadow: 0 0 16px rgba(46,230,184,0.5);"></span>
+        <span data-badge="" style="display: inline-block; padding: 4px 12px; border-radius: 4px; background: rgba(46,230,184,0.1); font-family: 'Anton', 'Arial Narrow', sans-serif; font-size: 26px; letter-spacing: 0.08em; color: #2EE6B8;">04</span>
+        <h3 class="stryve-title" style="margin: 18px 0 14px; font-family: 'Manrope', sans-serif; font-size: 30px; font-weight: 800; text-transform: uppercase; color: #FFFFFF;">Ritual de Medição</h3>
+        <p style="margin: 0 0 18px; max-width: 620px; font-family: 'Manrope', sans-serif; font-size: 19px; line-height: 1.7; color: #CCCCCC; text-wrap: pretty;">Toda sexta, revisamos as métricas com cadência fixa. Geramos o relatório com números reais, e a decisão do que muda vem do dado — nunca do achismo.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+          <span style="padding: 4px 12px; border: 1px solid rgba(46,230,184,0.55); border-radius: 16px; background: rgba(46,230,184,0.08); font-family: 'Manrope', sans-serif; font-size: 15px; color: #FFFFFF;">Artefato: Relatório de Ciclo</span>
+        </div>
+      </div>
+
+      <div class="stryve-step" data-step="" style="grid-column: 1; grid-row: 5; position: relative; padding: 0 0 52px 64px;">
+        <span aria-hidden="true" style="position: absolute; left: 6px; top: 8px; width: 16px; height: 16px; border-radius: 50%; background: #000; border: 2px solid #2EE6B8; box-shadow: 0 0 16px rgba(46,230,184,0.5);"></span>
+        <span data-badge="" style="display: inline-block; padding: 4px 12px; border-radius: 4px; background: rgba(46,230,184,0.1); font-family: 'Anton', 'Arial Narrow', sans-serif; font-size: 26px; letter-spacing: 0.08em; color: #2EE6B8;">05</span>
+        <h3 class="stryve-title" style="margin: 18px 0 14px; font-family: 'Manrope', sans-serif; font-size: 30px; font-weight: 800; text-transform: uppercase; color: #FFFFFF;">Otimização</h3>
+        <p style="margin: 0 0 18px; max-width: 620px; font-family: 'Manrope', sans-serif; font-size: 19px; line-height: 1.7; color: #CCCCCC; text-wrap: pretty;">Revisamos o que funcionou e o que não funcionou. Pausamos o que é fraco, escalamos o que performa, e ajustamos o próximo ciclo.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+          <span style="padding: 4px 12px; border: 1px solid rgba(46,230,184,0.55); border-radius: 16px; background: rgba(46,230,184,0.08); font-family: 'Manrope', sans-serif; font-size: 15px; color: #FFFFFF;">Artefato: Ata de Otimização</span>
+        </div>
+      </div>
+
+      <div class="stryve-step" data-step="" style="grid-column: 2; grid-row: 6; position: relative; padding: 0 0 0px 64px;">
+        <span aria-hidden="true" style="position: absolute; left: 6px; top: 8px; width: 16px; height: 16px; border-radius: 50%; background: #000; border: 2px solid #2EE6B8; box-shadow: 0 0 16px rgba(46,230,184,0.5);"></span>
+        <span data-badge="" style="display: inline-block; padding: 4px 12px; border-radius: 4px; background: rgba(46,230,184,0.1); font-family: 'Anton', 'Arial Narrow', sans-serif; font-size: 26px; letter-spacing: 0.08em; color: #2EE6B8;">06</span>
+        <h3 class="stryve-title" style="margin: 18px 0 14px; font-family: 'Manrope', sans-serif; font-size: 30px; font-weight: 800; text-transform: uppercase; color: #FFFFFF;">Expansão</h3>
+        <p style="margin: 0 0 18px; max-width: 620px; font-family: 'Manrope', sans-serif; font-size: 19px; line-height: 1.7; color: #CCCCCC; text-wrap: pretty;">Verificamos se a meta da Árvore foi batida, apresentamos a proposta de expansão de escopo e orçamento, e ativamos o bônus por resultado.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+          <span style="padding: 4px 12px; border: 1px solid rgba(46,230,184,0.55); border-radius: 16px; background: rgba(46,230,184,0.08); font-family: 'Manrope', sans-serif; font-size: 15px; color: #FFFFFF;">Artefato: Proposta de Expansão</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="resultados" data-screen-label="Números" style="position: relative; min-height: 100vh; box-sizing: border-box; background: #000000; overflow: hidden; display: flex; align-items: flex-end;">
+
+<video data-bgvideo="" src="./assets/numeros-bg.mp4" autoplay="" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsinline="" playsInline="{{ true }}" controls="{{ false }}" preload="metadata" disablePictureInPicture="{{ true }}" aria-hidden="true" style="position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; transform: translateZ(0); backface-visibility: hidden;"></video>
+  <div aria-hidden="true" style="position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, transparent 28%, rgba(0,0,0,0.55) 62%, rgba(0,0,0,0.92) 100%);"></div>
+
+  <div id="stryve-numeros-inner" style="position: relative; z-index: 2; width: 100%; max-width: 1560px; margin: 0 auto; padding: 152px 80px 88px; box-sizing: border-box;">
+
+    <div id="stryve-numeros-grid" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: auto auto; align-items: start;">
+
+      <div data-stat="" style="display: grid; grid-template-rows: 108px auto; justify-items: center; align-items: end; text-align: center; padding: 0 32px;">
+        <span class="stryve-num" style="font-family: 'Anton', 'Arial Narrow', sans-serif; font-size: 92px; line-height: 1; letter-spacing: 0.01em; color: #2EE6B8; text-shadow: 0 0 40px rgba(46,230,184,0.35);"><span data-count="50">0</span>+</span>
+        <span style="margin-top: 12px; font-family: 'Manrope', sans-serif; font-size: 17px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #FFFFFF;">Clientes atendidos</span>
+      </div>
+
+      <div data-stat="" style="display: grid; grid-template-rows: 108px auto; justify-items: center; align-items: end; text-align: center; padding: 0 32px; border-left: 1px solid rgba(255,255,255,0.1);">
+        <span class="stryve-num" style="font-family: 'Anton', 'Arial Narrow', sans-serif; font-size: 92px; line-height: 1; letter-spacing: 0.01em; color: #2EE6B8; text-shadow: 0 0 40px rgba(46,230,184,0.35);"><span data-count="100">0</span>%</span>
+        <span style="margin-top: 12px; font-family: 'Manrope', sans-serif; font-size: 17px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #FFFFFF;">Transparência</span>
+      </div>
+
+      <div data-stat="" style="display: grid; grid-template-rows: 108px auto; justify-items: center; align-items: end; text-align: center; padding: 0 32px; border-left: 1px solid rgba(255,255,255,0.1);">
+        <span class="stryve-num" style="font-family: 'Anton', 'Arial Narrow', sans-serif; font-size: 92px; line-height: 1; letter-spacing: 0.01em; color: #2EE6B8; text-shadow: 0 0 40px rgba(46,230,184,0.35); white-space: nowrap; font-size: 64px;">3 MESES</span>
+        <span style="margin-top: 12px; max-width: 320px; font-family: 'Manrope', sans-serif; font-size: 17px; font-weight: 500; line-height: 1.5; letter-spacing: 0.14em; text-transform: uppercase; color: #FFFFFF; text-wrap: pretty;">Prazo mínimo para resultados consistentes</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="trafego" data-screen-label="Metodologia de tráfego" style="position: relative; box-sizing: border-box; background: #000000; overflow: hidden;">
+
+
+
+  <div id="stryve-traf-inner" style="position: relative; z-index: 2; width: 100%; max-width: 1560px; margin: 0 auto; padding: 40px 80px 100px; box-sizing: border-box;">
+
+    <span data-reveal="" style="display: inline-flex; align-items: center; gap: 12px; font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: 0.4em; text-transform: uppercase; color: #2EE6B8;">
+      <span style="display: block; width: 28px; height: 1px; background: #2EE6B8;"></span>
+      Metodologia
+    </span>
+
+    <h2 id="stryve-traf-h2" data-reveal="" style="margin: 20px 0 16px; font-family: 'Anton', 'Arial Narrow', sans-serif; font-weight: 400; font-size: 54px; line-height: 1.05; letter-spacing: 0.01em; color: #FFFFFF; text-transform: uppercase;">TRÁFEGO PAGO NÃO É PALPITE</h2>
+
+    <p data-reveal="" style="margin: 0 0 60px; max-width: 700px; font-family: 'Manrope', sans-serif; font-size: 19px; line-height: 1.6; color: #CCCCCC; text-wrap: pretty;">1 campanha por objetivo, com 3 criativos em teste A/B simultâneo. Estrutura testada, não achismo.</p>
+
+    <!-- BLOCO 1 — ESTRUTURA DO ANÚNCIO -->
+    <div id="stryve-traf-flow" style="display: grid; grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr; gap: 20px; align-items: stretch;">
+
+      <div data-reveal="" style="display: flex; flex-direction: column; gap: 12px; padding: 24px; box-sizing: border-box; background: rgba(255,255,255,0.03); border: 1px solid rgba(46,230,184,0.18); border-radius: 8px;">
+        <span style="font-family: 'Anton', 'Arial Narrow', sans-serif; font-size: 20px; letter-spacing: 0.08em; color: #2EE6B8;">01 · HOOK</span>
+        <p style="margin: 0; font-family: 'Manrope', sans-serif; font-size: 16px; line-height: 1.6; color: #CCCCCC; text-wrap: pretty;">3 primeiros segundos capturam a atenção</p>
+      </div>
+
+      <span data-reveal="" aria-hidden="true" class="stryve-arrow" style="align-self: center; font-family: 'Manrope', sans-serif; font-size: 22px; color: #2EE6B8;">→</span>
+
+      <div data-reveal="" style="display: flex; flex-direction: column; gap: 12px; padding: 24px; box-sizing: border-box; background: rgba(255,255,255,0.03); border: 1px solid rgba(46,230,184,0.18); border-radius: 8px;">
+        <span style="font-family: 'Anton', 'Arial Narrow', sans-serif; font-size: 20px; letter-spacing: 0.08em; color: #2EE6B8;">02 · DOR/DESEJO</span>
+        <p style="margin: 0; font-family: 'Manrope', sans-serif; font-size: 16px; line-height: 1.6; color: #CCCCCC; text-wrap: pretty;">Nomeia o problema real do dono de negócio local</p>
+      </div>
+
+      <span data-reveal="" aria-hidden="true" class="stryve-arrow" style="align-self: center; font-family: 'Manrope', sans-serif; font-size: 22px; color: #2EE6B8;">→</span>
+
+      <div data-reveal="" style="display: flex; flex-direction: column; gap: 12px; padding: 24px; box-sizing: border-box; background: rgba(255,255,255,0.03); border: 1px solid rgba(46,230,184,0.18); border-radius: 8px;">
+        <span style="font-family: 'Anton', 'Arial Narrow', sans-serif; font-size: 20px; letter-spacing: 0.08em; color: #2EE6B8;">03 · SOLUÇÃO</span>
+        <p style="margin: 0; font-family: 'Manrope', sans-serif; font-size: 16px; line-height: 1.6; color: #CCCCCC; text-wrap: pretty;">Motor de Crescimento STRYVE, de forma clara</p>
+      </div>
+
+      <span data-reveal="" aria-hidden="true" class="stryve-arrow" style="align-self: center; font-family: 'Manrope', sans-serif; font-size: 22px; color: #2EE6B8;">→</span>
+
+      <div data-reveal="" style="display: flex; flex-direction: column; gap: 12px; padding: 24px; box-sizing: border-box; background: rgba(255,255,255,0.03); border: 1px solid rgba(46,230,184,0.18); border-radius: 8px;">
+        <span style="font-family: 'Anton', 'Arial Narrow', sans-serif; font-size: 20px; letter-spacing: 0.08em; color: #2EE6B8;">04 · CTA</span>
+        <p style="margin: 0; font-family: 'Manrope', sans-serif; font-size: 16px; line-height: 1.6; color: #CCCCCC; text-wrap: pretty;">Uma ação só: agendar diagnóstico gratuito</p>
+      </div>
+
+    </div>
+
+    <!-- BLOCO 2 — 3 VARIAÇÕES -->
+    <h3 data-reveal="" style="margin: 60px 0 32px; font-family: 'Manrope', sans-serif; font-size: 26px; font-weight: 800; letter-spacing: 0.02em; text-transform: uppercase; color: #FFFFFF;">3 variações por campanha</h3>
+
+    <div id="stryve-traf-vars" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px;">
+
+      <article data-card="" style="display: flex; flex-direction: column; gap: 18px; padding: 36px; box-sizing: border-box; background: #0A0A0A; border: 1px solid rgba(46,230,184,0.15); border-radius: 8px; transition: transform 0.3s ease-out, border-color 0.3s ease-out, box-shadow 0.3s ease-out, background 0.3s ease-out;" style-hover="transform: translateY(-4px); border-color: #2EE6B8; box-shadow: 0 12px 44px rgba(46,230,184,0.16); background: #0C110F;">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#2EE6B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 6 L36 13 V30 L22 37 L8 30 V13 Z"></path><path d="M8 13 L22 20 L36 13"></path><path d="M22 20 V37"></path></svg>
+        <h4 style="margin: 0; font-family: 'Manrope', sans-serif; font-size: 21px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: #FFFFFF;">Produto</h4>
+        <p style="margin: 0; font-family: 'Manrope', sans-serif; font-size: 16px; line-height: 1.6; color: #CCCCCC; text-wrap: pretty;">Destaque direto do que a STRYVE oferece</p>
+      </article>
+
+      <article data-card="" style="display: flex; flex-direction: column; gap: 18px; padding: 36px; box-sizing: border-box; background: #0A0A0A; border: 1px solid rgba(46,230,184,0.15); border-radius: 8px; transition: transform 0.3s ease-out, border-color 0.3s ease-out, box-shadow 0.3s ease-out, background 0.3s ease-out;" style-hover="transform: translateY(-4px); border-color: #2EE6B8; box-shadow: 0 12px 44px rgba(46,230,184,0.16); background: #0C110F;">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#2EE6B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 11 H37 V29 H20 L11 36 V29 H7 Z"></path><path d="M14 17 H30"></path><path d="M14 23 H25"></path></svg>
+        <h4 style="margin: 0; font-family: 'Manrope', sans-serif; font-size: 21px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: #FFFFFF;">Experiência</h4>
+        <p style="margin: 0; font-family: 'Manrope', sans-serif; font-size: 16px; line-height: 1.6; color: #CCCCCC; text-wrap: pretty;">Depoimento / jornada de um cliente real</p>
+      </article>
+
+      <article data-card="" style="display: flex; flex-direction: column; gap: 18px; padding: 36px; box-sizing: border-box; background: #0A0A0A; border: 1px solid rgba(46,230,184,0.15); border-radius: 8px; transition: transform 0.3s ease-out, border-color 0.3s ease-out, box-shadow 0.3s ease-out, background 0.3s ease-out;" style-hover="transform: translateY(-4px); border-color: #2EE6B8; box-shadow: 0 12px 44px rgba(46,230,184,0.16); background: #0C110F;">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#2EE6B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 28 H17 V37 H7 Z"></path><path d="M27 12 H37 V37 H27 Z"></path><path d="M19 20 H31"></path><path d="M27 15 L32 20 L27 25"></path></svg>
+        <h4 style="margin: 0; font-family: 'Manrope', sans-serif; font-size: 21px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: #FFFFFF;">História</h4>
+        <p style="margin: 0; font-family: 'Manrope', sans-serif; font-size: 16px; line-height: 1.6; color: #CCCCCC; text-wrap: pretty;">Transformação de um cliente, antes/depois</p>
+      </article>
+
+    </div>
+
+    <!-- BLOCO 3 — OTIMIZAÇÃO SEMANAL -->
+    <div id="stryve-traf-opt" data-reveal-fade="" style="margin-top: 60px; padding: 32px 40px; box-sizing: border-box; background: linear-gradient(150deg, rgba(46,230,184,0.09), rgba(46,230,184,0.03) 60%, rgba(10,10,10,1)); border: 1px solid rgba(46,230,184,0.2); border-radius: 12px;">
+
+      <div id="stryve-traf-metrics" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; align-items: start;">
+        <span style="display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2EE6B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="animation: stryveIconGlow 3s ease-in-out infinite;"><path d="M3 20 H21"></path><rect x="5" y="12" width="3.5" height="6"></rect><rect x="10.2" y="8" width="3.5" height="10"></rect><rect x="15.5" y="4" width="3.5" height="14"></rect></svg>
+          <span style="font-family: 'Manrope', sans-serif; font-size: 17px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #FFFFFF;">Alcance</span>
+        </span>
+        <span style="display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; border-left: 1px solid rgba(255,255,255,0.1);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2EE6B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="animation: stryveIconGlow 3s ease-in-out 0.4s infinite;"><path d="M5 3 L19 12 L12.5 13.2 L15.5 20 L12.8 21 L9.8 14.4 L5 18.6 Z"></path></svg>
+          <span style="font-family: 'Manrope', sans-serif; font-size: 17px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #FFFFFF;">CTR</span>
+        </span>
+        <span style="display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; border-left: 1px solid rgba(255,255,255,0.1);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2EE6B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="animation: stryveIconGlow 3s ease-in-out 0.8s infinite;"><path d="M12 3 V21"></path><path d="M16 7.5 C16 5.6 14.2 4.5 12 4.5 C9.8 4.5 8 5.6 8 7.5 C8 12 16 10.5 16 15.5 C16 17.6 14.2 19 12 19 C9.8 19 8 17.6 8 15.5"></path></svg>
+          <span style="font-family: 'Manrope', sans-serif; font-size: 17px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #FFFFFF;">Custo por resultado</span>
+        </span>
+        <span style="display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; border-left: 1px solid rgba(255,255,255,0.1);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2EE6B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="animation: stryveIconGlow 3s ease-in-out 1.2s infinite;"><circle cx="12" cy="12" r="9"></circle><path d="M10 8.5 L16 12 L10 15.5 Z"></path></svg>
+          <span style="font-family: 'Manrope', sans-serif; font-size: 17px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #FFFFFF;">Retenção de vídeo</span>
+        </span>
+      </div>
+
+      <p style="margin: 24px 0 0; font-family: 'Playfair Display', serif; font-style: italic; font-size: 19px; line-height: 1.5; color: #2EE6B8; text-align: center; text-wrap: pretty;">Decisão baseada em dado: criativo fraco pausa, criativo forte escala.</p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="conteudo" data-screen-label="Metodologia de conteúdo" style="position: relative; box-sizing: border-box; background: #000000; overflow: hidden;">
+
+
+
+  <div id="stryve-cont-inner" style="position: relative; z-index: 2; width: 100%; max-width: 1560px; margin: 0 auto; padding: 40px 80px 100px; box-sizing: border-box;">
+
+    <span data-reveal="" style="display: inline-flex; align-items: center; gap: 12px; font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: 0.4em; text-transform: uppercase; color: #2EE6B8;">
+      <span style="display: block; width: 28px; height: 1px; background: #2EE6B8;"></span>
+      Metodologia
+    </span>
+
+    <h2 id="stryve-cont-h2" data-reveal="" style="margin: 20px 0 16px; font-family: 'Anton', 'Arial Narrow', sans-serif; font-weight: 400; font-size: 54px; line-height: 1.05; letter-spacing: 0.01em; color: #FFFFFF; text-transform: uppercase;">CONTEÚDO NÃO É IMPROVISO</h2>
+
+    <p data-reveal="" style="margin: 0 0 60px; max-width: 700px; font-family: 'Manrope', sans-serif; font-size: 19px; line-height: 1.6; color: #CCCCCC; text-wrap: pretty;">3 publicações por semana — consistência importa mais que volume.</p>
+
+    <!-- BLOCO 1 — ROTINA SEMANAL -->
+    <div style="position: relative;">
+
+      <div aria-hidden="true" style="position: absolute; left: 0; right: 0; top: 42px; height: 2px; background: rgba(46,230,184,0.16);"></div>
+      <div id="stryve-cont-rail" data-rail="" aria-hidden="true" style="position: absolute; left: 0; top: 42px; width: 0; height: 2px; background: linear-gradient(to right, #2EE6B8, rgba(46,230,184,0.6)); box-shadow: 0 0 12px rgba(46,230,184,0.6); transition: width 1.2s cubic-bezier(.2,.7,.2,1);"></div>
+
+      <div id="stryve-cont-week" style="position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 20px;">
+
+        <div data-reveal="" style="display: flex; flex-direction: column; gap: 14px; padding: 24px; box-sizing: border-box; background: rgba(255,255,255,0.03); border: 1px solid rgba(46,230,184,0.18); border-radius: 8px;">
+          <span style="font-family: 'Manrope', sans-serif; font-size: 17px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #2EE6B8;">Segunda</span>
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#2EE6B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="7" width="24" height="22" rx="3"></rect><path d="M5 14 H29"></path><path d="M11 4 V9"></path><path d="M23 4 V9"></path><path d="M11 20 H17"></path></svg>
+          <p style="margin: 0; font-family: 'Manrope', sans-serif; font-size: 16px; line-height: 1.5; color: #CCCCCC;">Planejamento da pauta</p>
+        </div>
+
+        <div data-reveal="" style="display: flex; flex-direction: column; gap: 14px; padding: 24px; box-sizing: border-box; background: rgba(255,255,255,0.03); border: 1px solid rgba(46,230,184,0.18); border-radius: 8px;">
+          <span style="font-family: 'Manrope', sans-serif; font-size: 17px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #2EE6B8;">Terça</span>
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#2EE6B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4 H21 L26 9 V30 H8 Z"></path><path d="M21 4 V9 H26"></path><path d="M12 15 H22"></path><path d="M12 20 H22"></path><path d="M12 25 H18"></path></svg>
+          <p style="margin: 0; font-family: 'Manrope', sans-serif; font-size: 16px; line-height: 1.5; color: #CCCCCC;">Produção / roteiro</p>
+        </div>
+
+        <div data-reveal="" style="display: flex; flex-direction: column; gap: 14px; padding: 24px; box-sizing: border-box; background: rgba(255,255,255,0.03); border: 1px solid rgba(46,230,184,0.18); border-radius: 8px;">
+          <span style="font-family: 'Manrope', sans-serif; font-size: 17px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #2EE6B8;">Quarta</span>
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#2EE6B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="25" r="4"></circle><circle cx="25" cy="25" r="4"></circle><path d="M12 22 L26 6"></path><path d="M22 22 L8 6"></path></svg>
+          <p style="margin: 0; font-family: 'Manrope', sans-serif; font-size: 16px; line-height: 1.5; color: #CCCCCC;">Edição</p>
+        </div>
+
+        <div data-reveal="" style="display: flex; flex-direction: column; gap: 14px; padding: 24px; box-sizing: border-box; background: rgba(255,255,255,0.03); border: 1px solid rgba(46,230,184,0.18); border-radius: 8px;">
+          <span style="font-family: 'Manrope', sans-serif; font-size: 17px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #2EE6B8;">Quinta</span>
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#2EE6B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="17" cy="17" r="12"></circle><path d="M14 11.5 L24 17 L14 22.5 Z"></path></svg>
+          <p style="margin: 0; font-family: 'Manrope', sans-serif; font-size: 16px; line-height: 1.5; color: #CCCCCC;">Publicação</p>
+        </div>
+
+        <div data-reveal="" style="display: flex; flex-direction: column; gap: 14px; padding: 24px; box-sizing: border-box; background: rgba(255,255,255,0.03); border: 1px solid rgba(46,230,184,0.18); border-radius: 8px;">
+          <span style="font-family: 'Manrope', sans-serif; font-size: 17px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #2EE6B8;">Sexta</span>
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#2EE6B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="15" cy="15" r="9"></circle><path d="M21.5 21.5 L29 29"></path><path d="M11 17 L14 13 L17 15.5 L20 10"></path></svg>
+          <p style="margin: 0; font-family: 'Manrope', sans-serif; font-size: 16px; line-height: 1.5; color: #CCCCCC;">Análise e ajuste</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- BLOCO 2 — PILARES -->
+    <h3 data-reveal="" style="margin: 60px 0 32px; font-family: 'Manrope', sans-serif; font-size: 26px; font-weight: 800; letter-spacing: 0.02em; text-transform: uppercase; color: #FFFFFF;">4 pilares de conteúdo</h3>
+
+    <div id="stryve-cont-pilares" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 56px;">
+
+      <div data-pillar="" style="display: flex; flex-direction: column; gap: 10px;">
+        <span style="font-family: 'Anton', 'Arial Narrow', sans-serif; font-size: 40px; line-height: 1; color: #2EE6B8; text-shadow: 0 0 26px rgba(46,230,184,0.3);">35%</span>
+        <span style="font-family: 'Manrope', sans-serif; font-size: 17px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #FFFFFF;">Autoridade / Educação</span>
+        <span aria-hidden="true" style="display: block; height: 8px; border-radius: 999px; background: rgba(255,255,255,0.08); overflow: hidden;"><span data-bar="35" style="display: block; width: 0; height: 100%; border-radius: 999px; background: #2EE6B8; box-shadow: 0 0 14px rgba(46,230,184,0.5); transition: width 1.3s cubic-bezier(.2,.7,.2,1);"></span></span>
+        <p style="margin: 4px 0 0; font-family: 'Manrope', sans-serif; font-size: 16px; line-height: 1.6; color: #CCCCCC;">Dicas práticas pro dono de negócio local</p>
+      </div>
+
+      <div data-pillar="" style="display: flex; flex-direction: column; gap: 10px;">
+        <span style="font-family: 'Anton', 'Arial Narrow', sans-serif; font-size: 40px; line-height: 1; color: #2EE6B8; text-shadow: 0 0 26px rgba(46,230,184,0.3);">25%</span>
+        <span style="font-family: 'Manrope', sans-serif; font-size: 17px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #FFFFFF;">Prova social / Resultados</span>
+        <span aria-hidden="true" style="display: block; height: 8px; border-radius: 999px; background: rgba(255,255,255,0.08); overflow: hidden;"><span data-bar="25" style="display: block; width: 0; height: 100%; border-radius: 999px; background: #2EE6B8; box-shadow: 0 0 14px rgba(46,230,184,0.5); transition: width 1.3s cubic-bezier(.2,.7,.2,1);"></span></span>
+        <p style="margin: 4px 0 0; font-family: 'Manrope', sans-serif; font-size: 16px; line-height: 1.6; color: #CCCCCC;">Cases reais de clientes, com números</p>
+      </div>
+
+      <div data-pillar="" style="display: flex; flex-direction: column; gap: 10px;">
+        <span style="font-family: 'Anton', 'Arial Narrow', sans-serif; font-size: 40px; line-height: 1; color: #2EE6B8; text-shadow: 0 0 26px rgba(46,230,184,0.3);">20%</span>
+        <span style="font-family: 'Manrope', sans-serif; font-size: 17px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #FFFFFF;">Bastidores</span>
+        <span aria-hidden="true" style="display: block; height: 8px; border-radius: 999px; background: rgba(255,255,255,0.08); overflow: hidden;"><span data-bar="20" style="display: block; width: 0; height: 100%; border-radius: 999px; background: #2EE6B8; box-shadow: 0 0 14px rgba(46,230,184,0.5); transition: width 1.3s cubic-bezier(.2,.7,.2,1);"></span></span>
+        <p style="margin: 4px 0 0; font-family: 'Manrope', sans-serif; font-size: 16px; line-height: 1.6; color: #CCCCCC;">Time trabalhando, processo, rotina</p>
+      </div>
+
+      <div data-pillar="" style="display: flex; flex-direction: column; gap: 10px;">
+        <span style="font-family: 'Anton', 'Arial Narrow', sans-serif; font-size: 40px; line-height: 1; color: #2EE6B8; text-shadow: 0 0 26px rgba(46,230,184,0.3);">20%</span>
+        <span style="font-family: 'Manrope', sans-serif; font-size: 17px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #FFFFFF;">Conversão</span>
+        <span aria-hidden="true" style="display: block; height: 8px; border-radius: 999px; background: rgba(255,255,255,0.08); overflow: hidden;"><span data-bar="20" style="display: block; width: 0; height: 100%; border-radius: 999px; background: #2EE6B8; box-shadow: 0 0 14px rgba(46,230,184,0.5); transition: width 1.3s cubic-bezier(.2,.7,.2,1);"></span></span>
+        <p style="margin: 4px 0 0; font-family: 'Manrope', sans-serif; font-size: 16px; line-height: 1.6; color: #CCCCCC;">Oferta direta, CTA pra agendar diagnóstico</p>
+      </div>
+
+    </div>
+
+    <!-- BLOCO 3 — IDENTIDADE OBRIGATÓRIA -->
+    <div id="stryve-cont-id" data-reveal-fade="" style="margin-top: 60px; padding: 32px 40px; box-sizing: border-box; background: linear-gradient(150deg, rgba(46,230,184,0.09), rgba(46,230,184,0.03) 60%, rgba(10,10,10,1)); border: 1px solid rgba(46,230,184,0.2); border-radius: 12px;">
+      <span style="display: inline-flex; align-items: center; gap: 12px; font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: 0.4em; text-transform: uppercase; color: #2EE6B8;">
+        <span style="display: block; width: 28px; height: 1px; background: #2EE6B8;"></span>
+        Identidade obrigatória em todo post
+      </span>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 22px;">
+        <span style="display: inline-flex; align-items: center; gap: 10px; font-family: 'Manrope', sans-serif; font-size: 16px; color: #FFFFFF;"><span style="color: #2EE6B8;">✓</span>Busto de mármore clássico em pose contextual</span>
+        <span style="display: inline-flex; align-items: center; gap: 10px; font-family: 'Manrope', sans-serif; font-size: 16px; color: #FFFFFF;"><span style="color: #2EE6B8;">✓</span>Fundo escuro com textura de grade</span>
+        <span style="display: inline-flex; align-items: center; gap: 10px; font-family: 'Manrope', sans-serif; font-size: 16px; color: #FFFFFF;"><span style="color: #2EE6B8;">✓</span>Gradiente mint #00819D → #00FFD1</span>
+        <span style="display: inline-flex; align-items: center; gap: 10px; font-family: 'Manrope', sans-serif; font-size: 16px; color: #FFFFFF;"><span style="color: #2EE6B8;">✓</span>Títulos em Bebas Neue</span>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="planos" data-screen-label="Investimento" style="position: relative; box-sizing: border-box; background: #000000; overflow: hidden;">
+
+
+
+  <div id="stryve-inv-inner" style="position: relative; z-index: 2; width: 100%; max-width: 1560px; margin: 0 auto; padding: 160px 80px 100px; box-sizing: border-box;">
+
+    <span data-reveal="" style="display: inline-flex; align-items: center; gap: 12px; font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: 0.4em; text-transform: uppercase; color: #2EE6B8;">
+      <span style="display: block; width: 28px; height: 1px; background: #2EE6B8;"></span>
+      Investimento
+    </span>
+
+    <h2 id="stryve-inv-h2" data-reveal="" style="margin: 20px 0 16px; font-family: 'Anton', 'Arial Narrow', sans-serif; font-weight: 400; font-size: 54px; line-height: 1.05; letter-spacing: 0.01em; color: #FFFFFF; text-transform: uppercase;">UM MODELO. RESULTADO MENSURÁVEL.</h2>
+
+    <p data-reveal="" style="margin: 0 0 60px; max-width: 700px; font-family: 'Manrope', sans-serif; font-size: 19px; line-height: 1.6; color: #CCCCCC; text-wrap: pretty;">Sem pacotes genéricos. Um retainer com escopo completo, que cresce junto com o seu negócio.</p>
+
+    <div id="stryve-inv-cols" style="display: grid; grid-template-columns: minmax(0, 60fr) minmax(0, 40fr); gap: 28px; align-items: stretch;">
+
+      <!-- CARTÃO PRINCIPAL -->
+      <article id="stryve-inv-main" data-card="" style="display: flex; flex-direction: column; padding: 48px; box-sizing: border-box; background: linear-gradient(160deg, rgba(46,230,184,0.1), rgba(46,230,184,0.03) 55%, #0A0A0A); border: 2px solid #2EE6B8; border-radius: 12px;">
+        <span style="font-family: 'Manrope', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.26em; text-transform: uppercase; color: #CCCCCC;">Retainer base</span>
+        <span id="stryve-inv-price" style="margin-top: 18px; font-family: 'Anton', 'Arial Narrow', sans-serif; font-size: 56px; line-height: 1.05; color: #2EE6B8; text-shadow: 0 0 40px rgba(46,230,184,0.4);">SOB CONSULTA</span>
+        <span style="margin-top: 10px; font-family: 'Manrope', sans-serif; font-size: 16px; color: #CCCCCC;">Mensal · 1 unidade/local</span>
+        <span style="margin-top: 8px; font-family: 'Manrope', sans-serif; font-size: 14px; color: #CCCCCC;">Contrato mínimo: 4 a 6 meses</span>
+
+        <span aria-hidden="true" style="display: block; height: 1px; margin: 32px 0; background: rgba(46,230,184,0.25);"></span>
+
+        <span style="margin-bottom: 18px; font-family: 'Manrope', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: #2EE6B8;">O que está incluso</span>
+        <ul style="margin: 0 0 36px; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          <li style="display: flex; gap: 12px; font-family: 'Manrope', sans-serif; font-size: 17px; line-height: 1.5; color: #FFFFFF;"><span style="color: #2EE6B8;">✓</span>Diagnóstico completo do negócio</li>
+          <li style="display: flex; gap: 12px; font-family: 'Manrope', sans-serif; font-size: 17px; line-height: 1.5; color: #FFFFFF;"><span style="color: #2EE6B8;">✓</span>Estratégia sob medida (Árvore de Metas)</li>
+          <li style="display: flex; gap: 12px; font-family: 'Manrope', sans-serif; font-size: 17px; line-height: 1.5; color: #FFFFFF;"><span style="color: #2EE6B8;">✓</span>Execução simultânea de conteúdo e tráfego pago</li>
+          <li style="display: flex; gap: 12px; font-family: 'Manrope', sans-serif; font-size: 17px; line-height: 1.5; color: #FFFFFF;"><span style="color: #2EE6B8;">✓</span>Monitoramento semanal com relatório real</li>
+          <li style="display: flex; gap: 12px; font-family: 'Manrope', sans-serif; font-size: 17px; line-height: 1.5; color: #FFFFFF;"><span style="color: #2EE6B8;">✓</span>Otimização contínua a cada ciclo</li>
+          <li style="display: flex; gap: 12px; font-family: 'Manrope', sans-serif; font-size: 17px; line-height: 1.5; color: #FFFFFF;"><span style="color: #2EE6B8;">✓</span>Plano de expansão quando a meta for batida</li>
+        </ul>
+
+        <a href="https://wa.me/5511991437244" target="_blank" rel="noopener" style="margin-top: auto; align-self: flex-start; display: inline-block; padding: 18px 48px; border-radius: 6px; background: #2EE6B8; color: #000000; font-family: 'Manrope', sans-serif; font-size: 17px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; white-space: nowrap; transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;" style-hover="transform: scale(1.05); background: #3af3c4; color: #000000; box-shadow: 0 0 40px rgba(46,230,184,0.65), 0 0 90px rgba(46,230,184,0.35);">Agendar diagnóstico</a>
+      </article>
+
+      <!-- COMPLEMENTOS -->
+      <div style="display: flex; flex-direction: column; gap: 28px;">
+
+        <article data-card="" style="display: flex; flex-direction: column; gap: 14px; padding: 24px; box-sizing: border-box; background: #0A0A0A; border: 1px solid rgba(46,230,184,0.15); border-radius: 8px; transition: border-color 0.3s ease, box-shadow 0.3s ease;" style-hover="border-color: #2EE6B8; box-shadow: 0 12px 40px rgba(46,230,184,0.14);">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#2EE6B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 14 L8 6 H28 L31 14"></path><path d="M7 14 V30 H29 V14"></path><path d="M18 21 V27"></path><path d="M15 24 H21"></path></svg>
+          <h3 style="margin: 0; font-family: 'Manrope', sans-serif; font-size: 18px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: #FFFFFF;">Unidade adicional</h3>
+          <span style="font-family: 'Anton', 'Arial Narrow', sans-serif; font-size: 26px; line-height: 1.1; color: #2EE6B8;">+ R$ 1.500 a R$ 2.000</span>
+          <span style="font-family: 'Manrope', sans-serif; font-size: 14px; color: #CCCCCC;">/mês por local extra</span>
+        </article>
+
+        <article data-card="" style="display: flex; flex-direction: column; gap: 14px; padding: 24px; box-sizing: border-box; background: #0A0A0A; border: 1px solid rgba(46,230,184,0.15); border-radius: 8px; transition: border-color 0.3s ease, box-shadow 0.3s ease;" style-hover="border-color: #2EE6B8; box-shadow: 0 12px 40px rgba(46,230,184,0.14);">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#2EE6B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="18" r="12"></circle><circle cx="18" cy="18" r="6.5"></circle><circle cx="18" cy="18" r="1.8" fill="#2EE6B8" stroke="none"></circle></svg>
+          <h3 style="margin: 0; font-family: 'Manrope', sans-serif; font-size: 18px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: #FFFFFF;">Bônus por resultado</h3>
+          <span style="font-family: 'Anton', 'Arial Narrow', sans-serif; font-size: 26px; line-height: 1.1; color: #2EE6B8;">R$ 800 a R$ 2.000</span>
+          <span style="font-family: 'Manrope', sans-serif; font-size: 14px; line-height: 1.5; color: #CCCCCC;">por meta atingida, conforme a Árvore de Metas</span>
+        </article>
+
+      </div>
+
+    </div>
+
+    <!-- CRITÉRIOS DE QUALIFICAÇÃO -->
+    <div id="stryve-inv-quali" data-reveal-fade="" style="margin-top: 60px; padding: 40px; box-sizing: border-box; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px;">
+      <span style="display: inline-flex; align-items: center; gap: 12px; font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: 0.4em; text-transform: uppercase; color: #2EE6B8;">
+        <span style="display: block; width: 28px; height: 1px; background: #2EE6B8;"></span>
+        Critérios de qualificação
+      </span>
+      <h3 style="margin: 18px 0 24px; font-family: 'Manrope', sans-serif; font-size: 23px; font-weight: 800; color: #FFFFFF;">Trabalhamos com negócios prontos para escalar.</h3>
+      <div id="stryve-inv-quali-list" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 40px;">
+        <span style="display: flex; gap: 12px; font-family: 'Manrope', sans-serif; font-size: 17px; line-height: 1.5; color: #FFFFFF;"><span style="color: #2EE6B8;">✓</span>Faturamento mensal a partir de R$ 10.000 a R$ 30.000</span>
+        <span style="display: flex; gap: 12px; font-family: 'Manrope', sans-serif; font-size: 17px; line-height: 1.5; color: #FFFFFF;"><span style="color: #2EE6B8;">✓</span>Orçamento de tráfego pago a partir de R$ 600/mês</span>
+      </div>
+      <p style="margin: 26px 0 0; max-width: 720px; font-family: 'Manrope', sans-serif; font-style: italic; font-size: 15px; line-height: 1.6; color: #CCCCCC; text-wrap: pretty;">Esse filtro existe para garantir que só entramos em parceria com negócios prontos para o método funcionar de verdade.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="contato" style="position: relative; box-sizing: border-box; background: #000000;">
+  <div style="position: relative; z-index: 2; width: 100%; max-width: 1560px; margin: 0 auto; padding: 0 80px; box-sizing: border-box;">
+<!-- ================= CTA FINAL ================= -->
+    <div id="stryve-cta-box" data-reveal-pop="" style="max-width: 900px; margin: 100px auto 80px; padding: 48px 64px; box-sizing: border-box; background: #000000; border: 1px solid rgba(46,230,184,0.2); border-radius: 16px; text-align: center;">
+      <h2 style="margin: 0; font-family: 'Anton', 'Arial Narrow', sans-serif; font-weight: 400; font-size: 40px; line-height: 1.1; letter-spacing: 0.01em; color: #FFFFFF; text-transform: uppercase;">PRONTO PARA CRESCER?</h2>
+      <p style="margin: 18px auto 0; max-width: 500px; font-family: 'Manrope', sans-serif; font-size: 17px; line-height: 1.6; color: #CCCCCC; text-wrap: pretty;">O seu próximo passo é uma conversa. Não cobramos pela reunião de diagnóstico — só pelo resultado.</p>
+      <div style="display: flex; justify-content: center; margin-top: 32px;">
+        <a id="stryve-cta-btn" href="https://wa.me/5500000000000" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; width: max-content; white-space: nowrap; gap: 12px; padding: 18px 48px; border-radius: 6px; background: #2EE6B8; color: #000000; font-family: 'Manrope', sans-serif; font-size: 17px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; animation: stryveBtnPulse 2.8s ease-in-out infinite; transition: transform 0.3s ease, background 0.3s ease;" style-hover="transform: scale(1.05); background: #3af3c4; color: #000000;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5v-.5l-.8-1.8c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-.9.9-.9 2.1s.9 2.5 1 2.6c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.2.7 3 .6.5 0 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3Z"></path></svg>
+          Chama no WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+  <footer id="stryve-footer" data-reveal-fade="" style="position: relative; z-index: 2; background: #050505; border-top: 1px solid rgba(255,255,255,0.08);">
+    <div id="stryve-footer-inner" style="width: 100%; max-width: 1560px; margin: 0 auto; padding: 60px 80px; box-sizing: border-box;">
+
+      <div id="stryve-footer-cols" style="display: grid; grid-template-columns: 1.15fr 1.2fr 1.1fr 0.9fr; gap: 48px;">
+
+        <div style="display: flex; flex-direction: column;">
+          <a href="#hero" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+            <span style="display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border: 1px solid rgba(46,230,184,0.6); border-radius: 50%; color: #2EE6B8; font-family: 'Playfair Display', serif; font-size: 19px; font-style: italic; line-height: 1; box-shadow: 0 0 14px rgba(46,230,184,0.3);">S</span>
+            <span style="font-family: 'Manrope', sans-serif; font-weight: 300; font-size: 24px; line-height: 1; letter-spacing: 0.26em; color: #FFFFFF;">STRYVE</span>
+          </a>
+          <p style="margin: 16px 0 0; max-width: 240px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 16px; line-height: 1.5; color: #2EE6B8;">Crescimento não é sorte. É processo.</p>
+        </div>
+
+        <div style="display: flex; flex-direction: column;">
+          <span style="margin-bottom: 16px; font-family: 'Manrope', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.26em; text-transform: uppercase; color: #CCCCCC;">Contato</span>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="https://wa.me/5511991437244" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; font-family: 'Manrope', sans-serif; font-size: 15px; color: #FFFFFF; text-decoration: none; transition: color 0.2s ease;" style-hover="color: #2EE6B8;">
+              <svg width="15" height="15" style="flex-shrink: 0;" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5v-.5l-.8-1.8c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-.9.9-.9 2.1s.9 2.5 1 2.6c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.2.7 3 .6.5 0 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3Z"></path></svg>
+              WhatsApp: 11 99143-7244
+            </a>
+            <a href="mailto:stryve.agency01@gmail.com" style="display: inline-flex; align-items: center; gap: 10px; font-family: 'Manrope', sans-serif; font-size: 15px; color: #FFFFFF; text-decoration: none; transition: color 0.2s ease;" style-hover="color: #2EE6B8;">
+              <svg width="15" height="15" style="flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"></rect><path d="M3 6.5 12 13l9-6.5"></path></svg>
+              stryve.agency01@gmail.com
+            </a>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column;">
+          <span style="margin-bottom: 16px; font-family: 'Manrope', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.26em; text-transform: uppercase; color: #CCCCCC;">Redes sociais</span>
+          <a href="https://instagram.com/stryve_ag" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; font-family: 'Manrope', sans-serif; font-size: 15px; color: #FFFFFF; text-decoration: none; transition: color 0.2s ease;" style-hover="color: #2EE6B8;">
+            <svg width="15" height="15" style="flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"></circle></svg>
+            Instagram: @stryve_ag
+          </a>
+          <div style="display: flex; gap: 12px; margin-top: 18px;">
+            <a href="https://instagram.com/stryve_ag" target="_blank" rel="noopener" aria-label="Instagram" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border: 1px solid rgba(46,230,184,0.45); border-radius: 50%; color: #2EE6B8; transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;" style-hover="background: #2EE6B8; color: #000000; box-shadow: 0 0 20px rgba(46,230,184,0.4);">
+              <svg width="17" height="17" style="flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"></circle></svg>
+            </a>
+            <a href="https://wa.me/5511991437244" target="_blank" rel="noopener" aria-label="WhatsApp" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border: 1px solid rgba(46,230,184,0.45); border-radius: 50%; color: #2EE6B8; transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;" style-hover="background: #2EE6B8; color: #000000; box-shadow: 0 0 20px rgba(46,230,184,0.4);">
+              <svg width="17" height="17" style="flex-shrink: 0;" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5v-.5l-.8-1.8c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-.9.9-.9 2.1s.9 2.5 1 2.6c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.2.7 3 .6.5 0 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3Z"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column;">
+          <span style="margin-bottom: 16px; font-family: 'Manrope', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.26em; text-transform: uppercase; color: #CCCCCC;">Navegação</span>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <a href="#manifesto" style="font-family: 'Manrope', sans-serif; font-size: 15px; color: #CCCCCC; text-decoration: none; transition: color 0.2s ease;" style-hover="color: #2EE6B8;">Manifesto</a>
+            <a href="#servicos" style="font-family: 'Manrope', sans-serif; font-size: 15px; color: #CCCCCC; text-decoration: none; transition: color 0.2s ease;" style-hover="color: #2EE6B8;">Serviços</a>
+            <a href="#metodo" style="font-family: 'Manrope', sans-serif; font-size: 15px; color: #CCCCCC; text-decoration: none; transition: color 0.2s ease;" style-hover="color: #2EE6B8;">Método</a>
+            <a href="#resultados" style="font-family: 'Manrope', sans-serif; font-size: 15px; color: #CCCCCC; text-decoration: none; transition: color 0.2s ease;" style-hover="color: #2EE6B8;">Resultados</a>
+            <a href="#planos" style="font-family: 'Manrope', sans-serif; font-size: 15px; color: #CCCCCC; text-decoration: none; transition: color 0.2s ease;" style-hover="color: #2EE6B8;">Planos</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="stryve-footer-bottom" style="margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08);">
+        <span style="font-family: 'Manrope', sans-serif; font-size: 12px; color: #666666;">© 2025 STRYVE. Todos os direitos reservados.</span>
+      </div>
+
+    </div>
+  </footer>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  componentDidMount() {
+    this.timers = [];
+    this.queue = [];
+    this.startVideos();
+    this.buildQueue();
+    this.initSnake();
+    this.initMenu();
+    this.smoothScroll();
+  }
+
+  componentWillUnmount() {
+    if (this.check) { window.removeEventListener('scroll', this.check); window.removeEventListener('resize', this.check); }
+    if (this.snakeScroll) window.removeEventListener('scroll', this.snakeScroll);
+    if (this.ro) this.ro.disconnect();
+    (this.timers || []).forEach((t) => clearTimeout(t));
+  }
+
+  /* ---------- vídeos de fundo (Hero + Resultados) ---------- */
+  startVideos() {
+    document.querySelectorAll('video[data-bgvideo]').forEach((v) => {
+      v.muted = true; v.defaultMuted = true; v.setAttribute('muted', '');
+      const tryPlay = () => { const p = v.play(); if (p && p.catch) p.catch(() => {}); };
+      tryPlay();
+      requestAnimationFrame(tryPlay);
+      ['loadeddata', 'canplay'].forEach((ev) => v.addEventListener(ev, tryPlay, { once: true }));
+      window.addEventListener('pointerdown', tryPlay, { once: true });
+      window.addEventListener('scroll', tryPlay, { once: true, passive: true });
+    });
+  }
+
+  /* ---------- reveal por scroll (cascata por seção) ---------- */
+  buildQueue() {
+    const vh = () => window.innerHeight || 0;
+    const add = (el, anim, delay) => {
+      const entry = { el: el, anim: anim, delay: delay || 0 };
+      if (el.getBoundingClientRect().top < vh() * 0.95) { this.show(entry); return; }
+      el.style.opacity = '0';
+      this.queue.push(entry);
+    };
+
+    document.querySelectorAll('section').forEach((section) => {
+      const items = Array.from(section.querySelectorAll('[data-reveal], [data-stat], [data-card], [data-pillar]'));
+      const immediate = section.id === 'hero';
+      items.forEach((el, i) => {
+        const pop = el.hasAttribute('data-stat') || el.hasAttribute('data-card');
+        const entry = { el: el, anim: pop ? 'stryvePop' : 'stryveUp', delay: Math.min(i, 8) * 0.09 };
+        if (immediate) { this.show(entry); return; }
+        add(el, entry.anim, entry.delay);
+      });
+    });
+
+    document.querySelectorAll('[data-step]').forEach((el) => add(el, 'stryveUp', 0));
+    document.querySelectorAll('[data-reveal-pop]').forEach((el) => add(el, 'stryvePop', 0));
+    document.querySelectorAll('[data-reveal-fade]').forEach((el) => add(el, 'stryveFade', 0));
+
+    this.check = () => {
+      if (this.raf) return;
+      this.raf = requestAnimationFrame(() => {
+        this.raf = null;
+        const limit = vh() * 0.92;
+        this.queue = this.queue.filter((entry) => {
+          if (entry.el.getBoundingClientRect().top > limit) return true;
+          this.show(entry);
+          return false;
+        });
+      });
+    };
+    window.addEventListener('scroll', this.check, { passive: true });
+    window.addEventListener('resize', this.check);
+    this.check();
+    // rede de segurança: nada pode ficar invisível
+    this.timers.push(setTimeout(() => { this.queue.forEach((e) => this.show(e)); this.queue = []; }, 4000));
+  }
+
+  show(entry) {
+    const el = entry.el;
+    if (el.dataset.shown) return;
+    el.dataset.shown = '1';
+    const wide = !window.matchMedia('(max-width: 1180px)').matches;
+    const glow = el.id === 'stryve-inv-main' && wide;
+    el.style.animation = entry.anim + ' 0.8s cubic-bezier(.2,.7,.2,1) ' + entry.delay.toFixed(2) + 's forwards' +
+      (glow ? ', stryveCardGlow 3.6s ease-in-out 1.2s infinite' : '');
+    this.timers.push(setTimeout(() => { el.style.opacity = '1'; }, 900 + entry.delay * 1000));
+
+    // badge do Motor de Crescimento
+    const badge = el.querySelector('[data-badge]');
+    if (badge) badge.style.animation = 'stryveCodeGlow 1.4s ease-out 0.15s both';
+
+    // estatística dos cartões de Serviços entra por último
+    const stat = el.querySelector('[data-stat-block]');
+    if (stat) stat.style.animation = 'stryveFadeStat 0.6s ease-out ' + (entry.delay + 0.45).toFixed(2) + 's both';
+
+    // contadores dos Números
+    const n = el.querySelector('[data-count]');
+    if (n) this.timers.push(setTimeout(() => this.count(n, parseInt(n.getAttribute('data-count'), 10), 1800), 200));
+
+    // barras dos pilares de conteúdo
+    const bar = el.querySelector('[data-bar]');
+    if (bar) this.timers.push(setTimeout(() => { bar.style.width = bar.getAttribute('data-bar') + '%'; }, 300 + entry.delay * 1000));
+
+    // trilho da rotina semanal
+    if (el.parentElement && el.parentElement.id === 'stryve-cont-week') {
+      const rail = document.querySelector('[data-rail]');
+      if (rail && !rail.dataset.drawn) { rail.dataset.drawn = '1'; this.timers.push(setTimeout(() => { rail.style.width = '100%'; }, 250)); }
+    }
+  }
+
+  count(el, to, duration) {
+    if (!el || el.dataset.counted) return;
+    el.dataset.counted = '1';
+    const start = performance.now();
+    const tick = (t) => {
+      const p = Math.min(1, (t - start) / duration);
+      el.textContent = String(Math.round(to * (1 - Math.pow(1 - p, 3))));
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+
+  /* ---------- "minhoca" diagonal do Motor de Crescimento ---------- */
+  initSnake() {
+    const svg = document.querySelector('[data-snake]');
+    if (!svg) return;
+    this.snake = { svg: svg, base: svg.querySelector('[data-snake-base]'), fill: svg.querySelector('[data-snake-fill]'), steps: Array.from(document.querySelectorAll('[data-step]')) };
+    this.buildPath();
+    this.snakeScroll = () => this.onSnakeScroll();
+    window.addEventListener('scroll', this.snakeScroll, { passive: true });
+    window.addEventListener('resize', () => this.buildPath());
+    if (window.ResizeObserver) { this.ro = new ResizeObserver(() => this.buildPath()); this.ro.observe(svg.parentElement); }
+  }
+
+  buildPath() {
+    const s = this.snake;
+    if (!s || !s.base || !s.fill) return;
+    const box = s.svg.parentElement.getBoundingClientRect();
+    s.svg.setAttribute('viewBox', '0 0 ' + Math.round(box.width) + ' ' + Math.round(box.height));
+    const pts = s.steps.map((el) => {
+      const dot = el.firstElementChild;
+      const r = (dot || el).getBoundingClientRect();
+      return { x: r.left - box.left + r.width / 2, y: r.top - box.top + r.height / 2 };
+    });
+    if (pts.length < 2) return;
+    let d = 'M ' + pts[0].x.toFixed(1) + ' ' + pts[0].y.toFixed(1);
+    for (let i = 1; i < pts.length; i++) {
+      const p0 = pts[i - 1], p1 = pts[i], midY = (p0.y + p1.y) / 2;
+      d += ' C ' + p0.x.toFixed(1) + ' ' + midY.toFixed(1) + ', ' + p1.x.toFixed(1) + ' ' + midY.toFixed(1) + ', ' + p1.x.toFixed(1) + ' ' + p1.y.toFixed(1);
+    }
+    s.base.setAttribute('d', d);
+    s.fill.setAttribute('d', d);
+    this.pathLen = s.fill.getTotalLength ? s.fill.getTotalLength() : 0;
+    s.fill.style.strokeDasharray = this.pathLen + 'px';
+    s.fill.style.strokeDashoffset = this.pathLen + 'px';
+    this.onSnakeScroll();
+  }
+
+  onSnakeScroll() {
+    if (this.snakeRaf) return;
+    this.snakeRaf = requestAnimationFrame(() => {
+      this.snakeRaf = null;
+      const s = this.snake;
+      if (!s || !this.pathLen) return;
+      const box = s.svg.parentElement.getBoundingClientRect();
+      const total = Math.max(1, box.height * 0.85);
+      const progress = Math.max(0, Math.min(1, ((window.innerHeight || 0) * 0.72 - box.top) / total));
+      s.fill.style.strokeDashoffset = (this.pathLen * (1 - progress)).toFixed(1) + 'px';
+    });
+  }
+
+  /* ---------- submenu "Método": hover no desktop, accordion no mobile ---------- */
+  initMenu() {
+    const nav = document.getElementById('stryve-nav');
+    const burger = document.getElementById('stryve-burger');
+    const group = document.getElementById('stryve-metodo-menu');
+    const trigger = document.getElementById('stryve-metodo-trigger');
+    const isMobile = () => window.matchMedia('(max-width: 1023px)').matches;
+
+    if (burger && nav) {
+      burger.addEventListener('click', () => {
+        if (nav.hasAttribute('data-open')) nav.removeAttribute('data-open');
+        else nav.setAttribute('data-open', '');
+      });
+    }
+    if (trigger && group) {
+      trigger.addEventListener('click', (e) => {
+        if (!isMobile()) return;
+        e.preventDefault();
+        if (group.hasAttribute('data-expanded')) group.removeAttribute('data-expanded');
+        else group.setAttribute('data-expanded', '');
+      });
+    }
+    if (group && !isMobile()) {
+      const open = () => { clearTimeout(this.dropTimer); group.setAttribute('data-open', ''); };
+      const close = () => { this.dropTimer = setTimeout(() => group.removeAttribute('data-open'), 180); };
+      group.addEventListener('pointerenter', open);
+      group.addEventListener('pointerleave', close);
+      group.addEventListener('focusin', open);
+      group.addEventListener('focusout', close);
+      group.querySelectorAll('a[href^="#"]').forEach((a) => a.addEventListener('click', () => group.removeAttribute('data-open')));
+    }
+    if (nav) {
+      nav.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener('click', () => { if (isMobile() && a.id !== 'stryve-metodo-trigger') nav.removeAttribute('data-open'); });
+      });
+    }
+  }
+
+  /* ---------- scroll suave do menu ---------- */
+  smoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach((a) => {
+      a.addEventListener('click', (e) => {
+        const target = document.getElementById(a.getAttribute('href').slice(1));
+        if (!target) return;
+        e.preventDefault();
+        window.scrollTo({ top: target.getBoundingClientRect().top + (window.scrollY || 0) - 76, behavior: 'smooth' });
+      });
+    });
+  }
+
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

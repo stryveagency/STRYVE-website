@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-black: #000000;
+  --color-teal-neon: #2ee6b8;
+  --color-teal-neon-light: #7ff5d8;
+  --color-teal-neon-bright: #3af3c4;
+  --color-gray-light: #cccccc;
+
+  --font-anton: "Anton", "Arial Narrow", sans-serif;
+  --font-manrope: "Manrope", system-ui, sans-serif;
+  --font-playfair: "Playfair Display", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-bg-black);
+}
+
+body {
+  font-family: var(--font-manrope);
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer base {
+  a {
+    color: var(--color-teal-neon);
+  }
+}
+
+@keyframes stryve-header-in {
+  from {
+    opacity: 0;
+    transform: translateY(-14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes stryve-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes stryve-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes stryve-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes stryve-pulse {
+  0%,
+  100% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes stryve-code-glow {
+  0% {
+    box-shadow: 0 0 0 rgba(46, 230, 184, 0);
+  }
+  45% {
+    box-shadow: 0 0 26px rgba(46, 230, 184, 0.55);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(46, 230, 184, 0);
+  }
+}
+
+@keyframes stryve-highlight {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+@keyframes stryve-btn-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 rgba(46, 230, 184, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 34px rgba(46, 230, 184, 0.55);
+  }
+}
+
+.reveal-hidden {
+  opacity: 0;
+}
+
+.reveal-up {
+  animation: stryve-up 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.reveal-pop {
+  animation: stryve-pop 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.reveal-fade {
+  animation: stryve-fade 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}

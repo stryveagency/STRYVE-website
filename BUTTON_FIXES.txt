@@ -1,0 +1,13 @@
+Ajustar textos dos botões nos planos e CTA final.
+
+TAREFA 1 - Planos.tsx:
+- Plano "Essencial": botão continua "SOLICITAR PROPOSTA"
+- Plano "Crescimento" (destacado em teal): mudar botão de "SOLICITAR PROPOSTA" para "FALAR COM A STRYVE"
+- Plano "Performance": botão continua "SOLICITAR PROPOSTA"
+
+TAREFA 2 - CtaWhatsApp.tsx:
+- Adicionar ícone WhatsApp (SVG simples ou emoji 📱) antes do texto do botão
+- Texto do botão: "CHAMA NO WHATSAPP"
+- Resultado final: [WhatsApp icon] CHAMA NO WHATSAPP
+
+Fazer essas mudanças agora.

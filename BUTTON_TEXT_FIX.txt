@@ -1,0 +1,12 @@
+Adicionar textos nos botões que estão renderizando vazios.
+
+TAREFA: Planos.tsx
+- Botão do plano "Essencial": adicionar texto "SOLICITAR PROPOSTA"
+- Botão do plano "Crescimento" (teal): adicionar texto "FALAR COM A STRYVE"
+- Botão do plano "Performance": adicionar texto "SOLICITAR PROPOSTA"
+
+TAREFA: CtaWhatsApp.tsx
+- Botão principal: verificar se tem o ícone WhatsApp + texto "CHAMA NO WHATSAPP"
+- Se estiver faltando, adicionar ambos
+
+Verificar se o texto está sendo renderizado corretamente (branco sobre fundo teal deve ser visível).

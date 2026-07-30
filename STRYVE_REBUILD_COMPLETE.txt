@@ -1,0 +1,159 @@
+REBUILD COMPLETO DA LANDING PAGE STRYVE — Nova Estrutura Consolidada
+
+CONTEXTO:
+Versão anterior (S.T.R.I.D.E 6 etapas + 3 planos Essencial/Crescimento/Performance) será completamente substituída pela nova estrutura consolidada com Motor de Crescimento + 2 novas seções (Tráfego Pago + Conteúdo) + novo modelo único de Planos.
+
+ARQUIVO PRINCIPAL: STRYVE_Landing_Final_html.html (locação: projeto local em design-reference/)
+Este HTML consolidado é a fonte de verdade — reflete toda ordem, conteúdo, CSS e estrutura novos.
+
+ORDEM FINAL (11 seções):
+1. Navbar (fixa) — com submenu dropdown em "MÉTODO"
+2. Hero — vídeo de fundo (hero-background.mp4)
+3. Manifesto — novo background de imagem
+4. Serviços — versão enriquecida com dados do Playbook
+5. Motor de Crescimento — 6 etapas (Diagnóstico, Árvore de Metas, Ciclos de Execução, Ritual de Medição, Otimização, Expansão)
+6. Resultados — vídeo de fundo (resultados-background.mp4) — MOVIDO para depois do Motor
+7. Metodologia de Tráfego Pago — NOVA seção
+8. Metodologia de Conteúdo — NOVA seção
+9. Planos — novo modelo único (Retainer + unidade adicional + bônus por resultado + qualificação)
+10. CTA Final — WhatsApp
+11. Footer
+
+
+REFERÊNCIAS VISUAIS (USAR COMO GUIA PIXEL-A-PIXEL):
+
+Antes de implementar cada componente, ABRA o print correspondente na pasta design-reference/ 
+e use como guia visual. Não reinterprete — preserve cores, espaçamento, tipografia e animações 
+exatamente como no print.
+
+Prints de referência a usar:
+
+REFERÊNCIA GERAL:
+- nova-landing-consolidada.png — page completa, conferência geral de ordem
+
+COMPONENTES EXISTENTES (não mudaram conteúdo, mas conferir layout):
+- sessão-hero.png → implementar Hero.tsx conforme
+- sessão-manifesto.png → implementar Manifesto.tsx conforme
+- sessão-resultados.png → implementar Resultados.tsx conforme
+- cabeçalho.png → conferir Navbar (antes de adicionar submenu)
+- rodapé.png → conferir Footer
+
+NAVBAR (COM NOVO SUBMENU):
+- novo-cabeçalho-com-dropdown.png → Navbar ATUALIZADO com submenu
+- novo-dropdown-do-cabecalho.png → detalhe visual do dropdown funcionando
+
+COMPONENTES ALTERADOS (NOVO/ENRIQUECIDO):
+- nova-sessão-servicos.png → Servicos.tsx ATUALIZADO com dados estatísticos
+- novo-background-sessão-manifesto.(jpg|png) → imagem de fundo para Manifesto.tsx
+
+COMPONENTES NOVOS:
+- nova-sessão-metodo(motor_de_crescimento).png → MotorDeCrescimento.tsx (6 etapas)
+- nova-sessão-metodologia-trafegopago.png → TrafegoPago.tsx
+- nova-sessão-metodologia-conteudo.png → Conteudo.tsx
+- nova-sessão-planos(investimentos).png → Planos.tsx (modelo único)
+
+WORKFLOW DE IMPLEMENTAÇÃO:
+1. Abrir STRYVE_Landing_Final_html.html → entender estrutura HTML
+2. Para cada componente:
+   a. Abrir o print correspondente (acima)
+   b. Analisar cores, espaçamento, tipografia, layout
+   c. Implementar no React/Tailwind preservando pixel-perfect
+   d. Depois de implementado, tirar screenshot local
+   e. Comparar lado-a-lado com o print original
+   f. Flag diferenças e corrigir iterativamente
+3. Usar nova-landing-consolidada.png para verificar ordem final da página
+
+Se algum print não existir na pasta design-reference/, avisar qual está faltando.
+
+
+
+TAREFAS:
+
+TAREFA 1 — ATUALIZAR/REORDENAR COMPONENTES EXISTENTES:
+- Navbar.tsx: adicionar SUBMENU dropdown no item "MÉTODO"
+  * Submenu tem 2 sub-itens: "Tráfego Pago" (#trafego) e "Conteúdo" (#conteudo)
+  * Submenu deve aparecer com animação suave no hover
+  * Menu mobile (hamburger): o dropdown também funciona em mobile
+- Hero.tsx: nenhuma mudança estrutural (vídeo continua igual)
+- Manifesto.tsx: verificar se tem novo background de imagem (novo-background-sessão-manifesto) — se houver, adicionar
+- Serviços.tsx: ATUALIZAR para versão enriquecida (adicionar dados estatísticos por card, conforme HTML)
+- Resultados.tsx: REORDENAR — essa seção agora vem DEPOIS do Motor de Crescimento (não antes)
+- Planos.tsx: COMPLETAMENTE NOVO — sair do modelo 3 cartões (Essencial/Crescimento/Performance) para modelo único com:
+  * Retainer base: R$4.997/mês (1 local/unidade)
+  * Unidade adicional: +R$1.500 a R$2.000/mês
+  * Bônus por resultado: R$800 a R$2.000 por meta
+  * Bloco de qualificação: faturamento ≥R$10-30k, orçamento tráfego ≥R$600/mês
+
+TAREFA 2 — CRIAR NOVOS COMPONENTES:
+- Metodo.tsx → renomear/atualizar para MotorDeCrescimento.tsx (NOVO: substitui o antigo Método/S.T.R.I.D.E)
+  * 6 etapas com estrutura: Diagnóstico, Árvore de Metas, Ciclos de Execução, Ritual de Medição, Otimização, Expansão
+  * Cada etapa tem artefato obrigatório + dono responsável
+  * Conforme o HTML consolidado, pode incluir timeline visual
+  
+- TrafegoPago.tsx (NOVO)
+  * Seção com metodologia de tráfego pago
+  * Estrutura: Hook→Dor→Solução→CTA (3 variações de criativo)
+  * Métricas de otimização semanal
+  * ID: #trafego (para anchor do submenu)
+
+- Conteudo.tsx (NOVO)
+  * Seção com metodologia de conteúdo
+  * Rotina semanal seg-sex
+  * 4 pilares com porcentagens (%)
+  * Identidade visual obrigatória
+  * ID: #conteudo (para anchor do submenu)
+
+TAREFA 3 — ATUALIZAR App.tsx:
+Importar e renderizar TODOS os componentes na nova ordem:
+
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Manifesto from './components/Manifesto';
+import Servicos from './components/Servicos';
+import MotorDeCrescimento from './components/MotorDeCrescimento';
+import Resultados from './components/Resultados';
+import TrafegoPago from './components/TrafegoPago';
+import Conteudo from './components/Conteudo';
+import Planos from './components/Planos';
+import CtaWhatsApp from './components/CtaWhatsApp';
+import Footer from './components/Footer';
+
+<Navbar />
+<Hero id="hero" />
+<Manifesto id="manifesto" />
+<Servicos id="servicos" />
+<MotorDeCrescimento id="metodo" />
+<Resultados id="resultados" />
+<TrafegoPago id="trafego" />
+<Conteudo id="conteudo" />
+<Planos id="planos" />
+<CtaWhatsApp />
+<Footer />
+
+TAREFA 4 — ASSETS (vídeos e imagens):
+- hero-background.mp4 → /public/videos/hero-bust.mp4 (sem alteração)
+- resultados-background.mp4 → /public/videos/resultados-bust.mp4 (sem alteração)
+- novo-background-sessão-manifesto (se houver) → /public/images/manifesto-bg.jpg (ou PNG)
+  * Se a imagem existir, referenciá-la na seção Manifesto como background
+
+TAREFA 5 — PRESERVAR E VALIDAR:
+- Cores: preto #000000, teal #2EE6B8, branco #FFFFFF, cinza #CCCCCC (extrair do HTML)
+- Tipografia: Anton (headlines), Manrope (corpo), Playfair Display (detalhe)
+- Animações: scroll-reveal, fade-in, hover states, contadores animados (conforme HTML)
+- Responsividade: mobile, tablet, desktop (conforme HTML tem media queries)
+- Smooth scroll: menu links funcionam corretamente para IDs das seções
+
+TAREFA 6 — TESTE E COMPARAÇÃO:
+- npm run dev (rodar local)
+- Tirar screenshots de cada seção em desktop
+- Comparar com os prints originais da pasta design-reference/
+- Flag qualquer diferença em cores, espaçamento, tipografia, animações
+- Corrigir até bater 100%
+
+NOTA IMPORTANTE:
+Este rebuild substitui COMPLETAMENTE a estrutura anterior (S.T.R.I.D.E + 3 planos).
+A ordem das seções muda: Resultados sai de antes do Motor e vai para depois do Motor.
+2 novas seções são adicionadas (Tráfego Pago + Conteúdo).
+1 novo submenu é adicionado ao Navbar.
+
+Comece agora.
