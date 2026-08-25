@@ -1,68 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import Reveal from './Reveal'
 
-const week = [
-  {
-    day: 'Segunda',
-    desc: 'Planejamento da pauta',
-    icon: (
-      <>
-        <rect x="5" y="7" width="24" height="22" rx="3" />
-        <path d="M5 14 H29" />
-        <path d="M11 4 V9" />
-        <path d="M23 4 V9" />
-        <path d="M11 20 H17" />
-      </>
-    ),
-  },
-  {
-    day: 'Terça',
-    desc: 'Produção / roteiro',
-    icon: (
-      <>
-        <path d="M8 4 H21 L26 9 V30 H8 Z" />
-        <path d="M21 4 V9 H26" />
-        <path d="M12 15 H22" />
-        <path d="M12 20 H22" />
-        <path d="M12 25 H18" />
-      </>
-    ),
-  },
-  {
-    day: 'Quarta',
-    desc: 'Edição',
-    icon: (
-      <>
-        <circle cx="9" cy="25" r="4" />
-        <circle cx="25" cy="25" r="4" />
-        <path d="M12 22 L26 6" />
-        <path d="M22 22 L8 6" />
-      </>
-    ),
-  },
-  {
-    day: 'Quinta',
-    desc: 'Publicação',
-    icon: (
-      <>
-        <circle cx="17" cy="17" r="12" />
-        <path d="M14 11.5 L24 17 L14 22.5 Z" />
-      </>
-    ),
-  },
-  {
-    day: 'Sexta',
-    desc: 'Análise e ajuste',
-    icon: (
-      <>
-        <circle cx="15" cy="15" r="9" />
-        <path d="M21.5 21.5 L29 29" />
-        <path d="M11 17 L14 13 L17 15.5 L20 10" />
-      </>
-    ),
-  },
-]
-
 const pillars = [
   {
     pct: 35,
@@ -84,13 +22,6 @@ const pillars = [
     title: 'Conversão',
     desc: 'Oferta direta, CTA pra agendar diagnóstico',
   },
-]
-
-const identity = [
-  'Busto de mármore clássico em pose contextual',
-  'Fundo escuro com textura de grade',
-  'Gradiente mint #00819D → #00FFD1',
-  'Títulos em Bebas Neue',
 ]
 
 function useInView<T extends HTMLElement>() {
@@ -121,51 +52,6 @@ function useInView<T extends HTMLElement>() {
   }, [])
 
   return { ref, inView }
-}
-
-function WeekRail() {
-  const { ref, inView } = useInView<HTMLDivElement>()
-
-  return (
-    <div ref={ref} className="relative">
-      <div aria-hidden="true" className="absolute inset-x-0 top-[42px] h-0.5 bg-teal-neon/16" />
-      <div
-        aria-hidden="true"
-        className="absolute top-[42px] left-0 h-0.5 shadow-[0_0_12px_rgba(46,230,184,0.6)] transition-[width] duration-[1200ms] ease-[cubic-bezier(0.2,0.7,0.2,1)]"
-        style={{
-          width: inView ? '100%' : '0%',
-          background: 'linear-gradient(to right, #2EE6B8, rgba(46,230,184,0.6))',
-        }}
-      />
-      <div className="relative grid grid-cols-1 gap-5 sm:grid-cols-3 lg:grid-cols-5">
-        {week.map((d, i) => (
-          <Reveal
-            key={d.day}
-            delay={i}
-            className="flex flex-col gap-3.5 rounded-lg border border-teal-neon/18 bg-white/3 p-6"
-          >
-            <span className="font-manrope text-[17px] font-extrabold tracking-[0.18em] text-teal-neon uppercase">
-              {d.day}
-            </span>
-            <svg
-              width="34"
-              height="34"
-              viewBox="0 0 34 34"
-              fill="none"
-              stroke="#2EE6B8"
-              strokeWidth="1.4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-            >
-              {d.icon}
-            </svg>
-            <p className="m-0 font-manrope text-base leading-[1.5] text-gray-light">{d.desc}</p>
-          </Reveal>
-        ))}
-      </div>
-    </div>
-  )
 }
 
 function PillarBar({ pct }: { pct: number }) {
@@ -206,10 +92,8 @@ function Conteudo() {
           delay={2}
           className="mb-15 max-w-[700px] font-manrope text-lg leading-[1.6] text-gray-light text-pretty"
         >
-          3 publicações por semana — consistência importa mais que volume.
+          Consistência importa mais que volume.
         </Reveal>
-
-        <WeekRail />
 
         <Reveal
           as="h3"
@@ -235,28 +119,6 @@ function Conteudo() {
             </Reveal>
           ))}
         </div>
-
-        <Reveal
-          anim="fade"
-          className="mt-15 rounded-xl border border-teal-neon/20 p-8 sm:p-10"
-          style={{
-            background:
-              'linear-gradient(150deg, rgba(46,230,184,0.09), rgba(46,230,184,0.03) 60%, rgba(10,10,10,1))',
-          }}
-        >
-          <span className="inline-flex items-center gap-3 font-manrope text-sm font-medium tracking-[0.4em] text-teal-neon uppercase">
-            <span className="block h-px w-7 bg-teal-neon" />
-            Identidade obrigatória em todo post
-          </span>
-          <div className="mt-5.5 flex flex-wrap gap-x-7 gap-y-3">
-            {identity.map((item) => (
-              <span key={item} className="inline-flex items-center gap-2.5 font-manrope text-base text-white">
-                <span className="text-teal-neon">✓</span>
-                {item}
-              </span>
-            ))}
-          </div>
-        </Reveal>
       </div>
     </section>
   )

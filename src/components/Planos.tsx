@@ -120,25 +120,6 @@ function Planos() {
               <span className="font-anton text-[26px] leading-[1.1] text-teal-neon">+ R$ 1.500 a R$ 2.000</span>
               <span className="font-manrope text-sm text-gray-light">/mês por local extra</span>
             </Reveal>
-
-            <Reveal
-              anim="pop"
-              delay={2}
-              className="flex flex-col gap-3.5 rounded-lg border border-teal-neon/15 bg-[#0A0A0A] p-6 transition-all duration-300 ease-out hover:border-teal-neon hover:shadow-[0_12px_40px_rgba(46,230,184,0.14)]"
-            >
-              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#2EE6B8" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <circle cx="18" cy="18" r="12" />
-                <circle cx="18" cy="18" r="6.5" />
-                <circle cx="18" cy="18" r="1.8" fill="#2EE6B8" stroke="none" />
-              </svg>
-              <h3 className="m-0 font-manrope text-lg font-extrabold tracking-[0.04em] text-white uppercase">
-                Bônus por resultado
-              </h3>
-              <span className="font-anton text-[26px] leading-[1.1] text-teal-neon">R$ 800 a R$ 2.000</span>
-              <span className="font-manrope text-sm leading-[1.5] text-gray-light">
-                por meta atingida, conforme a Árvore de Metas
-              </span>
-            </Reveal>
           </div>
         </div>
 

@@ -1,45 +1,45 @@
-import { Fragment } from 'react'
 import Reveal from './Reveal'
 
-const flow = [
-  { code: '01 · HOOK', desc: '3 primeiros segundos capturam a atenção' },
-  { code: '02 · DOR/DESEJO', desc: 'Nomeia o problema real do dono de negócio local' },
-  { code: '03 · SOLUÇÃO', desc: 'Motor de Crescimento STRYVE, de forma clara' },
-  { code: '04 · CTA', desc: 'Uma ação só: agendar diagnóstico gratuito' },
-]
-
-const variations = [
+const benefits = [
   {
-    title: 'Produto',
-    desc: 'Destaque direto do que a STRYVE oferece',
+    title: 'Mais clientes qualificados',
+    desc: 'Tráfego direcionado pra quem já procura o que você oferece.',
     icon: (
       <>
-        <path d="M22 6 L36 13 V30 L22 37 L8 30 V13 Z" />
-        <path d="M8 13 L22 20 L36 13" />
-        <path d="M22 20 V37" />
+        <circle cx="17" cy="17" r="12" />
+        <circle cx="17" cy="17" r="7" />
+        <circle cx="17" cy="17" r="2" fill="#2EE6B8" stroke="none" />
       </>
     ),
   },
   {
-    title: 'Experiência',
-    desc: 'Depoimento / jornada de um cliente real',
+    title: 'Sem desperdício de verba',
+    desc: 'O que não converte para. O que funciona escala.',
     icon: (
       <>
-        <path d="M7 11 H37 V29 H20 L11 36 V29 H7 Z" />
-        <path d="M14 17 H30" />
-        <path d="M14 23 H25" />
+        <path d="M6 6 H28 L19 18 V27 L15 25 V18 Z" />
       </>
     ),
   },
   {
-    title: 'História',
-    desc: 'Transformação de um cliente, antes/depois',
+    title: 'Decisão por dado',
+    desc: 'Toda campanha é acompanhada por métricas reais, não por achismo.',
     icon: (
       <>
-        <path d="M7 28 H17 V37 H7 Z" />
-        <path d="M27 12 H37 V37 H27 Z" />
-        <path d="M19 20 H31" />
-        <path d="M27 15 L32 20 L27 25" />
+        <path d="M6 27 H28" />
+        <rect x="9" y="16" width="4" height="11" />
+        <rect x="16" y="10" width="4" height="17" />
+        <rect x="23" y="20" width="4" height="7" />
+      </>
+    ),
+  },
+  {
+    title: 'Previsibilidade pra escalar',
+    desc: 'Estrutura testada e repetível, que cresce junto com o seu negócio.',
+    icon: (
+      <>
+        <path d="M6 24 L14 16 L19 20 L28 9" />
+        <path d="M21 9 H28 V16" />
       </>
     ),
   },
@@ -106,50 +106,21 @@ function TrafegoPago() {
           delay={2}
           className="mb-15 max-w-[700px] font-manrope text-lg leading-[1.6] text-gray-light text-pretty"
         >
-          1 campanha por objetivo, com 3 criativos em teste A/B simultâneo. Estrutura testada, não achismo.
+          Cada real investido é rastreado até o resultado. Decisão por dado, não por achismo.
         </Reveal>
 
-        <div className="flex flex-col gap-5 lg:flex-row lg:items-stretch">
-          {flow.map((step, i) => (
-            <Fragment key={step.code}>
-              <Reveal
-                anim="pop"
-                delay={i}
-                className="flex flex-1 flex-col gap-3 rounded-lg border border-teal-neon/18 bg-white/3 p-6"
-              >
-                <span className="font-anton text-xl tracking-[0.08em] text-teal-neon">{step.code}</span>
-                <p className="m-0 font-manrope text-base leading-[1.6] text-gray-light text-pretty">
-                  {step.desc}
-                </p>
-              </Reveal>
-              {i < flow.length - 1 && (
-                <span aria-hidden="true" className="self-center font-manrope text-2xl leading-none text-teal-neon">
-                  →
-                </span>
-              )}
-            </Fragment>
-          ))}
-        </div>
-
-        <Reveal
-          as="h3"
-          className="mt-15 mb-8 font-manrope text-2xl font-extrabold tracking-[0.02em] text-white uppercase lg:text-[26px]"
-        >
-          3 variações por campanha
-        </Reveal>
-
-        <div className="grid grid-cols-1 gap-7 sm:grid-cols-3">
-          {variations.map((v, i) => (
+        <div className="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-4">
+          {benefits.map((b, i) => (
             <Reveal
-              key={v.title}
+              key={b.title}
               anim="pop"
               delay={i}
               className="flex flex-col gap-4.5 rounded-lg border border-teal-neon/15 bg-[#0A0A0A] p-9 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-teal-neon hover:bg-[#0C110F] hover:shadow-[0_12px_44px_rgba(46,230,184,0.16)]"
             >
               <svg
-                width="44"
-                height="44"
-                viewBox="0 0 44 44"
+                width="34"
+                height="34"
+                viewBox="0 0 34 34"
                 fill="none"
                 stroke="#2EE6B8"
                 strokeWidth="1.4"
@@ -157,12 +128,12 @@ function TrafegoPago() {
                 strokeLinejoin="round"
                 aria-hidden="true"
               >
-                {v.icon}
+                {b.icon}
               </svg>
               <h4 className="m-0 font-manrope text-xl font-extrabold tracking-[0.04em] text-white uppercase">
-                {v.title}
+                {b.title}
               </h4>
-              <p className="m-0 font-manrope text-base leading-[1.6] text-gray-light text-pretty">{v.desc}</p>
+              <p className="m-0 font-manrope text-base leading-[1.6] text-gray-light text-pretty">{b.desc}</p>
             </Reveal>
           ))}
         </div>
