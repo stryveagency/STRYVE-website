@@ -97,7 +97,7 @@ function Resultados() {
               className="font-anton text-[60px] leading-none tracking-[0.01em] text-teal-neon sm:text-[72px] lg:text-[92px]"
               style={{ textShadow: '0 0 40px rgba(46,230,184,0.35)' }}
             >
-              <Counter target={50} />+
+              <Counter target={10} />+
             </span>
             <span className="mt-3 font-manrope text-[17px] font-medium tracking-[0.14em] text-white uppercase">
               Clientes atendidos
