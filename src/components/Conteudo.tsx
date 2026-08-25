@@ -70,7 +70,7 @@ function PillarBar({ pct }: { pct: number }) {
 function Conteudo() {
   return (
     <section id="conteudo" className="relative overflow-hidden bg-black">
-      <div className="relative z-2 mx-auto w-full max-w-[1560px] px-6 pt-15 pb-20 sm:px-10 sm:pt-15 sm:pb-22 lg:px-20 lg:pt-15 lg:pb-25">
+      <div className="relative z-2 mx-auto w-full max-w-[1560px] px-6 pt-[130px] pb-20 sm:px-10 sm:pt-[140px] sm:pb-22 lg:px-20 lg:pt-[160px] lg:pb-25">
         <Reveal
           as="span"
           className="inline-flex items-center gap-3 font-manrope text-sm font-medium tracking-[0.4em] text-teal-neon uppercase"

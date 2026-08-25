@@ -16,9 +16,31 @@ const qualificacao = [
   'Orçamento de tráfego pago a partir de R$ 600/mês',
 ]
 
+const investimentoFacts: { title: string; stat?: string; desc: string }[] = [
+  {
+    title: 'Por unidade/local',
+    desc: 'O retainer cobre 1 endereço. Cada local adicional soma ao investimento.',
+  },
+  {
+    title: 'Unidade adicional',
+    stat: '+R$1.500–2.000',
+    desc: '/mês por local extra',
+  },
+  {
+    title: 'Contrato mínimo',
+    stat: '4–6 meses',
+    desc: 'Tempo pro Motor de Crescimento rodar um ciclo completo, do diagnóstico à otimização.',
+  },
+]
+
 function Planos() {
   return (
     <section id="planos" className="relative overflow-hidden bg-black">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-40 -left-40 z-0 h-[520px] w-[520px] rounded-full blur-[120px]"
+        style={{ background: 'radial-gradient(circle, rgba(46,230,184,0.16), transparent 70%)' }}
+      />
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 z-1"
@@ -55,7 +77,7 @@ function Planos() {
           Sem pacotes genéricos. Um retainer com escopo completo, que cresce junto com o seu negócio.
         </Reveal>
 
-        <div className="grid grid-cols-1 items-stretch gap-7 lg:grid-cols-[60fr_40fr]">
+        <div className="grid grid-cols-1 items-start gap-7 lg:grid-cols-[60fr_40fr]">
           {/* RETAINER PRINCIPAL */}
           <Reveal
             anim="pop"
@@ -101,26 +123,62 @@ function Planos() {
             </a>
           </Reveal>
 
-          {/* COMPLEMENTOS */}
-          <div className="flex flex-col gap-7">
-            <Reveal
-              anim="pop"
-              delay={1}
-              className="flex flex-col gap-3.5 rounded-lg border border-teal-neon/15 bg-[#0A0A0A] p-6 transition-all duration-300 ease-out hover:border-teal-neon hover:shadow-[0_12px_40px_rgba(46,230,184,0.14)]"
-            >
-              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#2EE6B8" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          {/* COMO O INVESTIMENTO FUNCIONA */}
+          <Reveal
+            anim="pop"
+            delay={1}
+            className="relative flex flex-col overflow-hidden rounded-xl border border-teal-neon/30 p-7 transition-all duration-300 ease-out hover:border-teal-neon sm:p-8"
+            style={{
+              background: 'linear-gradient(165deg, rgba(46,230,184,0.1), rgba(46,230,184,0.02) 55%, #0A0A0A)',
+              boxShadow: '0 0 50px rgba(46,230,184,0.08)',
+            }}
+          >
+            <span className="mb-7 inline-flex items-center gap-2.5 font-manrope text-xs font-bold tracking-[0.24em] text-teal-neon uppercase">
+              <svg width="26" height="26" viewBox="0 0 36 36" fill="none" stroke="#2EE6B8" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M5 14 L8 6 H28 L31 14" />
                 <path d="M7 14 V30 H29 V14" />
                 <path d="M18 21 V27" />
                 <path d="M15 24 H21" />
               </svg>
-              <h3 className="m-0 font-manrope text-lg font-extrabold tracking-[0.04em] text-white uppercase">
-                Unidade adicional
-              </h3>
-              <span className="font-anton text-[26px] leading-[1.1] text-teal-neon">+ R$ 1.500 a R$ 2.000</span>
-              <span className="font-manrope text-sm text-gray-light">/mês por local extra</span>
-            </Reveal>
-          </div>
+              Como o investimento funciona
+            </span>
+
+            <div className="relative flex flex-col gap-6">
+              <span
+                aria-hidden="true"
+                className="absolute top-1 bottom-1 left-[13.5px] w-px"
+                style={{
+                  background: 'linear-gradient(to bottom, rgba(46,230,184,0.5), rgba(46,230,184,0.06))',
+                }}
+              />
+              {investimentoFacts.map((f, i) => (
+                <div key={f.title} className="relative flex gap-4">
+                  <span className="relative z-1 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border border-teal-neon/60 bg-[#0A0A0A] font-anton text-[13px] text-teal-neon">
+                    {i + 1}
+                  </span>
+                  <div className="flex flex-1 flex-col gap-1 pt-0.5">
+                    <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-0.5">
+                      <span className="font-manrope text-base font-extrabold text-white">{f.title}</span>
+                      {f.stat && (
+                        <span
+                          className="font-anton text-xl leading-none whitespace-nowrap text-teal-neon"
+                          style={{ textShadow: '0 0 18px rgba(46,230,184,0.4)' }}
+                        >
+                          {f.stat}
+                        </span>
+                      )}
+                    </div>
+                    <span className="font-manrope text-sm leading-[1.55] text-gray-light">{f.desc}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <span aria-hidden="true" className="mt-7 mb-6 block h-px bg-teal-neon/15" />
+            <p className="font-playfair text-base leading-[1.5] text-teal-neon italic">
+              Cada negócio parte de um ponto diferente — o investimento reflete isso.
+            </p>
+          </Reveal>
         </div>
 
         {/* QUALIFICAÇÃO */}

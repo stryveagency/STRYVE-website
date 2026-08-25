@@ -10,6 +10,7 @@
   --font-anton: "Anton", "Arial Narrow", sans-serif;
   --font-manrope: "Manrope", system-ui, sans-serif;
   --font-playfair: "Playfair Display", serif;
+  --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
 }
 
 html {
@@ -143,4 +144,15 @@ body {
 
 .reveal-fade {
   animation: stryve-fade 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@keyframes stryve-cursor-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
 }

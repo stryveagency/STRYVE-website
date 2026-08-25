@@ -2,88 +2,57 @@ import Reveal from './Reveal'
 
 const services = [
   {
-    title: 'Tráfego Pago',
+    tag: 'PAGO',
+    label: 'Tráfego Pago',
+    id: 'trafego_pago',
     desc: 'Campanhas Meta Ads e Google Ads com segmentação precisa, testes A/B e otimização semanal para maximizar ROI.',
-    statTitle: '1 campanha por objetivo',
-    statCaption: '3 criativos em teste A/B simultâneo',
-    icon: (
-      <>
-        <path d="M7 33 L17 22 L24 28 L37 13" />
-        <path d="M28 13 H37 V22" />
-      </>
-    ),
+    stat: '1 campanha por objetivo · 3 criativos em teste A/B simultâneo',
   },
   {
-    title: 'Social Media',
+    tag: 'ORGÂNICO',
+    label: 'Social Media',
+    id: 'social_media',
     desc: 'Gestão completa de Instagram: planejamento, criação de conteúdo, Reels, Stories, legendas persuasivas, calendário estratégico.',
-    statTitle: '3x por semana',
-    statCaption: 'cadência fixa de publicação',
-    icon: (
-      <>
-        <rect x="6" y="12" width="24" height="20" rx="4" />
-        <path d="M30 20 L38 15 V29 L30 24 Z" />
-      </>
-    ),
+    stat: '4 pilares de conteúdo · autoridade, prova social, bastidores e conversão',
   },
   {
-    title: 'Landing Pages',
+    tag: 'ENTREGA',
+    label: 'Landing Pages',
+    id: 'landing_pages',
     desc: 'Páginas de captura otimizadas para conversão. Design, copywriting e performance orientados a CTA.',
-    statTitle: 'Pixel da Meta + GA4',
-    statCaption: 'rastreamento e SEO técnico configurados no lançamento',
-    icon: (
-      <>
-        <rect x="6" y="8" width="32" height="22" rx="3" />
-        <path d="M18 36 H26" />
-        <path d="M22 30 V36" />
-        <path d="M20 16 L28 20 L24 21.6 L22.4 25.6 Z" fill="#2EE6B8" stroke="none" />
-      </>
-    ),
+    stat: 'Pixel da Meta + GA4 · rastreamento e SEO técnico no lançamento',
   },
   {
-    title: 'Estratégia Digital',
+    tag: 'DIAGNÓSTICO',
+    label: 'Estratégia Digital',
+    id: 'estrategia_digital',
     desc: 'Diagnóstico 360° do negócio, posicionamento, definição de público, plano estratégico mensal.',
-    statTitle: 'Diagnóstico completo',
-    statCaption: 'antes de qualquer execução',
-    icon: (
-      <>
-        <circle cx="22" cy="22" r="15" />
-        <circle cx="22" cy="22" r="8" />
-        <circle cx="22" cy="22" r="2" fill="#2EE6B8" stroke="none" />
-      </>
-    ),
+    stat: 'Diagnóstico completo · antes de qualquer execução',
   },
   {
-    title: 'Conteúdo & Criativos',
+    tag: 'PRODUÇÃO',
+    label: 'Conteúdo & Criativos',
+    id: 'conteudo_criativos',
     desc: 'Produção de criativos de alta qualidade para anúncios, redes sociais e materiais de campanha.',
-    statTitle: '35% autoridade · 25% prova social\n20% bastidores · 20% conversão',
-    statCaption: 'distribuição do calendário de conteúdo',
-    icon: (
-      <>
-        <path d="M22 7 L37 15 L22 23 L7 15 Z" />
-        <path d="M7 22 L22 30 L37 22" />
-        <path d="M7 29 L22 37 L37 29" />
-      </>
-    ),
+    stat: 'Roteiro, edição e arte · alinhados à identidade da marca',
   },
   {
-    title: 'Relatórios & Insights',
+    tag: 'DADOS',
+    label: 'Relatórios & Insights',
+    id: 'relatorios_insights',
     desc: 'Monitoramento semanal com métricas reais, análise de conversões, próximos passos baseados em dados.',
-    statTitle: 'Toda sexta-feira',
-    statCaption: 'revisão fixa de métricas',
-    icon: (
-      <>
-        <path d="M7 36 H37" />
-        <rect x="10" y="24" width="6" height="10" />
-        <rect x="20" y="17" width="6" height="17" />
-        <rect x="30" y="10" width="6" height="24" />
-      </>
-    ),
+    stat: 'Toda sexta-feira · revisão fixa de métricas',
   },
 ]
 
 function Servicos() {
   return (
     <section id="servicos" className="relative overflow-hidden bg-black">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-40 -right-40 z-0 h-[520px] w-[520px] rounded-full blur-[120px]"
+        style={{ background: 'radial-gradient(circle, rgba(46,230,184,0.16), transparent 70%)' }}
+      />
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 z-1"
@@ -112,45 +81,68 @@ function Servicos() {
           O QUE A GENTE FAZ NA PRÁTICA
         </Reveal>
 
-        <div className="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, i) => (
-            <Reveal
-              key={service.title}
-              anim="pop"
-              delay={i}
-              className="group flex flex-col gap-5 rounded-lg border border-teal-neon/15 bg-[#0A0A0A] p-9 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-teal-neon hover:bg-[#0C110F] hover:shadow-[0_12px_44px_rgba(46,230,184,0.16)]"
-            >
-              <svg
-                width="44"
-                height="44"
-                viewBox="0 0 44 44"
-                fill="none"
-                stroke="#2EE6B8"
-                strokeWidth="1.4"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
+        <Reveal
+          anim="pop"
+          className="overflow-hidden rounded-xl border border-teal-neon/25 bg-[#060706]"
+          style={{ boxShadow: '0 0 60px rgba(46,230,184,0.06)' }}
+        >
+          <div className="flex items-center gap-2 border-b border-white/8 bg-white/2 px-6 py-4 sm:px-8">
+            <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
+            <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
+            <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
+            <span className="ml-3 truncate font-mono text-[12px] text-gray-light sm:text-[13px]">
+              stryve@sistema:~$ ./servicos.sh --list
+            </span>
+            <span className="ml-auto hidden shrink-0 font-mono text-[12px] text-teal-neon/70 sm:inline">
+              6 processos
+            </span>
+          </div>
+
+          <div className="flex flex-col">
+            {services.map((service, i) => (
+              <Reveal
+                key={service.id}
+                delay={i}
+                className={`group px-6 py-7 transition-colors duration-300 ease-out hover:bg-teal-neon/[0.03] sm:px-8 ${
+                  i < services.length - 1 ? 'border-b border-dashed border-white/8' : ''
+                }`}
               >
-                {service.icon}
-              </svg>
-              <h3 className="m-0 font-manrope text-xl font-extrabold tracking-[0.04em] text-white uppercase">
-                {service.title}
-              </h3>
-              <p className="m-0 font-manrope text-base leading-[1.6] text-gray-light text-pretty">
-                {service.desc}
-              </p>
-              <span aria-hidden="true" className="mt-1 block h-px bg-teal-neon/15" />
-              <div className="flex flex-col gap-1">
-                <span className="font-manrope text-xl leading-[1.35] font-extrabold whitespace-pre-line text-teal-neon">
-                  {service.statTitle}
-                </span>
-                <span className="font-manrope text-[13px] leading-[1.5] text-gray-light">
-                  {service.statCaption}
-                </span>
-              </div>
-            </Reveal>
-          ))}
-        </div>
+                <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-2">
+                  <div className="flex items-baseline gap-3">
+                    <span className="font-mono text-lg leading-none text-teal-neon">&gt;</span>
+                    <div className="flex flex-col gap-1">
+                      <h3
+                        className="m-0 font-anton text-2xl leading-[1.05] tracking-[0.01em] text-white uppercase sm:text-[28px]"
+                        style={{ textShadow: '0 0 22px rgba(46,230,184,0.15)' }}
+                      >
+                        {service.label}
+                      </h3>
+                      <span className="font-mono text-[11px] text-gray-light/45">{service.id}</span>
+                    </div>
+                  </div>
+                  <span className="font-mono text-[11px] tracking-[0.1em] text-teal-neon/80 sm:text-xs">
+                    [{service.tag}]
+                  </span>
+                </div>
+                <p className="m-0 mt-4 max-w-[640px] pl-7 font-manrope text-[15px] leading-[1.6] text-gray-light text-pretty sm:text-base">
+                  {service.desc}
+                </p>
+                <p className="m-0 mt-3 pl-7 font-mono text-[12px] leading-[1.6] text-teal-neon/85 sm:text-[13px]">
+                  $ {service.stat}
+                </p>
+              </Reveal>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-2 border-t border-white/8 bg-white/2 px-6 py-4 sm:px-8">
+            <span className="font-mono text-[13px] text-gray-light">stryve@sistema:~$</span>
+            <span
+              aria-hidden="true"
+              className="inline-block h-4 w-2 bg-teal-neon"
+              style={{ animation: 'stryve-cursor-blink 1.1s step-end infinite' }}
+            />
+          </div>
+        </Reveal>
       </div>
     </section>
   )

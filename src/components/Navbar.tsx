@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const navLinks = [
   { href: '#manifesto', label: 'Manifesto' },
@@ -15,12 +15,43 @@ const afterMetodoLinks = [
   { href: '#planos', label: 'Planos' },
 ]
 
-const navLinkClass =
-  'font-manrope text-[13px] font-medium tracking-[0.16em] text-gray-light uppercase no-underline transition-colors duration-250 ease-out hover:text-teal-neon'
+const sectionIds = ['manifesto', 'servicos', 'metodo', 'trafego', 'conteudo', 'resultados', 'planos']
+
+function useActiveSection() {
+  const [active, setActive] = useState('')
+
+  useEffect(() => {
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => el !== null)
+    if (sections.length === 0) return
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(entry.target.id)
+        })
+      },
+      { rootMargin: '-45% 0px -50% 0px', threshold: 0 },
+    )
+    sections.forEach((el) => io.observe(el))
+    return () => io.disconnect()
+  }, [])
+
+  return active
+}
+
+function navLinkClass(isActive: boolean) {
+  return `font-manrope text-[13px] font-medium tracking-[0.16em] uppercase no-underline transition-colors duration-250 ease-out ${
+    isActive ? 'text-teal-neon' : 'text-gray-light hover:text-teal-neon'
+  }`
+}
 
 function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [metodoOpen, setMetodoOpen] = useState(false)
+  const active = useActiveSection()
+  const metodoActive = active === 'metodo' || active === 'trafego' || active === 'conteudo'
 
   const closeMobile = () => {
     setMobileOpen(false)
@@ -42,13 +73,13 @@ function Navbar() {
 
         <nav className="hidden items-center gap-9 lg:flex">
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className={navLinkClass}>
+            <a key={link.href} href={link.href} className={navLinkClass(active === link.href.slice(1))}>
               {link.label}
             </a>
           ))}
 
           <div className="group relative flex items-center self-stretch px-0.5">
-            <a href="#metodo" className={`inline-flex items-center gap-1.5 ${navLinkClass}`}>
+            <a href="#metodo" className={`inline-flex items-center gap-1.5 ${navLinkClass(metodoActive)}`}>
               Método
               <span aria-hidden="true" className="text-[10px] leading-none">
                 ▾
@@ -72,7 +103,7 @@ function Navbar() {
           </div>
 
           {afterMetodoLinks.map((link) => (
-            <a key={link.href} href={link.href} className={navLinkClass}>
+            <a key={link.href} href={link.href} className={navLinkClass(active === link.href.slice(1))}>
               {link.label}
             </a>
           ))}
