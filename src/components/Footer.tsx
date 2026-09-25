@@ -29,7 +29,7 @@ function Footer() {
             </span>
             <div className="flex flex-col gap-3">
               <a
-                href="https://wa.me/5511991437244"
+                href="https://wa.me/5511976348811"
                 target="_blank"
                 rel="noopener"
                 className="inline-flex items-center gap-2.5 font-manrope text-[15px] text-white no-underline transition-colors duration-200 ease-out hover:text-teal-neon"
@@ -37,7 +37,7 @@ function Footer() {
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5v-.5l-.8-1.8c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-.9.9-.9 2.1s.9 2.5 1 2.6c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.2.7 3 .6.5 0 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3Z" />
                 </svg>
-                WhatsApp: 11 99143-7244
+                WhatsApp: (11) 97634-8811
               </a>
               <a
                 href="mailto:stryve.agency01@gmail.com"

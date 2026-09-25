@@ -1,6 +1,6 @@
 import Reveal from './Reveal'
 
-const WHATSAPP = 'https://wa.me/5511991437244'
+const WHATSAPP = 'https://wa.me/5511976348811'
 
 const incluso = [
   'Diagnóstico completo do negócio',

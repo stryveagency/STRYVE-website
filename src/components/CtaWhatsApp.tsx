@@ -34,7 +34,7 @@ function CtaWhatsApp() {
           </p>
           <div className="mt-10 flex justify-center lg:justify-end">
             <a
-              href="https://wa.me/5511991437244"
+              href="https://wa.me/5511976348811"
               target="_blank"
               rel="noopener"
               className="inline-flex w-max flex-shrink-0 items-center justify-center gap-3 rounded-md bg-teal-neon px-[50px] py-5 font-manrope text-lg font-extrabold tracking-[0.12em] text-black uppercase no-underline shadow-[0_0_40px_rgba(46,230,184,0.6)] [animation:stryve-btn-pulse_2.8s_ease-in-out_infinite] transition-all duration-300 ease-out hover:scale-[1.08] hover:bg-teal-neon-bright hover:shadow-[0_0_60px_rgba(46,230,184,0.85)]"

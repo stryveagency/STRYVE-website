@@ -123,7 +123,7 @@ function Navbar() {
           </button>
 
           <a
-            href="https://wa.me/5511991437244"
+            href="https://wa.me/5511976348811"
             target="_blank"
             rel="noopener"
             className="inline-flex items-center gap-2.5 rounded border border-teal-neon/55 bg-teal-neon/6 px-[22px] py-[11px] font-manrope text-[13px] font-bold tracking-[0.12em] text-teal-neon whitespace-nowrap uppercase no-underline transition-all duration-300 ease-out hover:bg-teal-neon hover:text-black hover:shadow-[0_0_26px_rgba(46,230,184,0.45)]"
