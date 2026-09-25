@@ -124,7 +124,7 @@ function MotorDeCrescimento() {
         className="pointer-events-none absolute inset-0 z-1"
         style={{
           backgroundImage:
-            'repeating-linear-gradient(to right, rgba(46,230,184,0.06) 0 1px, transparent 1px 88px)',
+            'repeating-linear-gradient(to right, rgba(0, 255, 209,0.06) 0 1px, transparent 1px 88px)',
           maskImage: 'linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent)',
           WebkitMaskImage: 'linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent)',
         }}
@@ -133,16 +133,16 @@ function MotorDeCrescimento() {
       <div className="relative z-2 mx-auto w-full max-w-[1560px] px-6 pt-[130px] pb-15 sm:px-10 sm:pt-[140px] sm:pb-15 lg:px-20 lg:pt-[160px] lg:pb-15">
         <Reveal
           as="span"
-          className="inline-flex items-center gap-3 font-manrope text-sm font-medium tracking-[0.4em] text-teal-neon uppercase"
+          className="inline-flex items-center gap-3 font-body text-sm font-medium tracking-[0.4em] text-mint uppercase"
         >
-          <span className="block h-px w-7 bg-teal-neon" />
+          <span className="block h-px w-7 bg-mint" />
           Motor de Crescimento
         </Reveal>
 
         <Reveal
           as="h2"
           delay={1}
-          className="mt-5 mb-5 font-anton text-[38px] leading-[1.05] tracking-[0.01em] text-white uppercase lg:text-[54px]"
+          className="mt-5 mb-5 font-display text-[38px] leading-[1.05] tracking-[0.01em] text-white uppercase lg:text-[54px]"
         >
           O MOTOR DE CRESCIMENTO STRYVE
         </Reveal>
@@ -150,7 +150,7 @@ function MotorDeCrescimento() {
         <Reveal
           as="p"
           delay={2}
-          className="mb-15 max-w-[760px] font-manrope text-xl leading-[1.6] text-gray-light text-pretty"
+          className="mb-15 max-w-[760px] font-body text-xl leading-[1.6] text-gray-light text-pretty"
         >
           Um artefato obrigatório em cada etapa — sempre com dono e entregável claro. Decisão baseada em dado
           real, não em achismo.
@@ -167,7 +167,7 @@ function MotorDeCrescimento() {
               ref={basePathRef}
               d=""
               fill="none"
-              stroke="rgba(46,230,184,0.16)"
+              stroke="rgba(0, 255, 209,0.16)"
               strokeWidth={2}
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -176,11 +176,11 @@ function MotorDeCrescimento() {
               ref={fillPathRef}
               d=""
               fill="none"
-              stroke="#2EE6B8"
+              stroke="#00FFD1"
               strokeWidth={2.5}
               strokeLinecap="round"
               strokeLinejoin="round"
-              style={{ filter: 'drop-shadow(0 0 8px rgba(46,230,184,0.8))' }}
+              style={{ filter: 'drop-shadow(0 0 8px rgba(0, 255, 209,0.8))' }}
             />
           </svg>
 
@@ -198,18 +198,18 @@ function MotorDeCrescimento() {
                   dotRefs.current[i] = el
                 }}
                 aria-hidden="true"
-                className="absolute top-2 left-1.5 h-4 w-4 rounded-full border-2 border-teal-neon bg-black shadow-[0_0_16px_rgba(46,230,184,0.5)]"
+                className="absolute top-2 left-1.5 h-4 w-4 rounded-full border-2 border-mint bg-black shadow-[0_0_16px_rgba(0, 255, 209,0.5)]"
               />
-              <span className="inline-block rounded bg-teal-neon/10 px-3 py-1 font-anton text-[26px] tracking-[0.08em] text-teal-neon">
+              <span className="inline-block rounded bg-mint/10 px-3 py-1 font-display uppercase text-[26px] tracking-[0.08em] text-mint">
                 {step.code}
               </span>
-              <h3 className="mt-[18px] mb-3.5 font-manrope text-2xl font-extrabold text-white uppercase lg:text-[30px]">
+              <h3 className="mt-[18px] mb-3.5 font-body text-2xl font-extrabold text-white uppercase lg:text-[30px]">
                 {step.title}
               </h3>
-              <p className="mb-[18px] max-w-[620px] font-manrope text-lg leading-[1.7] text-gray-light text-pretty">
+              <p className="mb-[18px] max-w-[620px] font-body text-lg leading-[1.7] text-gray-light text-pretty">
                 {step.desc}
               </p>
-              <span className="inline-block rounded-full border border-teal-neon/55 bg-teal-neon/8 px-3 py-1 font-manrope text-[15px] text-white">
+              <span className="inline-block rounded-full border border-mint/55 bg-mint/8 px-3 py-1 font-body text-[15px] text-white">
                 {step.artefato}
               </span>
             </Reveal>

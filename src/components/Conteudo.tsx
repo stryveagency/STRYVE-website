@@ -60,7 +60,7 @@ function PillarBar({ pct }: { pct: number }) {
   return (
     <span ref={ref} aria-hidden="true" className="block h-2 overflow-hidden rounded-full bg-white/8">
       <span
-        className="block h-full rounded-full bg-teal-neon shadow-[0_0_14px_rgba(46,230,184,0.5)] transition-[width] duration-[1300ms] ease-[cubic-bezier(0.2,0.7,0.2,1)]"
+        className="block h-full rounded-full bg-mint shadow-[0_0_14px_rgba(0, 255, 209,0.5)] transition-[width] duration-[1300ms] ease-[cubic-bezier(0.2,0.7,0.2,1)]"
         style={{ width: inView ? `${pct}%` : '0%' }}
       />
     </span>
@@ -73,16 +73,16 @@ function Conteudo() {
       <div className="relative z-2 mx-auto w-full max-w-[1560px] px-6 pt-[130px] pb-20 sm:px-10 sm:pt-[140px] sm:pb-22 lg:px-20 lg:pt-[160px] lg:pb-25">
         <Reveal
           as="span"
-          className="inline-flex items-center gap-3 font-manrope text-sm font-medium tracking-[0.4em] text-teal-neon uppercase"
+          className="inline-flex items-center gap-3 font-body text-sm font-medium tracking-[0.4em] text-mint uppercase"
         >
-          <span className="block h-px w-7 bg-teal-neon" />
+          <span className="block h-px w-7 bg-mint" />
           Metodologia
         </Reveal>
 
         <Reveal
           as="h2"
           delay={1}
-          className="mt-5 mb-4 font-anton text-[38px] leading-[1.05] tracking-[0.01em] text-white uppercase lg:text-[54px]"
+          className="mt-5 mb-4 font-display text-[38px] leading-[1.05] tracking-[0.01em] text-white uppercase lg:text-[54px]"
         >
           CONTEÚDO NÃO É IMPROVISO
         </Reveal>
@@ -90,14 +90,14 @@ function Conteudo() {
         <Reveal
           as="p"
           delay={2}
-          className="mb-15 max-w-[700px] font-manrope text-lg leading-[1.6] text-gray-light text-pretty"
+          className="mb-15 max-w-[700px] font-body text-lg leading-[1.6] text-gray-light text-pretty"
         >
           Consistência importa mais que volume.
         </Reveal>
 
         <Reveal
           as="h3"
-          className="mt-15 mb-8 font-manrope text-2xl font-extrabold tracking-[0.02em] text-white uppercase lg:text-[26px]"
+          className="mt-15 mb-8 font-body text-2xl font-extrabold tracking-[0.02em] text-white uppercase lg:text-[26px]"
         >
           4 pilares de conteúdo
         </Reveal>
@@ -106,16 +106,16 @@ function Conteudo() {
           {pillars.map((p, i) => (
             <Reveal key={p.title} delay={i} className="flex flex-col gap-2.5">
               <span
-                className="font-anton text-4xl leading-none text-teal-neon"
-                style={{ textShadow: '0 0 26px rgba(46,230,184,0.3)' }}
+                className="font-display uppercase text-4xl leading-none text-mint"
+                style={{ textShadow: '0 0 26px rgba(0, 255, 209,0.3)' }}
               >
                 {p.pct}%
               </span>
-              <span className="font-manrope text-[17px] font-extrabold tracking-[0.1em] text-white uppercase">
+              <span className="font-body text-[17px] font-extrabold tracking-[0.1em] text-white uppercase">
                 {p.title}
               </span>
               <PillarBar pct={p.pct} />
-              <p className="m-0 mt-1 font-manrope text-base leading-[1.6] text-gray-light">{p.desc}</p>
+              <p className="m-0 mt-1 font-body text-base leading-[1.6] text-gray-light">{p.desc}</p>
             </Reveal>
           ))}
         </div>

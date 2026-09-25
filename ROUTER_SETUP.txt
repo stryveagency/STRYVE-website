@@ -1,0 +1,33 @@
+ROUTER SETUP — React Router (multi-página)
+
+Objetivo: transformar a landing page em multi-página, com a rota /servicos.
+
+Passo 1: Instalar React Router
+  npm install react-router-dom                                   [FEITO]
+
+Passo 2: Criar estrutura                                          [FEITO]
+  - src/pages/Home.tsx      → a landing page atual (todas as seções)
+  - src/pages/Servicos.tsx  → página nova de serviços
+      (por enquanto: Navbar + seção Serviços + CTA WhatsApp + Footer;
+       conteúdo exclusivo da página ainda a definir)
+
+Passo 3: Refatorar App.tsx                                        [FEITO]
+  - BrowserRouter + Routes
+      /          → Home
+      /servicos  → Servicos
+
+Passo 4: Atualizar Navbar.tsx                                     [FEITO]
+  - "SERVIÇOS" agora é <Link to="/servicos">
+  - Demais links viraram "/#secao" (ex: /#manifesto) para funcionarem
+    também a partir de /servicos (voltam pra Home e rolam até a seção)
+  - Footer.tsx recebeu os mesmos ajustes
+
+Extra: vercel.json                                                [FEITO]
+  - Rewrite de todas as rotas para /index.html, senão acessar
+    stryve.../servicos direto (ou dar F5) retorna 404 na Vercel.
+  - Arquivos estáticos (ex: /links) continuam sendo servidos normalmente.
+
+Próximos passos
+  - Desenhar o conteúdo próprio da página /servicos
+  - Testar: npm run dev → abrir http://localhost:5173/servicos
+  - git add . && git commit && git push (Vercel faz o redeploy)

@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-A marketing/landing page site built with Vite + React 19 + TypeScript + Tailwind CSS v4. Single-page layout, no routing library.
+A marketing/landing page site built with Vite + React 19 + TypeScript + Tailwind CSS v4. Multi-page via React Router (`BrowserRouter` in `src/App.tsx`, pages in `src/pages/`); `vercel.json` rewrites all paths to `index.html`.
 
 ## Commands
 

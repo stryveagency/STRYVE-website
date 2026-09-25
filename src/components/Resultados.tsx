@@ -94,12 +94,12 @@ function Resultados() {
             className="grid grid-rows-[auto_auto] items-end justify-items-center px-8 text-center sm:grid-rows-[108px_auto]"
           >
             <span
-              className="font-anton text-[60px] leading-none tracking-[0.01em] text-teal-neon sm:text-[72px] lg:text-[92px]"
-              style={{ textShadow: '0 0 40px rgba(46,230,184,0.35)' }}
+              className="font-display uppercase text-[60px] leading-none tracking-[0.01em] text-mint sm:text-[72px] lg:text-[92px]"
+              style={{ textShadow: '0 0 40px rgba(0, 255, 209,0.35)' }}
             >
               <Counter target={10} />+
             </span>
-            <span className="mt-3 font-manrope text-[17px] font-medium tracking-[0.14em] text-white uppercase">
+            <span className="mt-3 font-body text-[17px] font-medium tracking-[0.14em] text-white uppercase">
               Clientes atendidos
             </span>
           </Reveal>
@@ -110,12 +110,12 @@ function Resultados() {
             className="grid grid-rows-[auto_auto] items-end justify-items-center border-t border-white/10 px-8 pt-10 text-center sm:grid-rows-[108px_auto] sm:border-t-0 sm:border-l sm:pt-0"
           >
             <span
-              className="font-anton text-[60px] leading-none tracking-[0.01em] text-teal-neon sm:text-[72px] lg:text-[92px]"
-              style={{ textShadow: '0 0 40px rgba(46,230,184,0.35)' }}
+              className="font-display uppercase text-[60px] leading-none tracking-[0.01em] text-mint sm:text-[72px] lg:text-[92px]"
+              style={{ textShadow: '0 0 40px rgba(0, 255, 209,0.35)' }}
             >
               <Counter target={100} suffix="%" />
             </span>
-            <span className="mt-3 font-manrope text-[17px] font-medium tracking-[0.14em] text-white uppercase">
+            <span className="mt-3 font-body text-[17px] font-medium tracking-[0.14em] text-white uppercase">
               Transparência
             </span>
           </Reveal>
@@ -126,12 +126,12 @@ function Resultados() {
             className="grid grid-rows-[auto_auto] items-end justify-items-center border-t border-white/10 px-8 pt-10 text-center sm:grid-rows-[108px_auto] sm:border-t-0 sm:border-l sm:pt-0"
           >
             <span
-              className="font-anton text-[60px] leading-none tracking-[0.01em] whitespace-nowrap text-teal-neon"
-              style={{ textShadow: '0 0 40px rgba(46,230,184,0.35)' }}
+              className="font-display uppercase text-[60px] leading-none tracking-[0.01em] whitespace-nowrap text-mint"
+              style={{ textShadow: '0 0 40px rgba(0, 255, 209,0.35)' }}
             >
               5 MESES
             </span>
-            <span className="mt-3 max-w-[320px] font-manrope text-[17px] leading-[1.5] font-medium tracking-[0.14em] text-white uppercase text-pretty">
+            <span className="mt-3 max-w-[320px] font-body text-[17px] leading-[1.5] font-medium tracking-[0.14em] text-white uppercase text-pretty">
               Prazo mínimo para resultados consistentes
             </span>
           </Reveal>

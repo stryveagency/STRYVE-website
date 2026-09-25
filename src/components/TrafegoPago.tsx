@@ -8,7 +8,7 @@ const benefits = [
       <>
         <circle cx="17" cy="17" r="12" />
         <circle cx="17" cy="17" r="7" />
-        <circle cx="17" cy="17" r="2" fill="#2EE6B8" stroke="none" />
+        <circle cx="17" cy="17" r="2" fill="#00FFD1" stroke="none" />
       </>
     ),
   },
@@ -87,16 +87,16 @@ function TrafegoPago() {
       <div className="relative z-2 mx-auto w-full max-w-[1560px] px-6 pt-[130px] pb-20 sm:px-10 sm:pt-[140px] sm:pb-22 lg:px-20 lg:pt-[160px] lg:pb-25">
         <Reveal
           as="span"
-          className="inline-flex items-center gap-3 font-manrope text-sm font-medium tracking-[0.4em] text-teal-neon uppercase"
+          className="inline-flex items-center gap-3 font-body text-sm font-medium tracking-[0.4em] text-mint uppercase"
         >
-          <span className="block h-px w-7 bg-teal-neon" />
+          <span className="block h-px w-7 bg-mint" />
           Metodologia
         </Reveal>
 
         <Reveal
           as="h2"
           delay={1}
-          className="mt-5 mb-4 font-anton text-[38px] leading-[1.05] tracking-[0.01em] text-white uppercase lg:text-[54px]"
+          className="mt-5 mb-4 font-display text-[38px] leading-[1.05] tracking-[0.01em] text-white uppercase lg:text-[54px]"
         >
           MAIS CLIENTE.
           <br />
@@ -106,7 +106,7 @@ function TrafegoPago() {
         <Reveal
           as="p"
           delay={2}
-          className="mb-15 max-w-[700px] font-manrope text-lg leading-[1.6] text-gray-light text-pretty"
+          className="mb-15 max-w-[700px] font-body text-lg leading-[1.6] text-gray-light text-pretty"
         >
           Cada real investido é rastreado até o resultado. Decisão por dado, não por achismo.
         </Reveal>
@@ -117,14 +117,14 @@ function TrafegoPago() {
               key={b.title}
               anim="pop"
               delay={i}
-              className="flex flex-col gap-4.5 rounded-lg border border-teal-neon/15 bg-[#0A0A0A] p-9 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-teal-neon hover:bg-[#0C110F] hover:shadow-[0_12px_44px_rgba(46,230,184,0.16)]"
+              className="flex flex-col gap-4.5 rounded-lg border border-mint/15 bg-[#121415] p-9 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-mint hover:bg-[#121415] hover:shadow-[0_12px_44px_rgba(0, 255, 209,0.16)]"
             >
               <svg
                 width="34"
                 height="34"
                 viewBox="0 0 34 34"
                 fill="none"
-                stroke="#2EE6B8"
+                stroke="#00FFD1"
                 strokeWidth="1.4"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -132,20 +132,20 @@ function TrafegoPago() {
               >
                 {b.icon}
               </svg>
-              <h4 className="m-0 font-manrope text-xl font-extrabold tracking-[0.04em] text-white uppercase">
+              <h4 className="m-0 font-body text-xl font-extrabold tracking-[0.04em] text-white uppercase">
                 {b.title}
               </h4>
-              <p className="m-0 font-manrope text-base leading-[1.6] text-gray-light text-pretty">{b.desc}</p>
+              <p className="m-0 font-body text-base leading-[1.6] text-gray-light text-pretty">{b.desc}</p>
             </Reveal>
           ))}
         </div>
 
         <Reveal
           anim="fade"
-          className="mt-15 rounded-xl border border-teal-neon/20 p-8 sm:p-10"
+          className="mt-15 rounded-xl border border-mint/20 p-8 sm:p-10"
           style={{
             background:
-              'linear-gradient(150deg, rgba(46,230,184,0.09), rgba(46,230,184,0.03) 60%, rgba(10,10,10,1))',
+              'linear-gradient(150deg, rgba(0, 255, 209,0.09), rgba(0, 255, 209,0.03) 60%, rgba(18,20,21,1))',
           }}
         >
           <div className="grid grid-cols-2 gap-6 lg:grid-cols-4">
@@ -159,7 +159,7 @@ function TrafegoPago() {
                   height="26"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="#2EE6B8"
+                  stroke="#00FFD1"
                   strokeWidth="1.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -168,14 +168,14 @@ function TrafegoPago() {
                 >
                   {m.icon}
                 </svg>
-                <span className="font-manrope text-[15px] font-bold tracking-[0.12em] text-white uppercase sm:text-base">
+                <span className="font-body text-[15px] font-bold tracking-[0.12em] text-white uppercase sm:text-base">
                   {m.label}
                 </span>
               </span>
             ))}
           </div>
 
-          <p className="mt-6 text-center font-playfair text-lg leading-[1.5] text-teal-neon italic text-pretty">
+          <p className="mt-6 text-center font-accent text-lg leading-[1.5] text-mint italic text-pretty">
             Decisão baseada em dado: criativo fraco pausa, criativo forte escala.
           </p>
         </Reveal>

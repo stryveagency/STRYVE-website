@@ -1,16 +1,19 @@
 @import "tailwindcss";
 
+/* Tokens do Guia de Marca STRYVE (guia-de-marca-stryve.html, v1.0) */
 @theme {
-  --color-bg-black: #000000;
-  --color-teal-neon: #2ee6b8;
-  --color-teal-neon-light: #7ff5d8;
-  --color-teal-neon-bright: #3af3c4;
-  --color-gray-light: #cccccc;
+  /* Preto Stryve substitui o preto puro em todas as classes black (bg-black, text-black, black/55...) */
+  --color-black: #0b0d0e;
+  --color-bg-black: #0b0d0e;
+  --color-black-soft: #121415;
+  --color-mint: #00ffd1;
+  --color-mint-deep: #00819d;
+  --color-gray-light: #c9d3d3;
+  --color-gray-mid: #7c8888;
 
-  --font-anton: "Anton", "Arial Narrow", sans-serif;
-  --font-manrope: "Manrope", system-ui, sans-serif;
-  --font-playfair: "Playfair Display", serif;
-  --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+  --font-display: "Bebas Neue", "Oswald", "Arial Narrow", sans-serif;
+  --font-accent: "Instrument Serif", Georgia, serif;
+  --font-body: "Inter", "Helvetica Neue", Arial, ui-sans-serif, sans-serif;
 }
 
 html {
@@ -26,13 +29,13 @@ body {
 }
 
 body {
-  font-family: var(--font-manrope);
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
 }
 
 @layer base {
   a {
-    color: var(--color-teal-neon);
+    color: var(--color-mint);
   }
 }
 
@@ -91,22 +94,22 @@ body {
 @keyframes stryve-icon-glow {
   0%,
   100% {
-    filter: drop-shadow(0 0 0 rgba(46, 230, 184, 0));
+    filter: drop-shadow(0 0 0 rgba(0, 255, 209, 0));
   }
   50% {
-    filter: drop-shadow(0 0 10px rgba(46, 230, 184, 0.8));
+    filter: drop-shadow(0 0 10px rgba(0, 255, 209, 0.8));
   }
 }
 
 @keyframes stryve-code-glow {
   0% {
-    box-shadow: 0 0 0 rgba(46, 230, 184, 0);
+    box-shadow: 0 0 0 rgba(0, 255, 209, 0);
   }
   45% {
-    box-shadow: 0 0 26px rgba(46, 230, 184, 0.55);
+    box-shadow: 0 0 26px rgba(0, 255, 209, 0.55);
   }
   100% {
-    box-shadow: 0 0 0 rgba(46, 230, 184, 0);
+    box-shadow: 0 0 0 rgba(0, 255, 209, 0);
   }
 }
 
@@ -123,10 +126,10 @@ body {
 @keyframes stryve-btn-pulse {
   0%,
   100% {
-    box-shadow: 0 0 0 rgba(46, 230, 184, 0.25);
+    box-shadow: 0 0 0 rgba(0, 255, 209, 0.25);
   }
   50% {
-    box-shadow: 0 0 34px rgba(46, 230, 184, 0.55);
+    box-shadow: 0 0 34px rgba(0, 255, 209, 0.55);
   }
 }
 

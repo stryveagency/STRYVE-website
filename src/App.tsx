@@ -1,30 +1,15 @@
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Manifesto from './components/Manifesto'
-import Servicos from './components/Servicos'
-import MotorDeCrescimento from './components/MotorDeCrescimento'
-import Resultados from './components/Resultados'
-import TrafegoPago from './components/TrafegoPago'
-import Conteudo from './components/Conteudo'
-import Planos from './components/Planos'
-import CtaWhatsApp from './components/CtaWhatsApp'
-import Footer from './components/Footer'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import Servicos from './pages/Servicos'
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <Hero />
-      <Manifesto />
-      <Servicos />
-      <MotorDeCrescimento />
-      <Resultados />
-      <TrafegoPago />
-      <Conteudo />
-      <Planos />
-      <CtaWhatsApp />
-      <Footer />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/servicos" element={<Servicos />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 

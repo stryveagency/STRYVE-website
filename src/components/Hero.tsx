@@ -57,7 +57,7 @@ function Hero() {
       />
 
       <div className="absolute bottom-7 left-1/2 z-6 flex -translate-x-1/2 flex-col items-center gap-2.5 [animation:stryve-pulse_2s_ease-in-out_infinite]">
-        <span className="font-manrope text-[11px] font-medium tracking-[0.4em] text-gray-light uppercase">
+        <span className="font-body text-[11px] font-medium tracking-[0.4em] text-gray-light uppercase">
           scroll
         </span>
         <span
@@ -74,7 +74,7 @@ function Hero() {
           <Reveal
             as="h1"
             delay={0}
-            className="m-0 font-anton text-[52px] leading-[1.05] tracking-[0.01em] text-white uppercase text-balance sm:text-[68px] lg:text-[100px]"
+            className="m-0 font-display text-[52px] leading-[1.05] tracking-[0.01em] text-white uppercase text-balance sm:text-[68px] lg:text-[100px]"
           >
             CRESCIMENTO
             <br />
@@ -84,8 +84,8 @@ function Hero() {
           <Reveal
             as="p"
             delay={1}
-            className="mt-6 font-anton text-[26px] leading-[1.1] tracking-[0.04em] text-teal-neon uppercase lg:text-[60px]"
-            style={{ textShadow: '0 0 24px rgba(46,230,184,0.45)' }}
+            className="mt-6 font-display text-[26px] leading-[1.1] tracking-[0.04em] text-mint uppercase lg:text-[60px]"
+            style={{ textShadow: '0 0 24px rgba(0, 255, 209,0.45)' }}
           >
             É PROCESSO.
           </Reveal>
@@ -93,7 +93,7 @@ function Hero() {
           <Reveal
             as="p"
             delay={2}
-            className="mt-8 max-w-[480px] font-manrope text-lg leading-[1.6] text-gray-light text-pretty"
+            className="mt-8 max-w-[480px] font-body text-lg leading-[1.6] text-gray-light text-pretty"
           >
             Estratégia digital orientada a <strong className="font-bold text-white">RESULTADO</strong>. Sem
             achismo. Tráfego pago, social media e conteúdo trabalhando juntos, com dados reais guiando cada
@@ -103,7 +103,7 @@ function Hero() {
           <Reveal delay={3} className="mt-10">
             <a
               href="#planos"
-              className="inline-block rounded bg-teal-neon px-12 py-[18px] font-manrope text-xl font-extrabold tracking-[0.12em] text-black uppercase no-underline transition-all duration-300 ease-out hover:scale-105 hover:bg-teal-neon-bright hover:shadow-[0_0_0_1px_rgba(46,230,184,0.6),0_0_32px_rgba(46,230,184,0.6),0_0_72px_rgba(46,230,184,0.35)]"
+              className="inline-block rounded bg-mint px-12 py-[18px] font-body text-xl font-extrabold tracking-[0.12em] text-black uppercase no-underline transition-all duration-300 ease-out hover:scale-105 hover:bg-mint hover:shadow-[0_0_0_1px_rgba(0, 255, 209,0.6),0_0_32px_rgba(0, 255, 209,0.6),0_0_72px_rgba(0, 255, 209,0.35)]"
             >
               Chama na DM
             </a>
